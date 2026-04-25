@@ -1,6 +1,6 @@
 ﻿namespace FuelTrack
 {
-    partial class Dashboard
+    partial class Inventory
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
-            panel1 = new Panel();
-            alert_label = new Label();
-            usr_avatar = new PictureBox();
-            role_label = new Label();
-            date_label = new Label();
             menubar_dashboard = new Panel();
             logout_btn = new Button();
             audit_btn = new Button();
@@ -47,67 +41,28 @@
             main_label_menu = new Label();
             inv_btn = new Button();
             dashboard_btn = new Button();
-            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            groupBox1 = new GroupBox();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)usr_avatar).BeginInit();
+            textBox1 = new TextBox();
+            button1 = new Button();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            label6 = new Label();
+            label7 = new Label();
+            button2 = new Button();
+            button3 = new Button();
+            button4 = new Button();
+            button5 = new Button();
+            label25 = new Label();
+            dataGridView1 = new DataGridView();
             menubar_dashboard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
-            // 
-            // panel1
-            // 
-            panel1.BackColor = SystemColors.ButtonHighlight;
-            panel1.Controls.Add(alert_label);
-            panel1.Controls.Add(usr_avatar);
-            panel1.Controls.Add(role_label);
-            panel1.Controls.Add(date_label);
-            panel1.Location = new Point(-2, -3);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(811, 67);
-            panel1.TabIndex = 0;
-            // 
-            // alert_label
-            // 
-            alert_label.AutoSize = true;
-            alert_label.Location = new Point(635, 25);
-            alert_label.Name = "alert_label";
-            alert_label.Size = new Size(70, 17);
-            alert_label.TabIndex = 3;
-            alert_label.Text = "--ALERTS--";
-            // 
-            // usr_avatar
-            // 
-            usr_avatar.BackColor = SystemColors.ControlDark;
-            usr_avatar.BackgroundImageLayout = ImageLayout.None;
-            usr_avatar.Location = new Point(706, 14);
-            usr_avatar.Name = "usr_avatar";
-            usr_avatar.Size = new Size(38, 43);
-            usr_avatar.SizeMode = PictureBoxSizeMode.Zoom;
-            usr_avatar.TabIndex = 2;
-            usr_avatar.TabStop = false;
-            // 
-            // role_label
-            // 
-            role_label.AutoSize = true;
-            role_label.Location = new Point(753, 25);
-            role_label.Name = "role_label";
-            role_label.Size = new Size(59, 17);
-            role_label.TabIndex = 1;
-            role_label.Text = "--ROLE--";
-            // 
-            // date_label
-            // 
-            date_label.AutoSize = true;
-            date_label.Location = new Point(14, 25);
-            date_label.Name = "date_label";
-            date_label.Size = new Size(110, 17);
-            date_label.TabIndex = 0;
-            date_label.Text = "DATE GOES HERE";
             // 
             // menubar_dashboard
             // 
             menubar_dashboard.BackColor = Color.FromArgb(26, 58, 92);
-            menubar_dashboard.Controls.Add(groupBox1);
             menubar_dashboard.Controls.Add(logout_btn);
             menubar_dashboard.Controls.Add(audit_btn);
             menubar_dashboard.Controls.Add(reports_Btn);
@@ -121,10 +76,10 @@
             menubar_dashboard.Controls.Add(inv_btn);
             menubar_dashboard.Controls.Add(dashboard_btn);
             menubar_dashboard.ForeColor = SystemColors.ActiveCaptionText;
-            menubar_dashboard.Location = new Point(0, 42);
+            menubar_dashboard.Location = new Point(0, 0);
             menubar_dashboard.Name = "menubar_dashboard";
             menubar_dashboard.Size = new Size(163, 734);
-            menubar_dashboard.TabIndex = 1;
+            menubar_dashboard.TabIndex = 2;
             // 
             // logout_btn
             // 
@@ -138,7 +93,6 @@
             logout_btn.TabIndex = 12;
             logout_btn.Text = "LOGOUT";
             logout_btn.UseVisualStyleBackColor = false;
-            logout_btn.Click += logout_btn_Click;
             // 
             // audit_btn
             // 
@@ -191,6 +145,7 @@
             richTextBox1.Size = new Size(100, 36);
             richTextBox1.TabIndex = 8;
             richTextBox1.Text = "FuelTrack";
+            richTextBox1.TextChanged += richTextBox1_TextChanged;
             // 
             // employee_btn
             // 
@@ -283,61 +238,202 @@
             dashboard_btn.Text = "Dashboard";
             dashboard_btn.UseVisualStyleBackColor = false;
             // 
-            // groupBox1
+            // textBox1
             // 
-            groupBox1.Location = new Point(152, 96);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(200, 100);
-            groupBox1.TabIndex = 13;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "groupBox1";
+            textBox1.Location = new Point(575, 41);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(153, 25);
+            textBox1.TabIndex = 3;
+            textBox1.Text = "Search...";
             // 
-            // Dashboard
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(26, 58, 92);
+            button1.ForeColor = SystemColors.ControlLightLight;
+            button1.Location = new Point(734, 38);
+            button1.Name = "button1";
+            button1.Size = new Size(64, 29);
+            button1.TabIndex = 4;
+            button1.Text = "+ Add";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(181, 41);
+            label1.Name = "label1";
+            label1.Size = new Size(144, 30);
+            label1.TabIndex = 5;
+            label1.Text = "Fuel Inventory";
+            label1.Click += label1_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(200, 126);
+            label2.Name = "label2";
+            label2.Size = new Size(62, 17);
+            label2.TabIndex = 7;
+            label2.Text = "Fuel Type";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(286, 126);
+            label3.Name = "label3";
+            label3.Size = new Size(39, 17);
+            label3.TabIndex = 8;
+            label3.Text = "Stock";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(364, 126);
+            label4.Name = "label4";
+            label4.Size = new Size(63, 17);
+            label4.TabIndex = 9;
+            label4.Text = "Min Level";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(460, 126);
+            label5.Name = "label5";
+            label5.Size = new Size(47, 17);
+            label5.TabIndex = 10;
+            label5.Text = "Price/L";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(553, 126);
+            label6.Name = "label6";
+            label6.Size = new Size(43, 17);
+            label6.TabIndex = 11;
+            label6.Text = "Status";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(714, 124);
+            label7.Name = "label7";
+            label7.Size = new Size(44, 17);
+            label7.TabIndex = 12;
+            label7.Text = "Action";
+            // 
+            // button2
+            // 
+            button2.Location = new Point(701, 166);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 13;
+            button2.Text = "edit";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(701, 216);
+            button3.Name = "button3";
+            button3.Size = new Size(75, 23);
+            button3.TabIndex = 14;
+            button3.Text = "edit";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(701, 269);
+            button4.Name = "button4";
+            button4.Size = new Size(75, 23);
+            button4.TabIndex = 15;
+            button4.Text = "edit";
+            button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            button5.Location = new Point(701, 319);
+            button5.Name = "button5";
+            button5.Size = new Size(75, 27);
+            button5.TabIndex = 16;
+            button5.Text = "edit";
+            button5.UseVisualStyleBackColor = true;
+            // 
+            // label25
+            // 
+            label25.AutoSize = true;
+            label25.Location = new Point(575, 222);
+            label25.Name = "label25";
+            label25.Size = new Size(0, 17);
+            label25.TabIndex = 34;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.BackgroundColor = SystemColors.Control;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(190, 113);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(605, 253);
+            dataGridView1.TabIndex = 6;
+            // 
+            // Inventory
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.Control;
-            BackgroundImageLayout = ImageLayout.None;
-            ClientSize = new Size(807, 593);
-            ControlBox = false;
-            Controls.Add(panel1);
+            ClientSize = new Size(824, 645);
+            Controls.Add(label25);
+            Controls.Add(button5);
+            Controls.Add(button4);
+            Controls.Add(button3);
+            Controls.Add(button2);
+            Controls.Add(label7);
+            Controls.Add(label6);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(dataGridView1);
+            Controls.Add(label1);
+            Controls.Add(button1);
+            Controls.Add(textBox1);
             Controls.Add(menubar_dashboard);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
-            Icon = (Icon)resources.GetObject("$this.Icon");
-            MaximizeBox = false;
-            Name = "Dashboard";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "FuelTrack — Dashboard";
-            Load += Dashboard_Load;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)usr_avatar).EndInit();
+            Name = "Inventory";
+            Text = "FuelTrack — Inventory";
             menubar_dashboard.ResumeLayout(false);
             menubar_dashboard.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private Panel panel1;
         private Panel menubar_dashboard;
-        private Button dashboard_btn;
-        private Label main_label_menu;
-        private Button inv_btn;
-        private Button trans_btn;
-        private Label manage_btn;
-        private Button employee_btn;
-        private Button suplier_btn;
-        private RichTextBox richTextBox1;
-        private Label rprt_label;
+        private Button logout_btn;
         private Button audit_btn;
         private Button reports_Btn;
-        private Label date_label;
-        private Label role_label;
-        private Label alert_label;
-        private PictureBox usr_avatar;
-        private Button logout_btn;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private GroupBox groupBox1;
+        private Label rprt_label;
+        private RichTextBox richTextBox1;
+        private Button employee_btn;
+        private Button suplier_btn;
+        private Label manage_btn;
+        private Button trans_btn;
+        private Label main_label_menu;
+        private Button inv_btn;
+        private Button dashboard_btn;
+        private TextBox textBox1;
+        private Button button1;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private Label label4;
+        private Label label5;
+        private Label label6;
+        private Label label7;
+        private Button button2;
+        private Button button3;
+        private Button button4;
+        private Button button5;
+        private Label label25;
+        private DataGridView dataGridView1;
     }
 }
