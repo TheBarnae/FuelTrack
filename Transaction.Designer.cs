@@ -54,6 +54,7 @@
             label8 = new Label();
             label9 = new Label();
             label10 = new Label();
+            label11 = new Label();
             menubar_dashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
@@ -229,7 +230,7 @@
             dashboard_btn.FlatAppearance.BorderSize = 0;
             dashboard_btn.FlatStyle = FlatStyle.Flat;
             dashboard_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dashboard_btn.Location = new Point(0, 113);
+            dashboard_btn.Location = new Point(-3, 116);
             dashboard_btn.Name = "dashboard_btn";
             dashboard_btn.Size = new Size(163, 37);
             dashboard_btn.TabIndex = 0;
@@ -357,11 +358,20 @@
             label10.TabIndex = 18;
             label10.Text = "Transactions Data HERE!";
             // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(435, 55);
+            label11.Name = "label11";
+            label11.Size = new Size(0, 17);
+            label11.TabIndex = 19;
+            // 
             // Transaction
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(887, 668);
+            Controls.Add(label11);
             Controls.Add(label10);
             Controls.Add(label9);
             Controls.Add(label8);
@@ -414,5 +424,6 @@
         private Label label8;
         private Label label9;
         private Label label10;
+        private Label label11;
     }
 }

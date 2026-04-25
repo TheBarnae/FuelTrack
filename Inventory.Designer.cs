@@ -56,6 +56,7 @@
             button5 = new Button();
             label25 = new Label();
             dataGridView1 = new DataGridView();
+            label8 = new Label();
             menubar_dashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -375,11 +376,20 @@
             dataGridView1.Size = new Size(605, 253);
             dataGridView1.TabIndex = 6;
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(190, 392);
+            label8.Name = "label8";
+            label8.Size = new Size(0, 17);
+            label8.TabIndex = 35;
+            // 
             // Inventory
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(824, 645);
+            Controls.Add(label8);
             Controls.Add(label25);
             Controls.Add(button5);
             Controls.Add(button4);
@@ -435,5 +445,6 @@
         private Button button5;
         private Label label25;
         private DataGridView dataGridView1;
+        private Label label8;
     }
 }
