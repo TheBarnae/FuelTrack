@@ -71,6 +71,8 @@
             // 
             login_btn.Anchor = AnchorStyles.Bottom;
             login_btn.AutoSize = true;
+            login_btn.BackgroundImageLayout = ImageLayout.Center;
+            login_btn.FlatAppearance.BorderSize = 0;
             login_btn.ImageAlign = ContentAlignment.BottomCenter;
             login_btn.Location = new Point(150, 300);
             login_btn.Name = "login_btn";
@@ -78,6 +80,7 @@
             login_btn.TabIndex = 5;
             login_btn.Text = "LOGIN";
             login_btn.UseVisualStyleBackColor = true;
+            login_btn.Click += login_btn_Click;
             // 
             // user_txtbox
             // 
@@ -109,9 +112,11 @@
             Controls.Add(pass_label);
             Controls.Add(user_label);
             Controls.Add(FuelTrack_Logo);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Login";
-            Text = "FuelTrack - Login";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "FuelTrack — Login";
             ((System.ComponentModel.ISupportInitialize)FuelTrack_Logo).EndInit();
             ResumeLayout(false);
             PerformLayout();
