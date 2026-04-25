@@ -55,6 +55,7 @@
             label9 = new Label();
             label10 = new Label();
             label11 = new Label();
+            label12 = new Label();
             menubar_dashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
@@ -366,11 +367,20 @@
             label11.Size = new Size(0, 17);
             label11.TabIndex = 19;
             // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(442, 33);
+            label12.Name = "label12";
+            label12.Size = new Size(0, 17);
+            label12.TabIndex = 20;
+            // 
             // Transaction
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(887, 668);
+            Controls.Add(label12);
             Controls.Add(label11);
             Controls.Add(label10);
             Controls.Add(label9);
@@ -425,5 +435,6 @@
         private Label label9;
         private Label label10;
         private Label label11;
+        private Label label12;
     }
 }
