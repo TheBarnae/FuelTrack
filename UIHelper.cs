@@ -27,5 +27,35 @@ namespace FuelTrack
 
             control.Region = new Region(path);
         }
+
+        // Updated to apply your specific hover/click scheme and remove borders
+        public static void SetButtonColors(Button button)
+        {
+            button.FlatStyle = FlatStyle.Flat;
+            button.FlatAppearance.BorderSize = 0;
+            button.BackColor = Color.FromArgb(26, 58, 92); // Default Base Color
+            button.ForeColor = Color.White;
+            button.FlatAppearance.MouseOverBackColor = Color.FromArgb(33, 70, 110);
+            button.FlatAppearance.MouseDownBackColor = Color.FromArgb(20, 45, 75);
+        }
+
+        // New method to toggle the "Active" highlight for the Dashboard/Navigation
+        public static void SetButtonActive(Button button, bool isActive)
+        {
+            if (isActive)
+            {
+                button.BackColor = Color.FromArgb(40, 85, 135); // Active Highlight
+            }
+            else
+            {
+                button.BackColor = Color.FromArgb(26, 58, 92); // Reset to Base
+            }
+        }
+
+        public static void setDateLabel(Label label)
+        {
+            label.Text = DateTime.Now.ToString("MMMM dd, yyyy");
+            label.Refresh();
+        }
     }
 }

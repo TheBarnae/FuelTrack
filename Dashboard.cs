@@ -38,8 +38,21 @@ namespace FuelTrack
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            date_label.Text = DateTime.Now.ToString("MMMM dd, yyyy");
-            date_label.Refresh();
+            UIHelper.setDateLabel(date_label);
+            UIHelper.SetButtonColors(dashboard_btn);
+
+            // Set the dashboard as the active one
+            UIHelper.SetButtonActive(dashboard_btn, true);
+
+            // Set rounded corners for panels in dashboard
+            UIHelper.SetRadius(sales_panel, 12);
+            UIHelper.SetRadius(liters_panel, 12);
+            UIHelper.SetRadius(transaction_panel, 12);
+            UIHelper.SetRadius(Low_stocks_alerts, 12);
+            UIHelper.SetRadius(inventory_pnel, 12);
+            UIHelper.SetRadius(recent_transaction_panel, 12);
+
+
         }
 
         private void logout_btn_Click(object sender, EventArgs e)
