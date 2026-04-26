@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Windows.Forms;
+using System.Runtime.InteropServices;
 using System.Text;
+using System.Windows.Forms;
+
 
 /*THIS CLASS IS USED TO STORE ALL THE DESIGN RELATED METHODS AND PROPERTIES 
 FOR THE APPLICATION, SUCH AS COLOR SCHEMES, FONTS, AND OTHER UI ELEMENTS. 
@@ -56,6 +58,47 @@ namespace FuelTrack
         {
             label.Text = DateTime.Now.ToString("MMMM dd, yyyy");
             label.Refresh();
+        }
+        // Method to disable the close button on a form
+        [DllImport("user32.dll")]
+        private static extern IntPtr GetSystemMenu(IntPtr hWnd, bool bRevert);
+
+        [DllImport("user32.dll")]
+        private static extern bool EnableMenuItem(IntPtr hMenu, uint uIDEnableItem, uint uEnable);
+
+        private const uint SC_CLOSE = 0xF060;
+        private const uint MF_GRAYED = 0x1;
+
+        public static void DisableCloseButton(Form form)
+        {
+            IntPtr hMenu = GetSystemMenu(form.Handle, false);
+            EnableMenuItem(hMenu, SC_CLOSE, MF_GRAYED);
+        }
+        public static void MakeCircular(PictureBox pic)
+        {
+            GraphicsPath path = new GraphicsPath();
+            path.AddEllipse(0, 0, pic.Width, pic.Height);
+            pic.Region = new Region(path);
+        }
+
+        public static void StyleFuelTrackTitle(RichTextBox rtb)
+        {
+            rtb.Text = "FuelTrack";
+            rtb.Select(0, 4);
+            rtb.SelectionColor = Color.Aqua;
+            rtb.Select(4, 5);
+            rtb.SelectionColor = Color.White;
+            rtb.Select(0, 0);
+            rtb.BorderStyle = BorderStyle.None;
+            rtb.ReadOnly = true;
+        }
+        public static class Navigator
+        {
+            public static void Switch(Form current, Form next)
+            {
+                next.Show();
+                current.Hide();
+            }
         }
     }
 }

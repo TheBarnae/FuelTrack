@@ -63,6 +63,26 @@ namespace FuelTrack.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1777086087185_j0imp17w5y {
+            get {
+                object obj = ResourceManager.GetObject("1777086087185_j0imp17w5y", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fuel_station_vector_icon {
+            get {
+                object obj = ResourceManager.GetObject("fuel-station-vector-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap FUELTRACK_LOGO {
             get {
                 object obj = ResourceManager.GetObject("FUELTRACK_LOGO", resourceCulture);

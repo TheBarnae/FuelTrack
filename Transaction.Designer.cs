@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Transaction));
             menubar_dashboard = new Panel();
             logout_btn = new Button();
             audit_btn = new Button();
@@ -41,24 +42,21 @@
             main_label_menu = new Label();
             inv_btn = new Button();
             dashboard_btn = new Button();
+            fueltrack_icon = new Label();
             label1 = new Label();
             button1 = new Button();
             dataGridView1 = new DataGridView();
             dataGridView2 = new DataGridView();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            label8 = new Label();
-            label9 = new Label();
-            label10 = new Label();
-            label11 = new Label();
-            label12 = new Label();
+            panel1 = new Panel();
+            alert_label = new Label();
+            usr_avatar = new PictureBox();
+            role_label = new Label();
+            date_label = new Label();
             menubar_dashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)usr_avatar).BeginInit();
             SuspendLayout();
             // 
             // menubar_dashboard
@@ -76,10 +74,11 @@
             menubar_dashboard.Controls.Add(main_label_menu);
             menubar_dashboard.Controls.Add(inv_btn);
             menubar_dashboard.Controls.Add(dashboard_btn);
+            menubar_dashboard.Controls.Add(fueltrack_icon);
             menubar_dashboard.ForeColor = SystemColors.ActiveCaptionText;
-            menubar_dashboard.Location = new Point(1, 1);
+            menubar_dashboard.Location = new Point(0, 37);
             menubar_dashboard.Name = "menubar_dashboard";
-            menubar_dashboard.Size = new Size(163, 734);
+            menubar_dashboard.Size = new Size(163, 600);
             menubar_dashboard.TabIndex = 3;
             // 
             // logout_btn
@@ -88,12 +87,13 @@
             logout_btn.BackgroundImageLayout = ImageLayout.None;
             logout_btn.FlatAppearance.BorderSize = 0;
             logout_btn.FlatStyle = FlatStyle.Flat;
-            logout_btn.Location = new Point(12, 503);
+            logout_btn.Location = new Point(12, 444);
             logout_btn.Name = "logout_btn";
-            logout_btn.Size = new Size(135, 34);
+            logout_btn.Size = new Size(135, 30);
             logout_btn.TabIndex = 12;
             logout_btn.Text = "LOGOUT";
             logout_btn.UseVisualStyleBackColor = false;
+            logout_btn.Click += logout_btn_Click;
             // 
             // audit_btn
             // 
@@ -101,9 +101,9 @@
             audit_btn.FlatAppearance.BorderSize = 0;
             audit_btn.FlatStyle = FlatStyle.Flat;
             audit_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            audit_btn.Location = new Point(0, 436);
+            audit_btn.Location = new Point(0, 385);
             audit_btn.Name = "audit_btn";
-            audit_btn.Size = new Size(163, 37);
+            audit_btn.Size = new Size(163, 33);
             audit_btn.TabIndex = 11;
             audit_btn.Text = "Audit Trail";
             audit_btn.UseVisualStyleBackColor = false;
@@ -114,9 +114,9 @@
             reports_Btn.FlatAppearance.BorderSize = 0;
             reports_Btn.FlatStyle = FlatStyle.Flat;
             reports_Btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            reports_Btn.Location = new Point(0, 392);
+            reports_Btn.Location = new Point(0, 346);
             reports_Btn.Name = "reports_Btn";
-            reports_Btn.Size = new Size(163, 37);
+            reports_Btn.Size = new Size(163, 33);
             reports_Btn.TabIndex = 10;
             reports_Btn.Text = "Reports";
             reports_Btn.UseVisualStyleBackColor = false;
@@ -128,7 +128,7 @@
             rprt_label.FlatStyle = FlatStyle.Flat;
             rprt_label.Font = new Font("Segoe UI", 6F, FontStyle.Bold);
             rprt_label.ForeColor = Color.White;
-            rprt_label.Location = new Point(3, 376);
+            rprt_label.Location = new Point(3, 332);
             rprt_label.Name = "rprt_label";
             rprt_label.Size = new Size(39, 11);
             rprt_label.TabIndex = 9;
@@ -140,10 +140,10 @@
             richTextBox1.BorderStyle = BorderStyle.None;
             richTextBox1.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             richTextBox1.ForeColor = Color.White;
-            richTextBox1.Location = new Point(31, 42);
+            richTextBox1.Location = new Point(37, 37);
             richTextBox1.Name = "richTextBox1";
             richTextBox1.ScrollBars = RichTextBoxScrollBars.None;
-            richTextBox1.Size = new Size(100, 36);
+            richTextBox1.Size = new Size(100, 32);
             richTextBox1.TabIndex = 8;
             richTextBox1.Text = "FuelTrack";
             // 
@@ -153,9 +153,9 @@
             employee_btn.FlatAppearance.BorderSize = 0;
             employee_btn.FlatStyle = FlatStyle.Flat;
             employee_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            employee_btn.Location = new Point(0, 269);
+            employee_btn.Location = new Point(0, 237);
             employee_btn.Name = "employee_btn";
-            employee_btn.Size = new Size(163, 37);
+            employee_btn.Size = new Size(163, 33);
             employee_btn.TabIndex = 7;
             employee_btn.Text = "Employees";
             employee_btn.UseVisualStyleBackColor = false;
@@ -166,9 +166,9 @@
             suplier_btn.FlatAppearance.BorderSize = 0;
             suplier_btn.FlatStyle = FlatStyle.Flat;
             suplier_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            suplier_btn.Location = new Point(0, 313);
+            suplier_btn.Location = new Point(0, 276);
             suplier_btn.Name = "suplier_btn";
-            suplier_btn.Size = new Size(163, 37);
+            suplier_btn.Size = new Size(163, 33);
             suplier_btn.TabIndex = 6;
             suplier_btn.Text = "Suppliers";
             suplier_btn.UseVisualStyleBackColor = false;
@@ -180,7 +180,7 @@
             manage_btn.FlatStyle = FlatStyle.Flat;
             manage_btn.Font = new Font("Segoe UI", 6F, FontStyle.Bold);
             manage_btn.ForeColor = Color.White;
-            manage_btn.Location = new Point(3, 253);
+            manage_btn.Location = new Point(3, 223);
             manage_btn.Name = "manage_btn";
             manage_btn.Size = new Size(41, 11);
             manage_btn.TabIndex = 5;
@@ -192,9 +192,9 @@
             trans_btn.FlatAppearance.BorderSize = 0;
             trans_btn.FlatStyle = FlatStyle.Flat;
             trans_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            trans_btn.Location = new Point(0, 202);
+            trans_btn.Location = new Point(0, 178);
             trans_btn.Name = "trans_btn";
-            trans_btn.Size = new Size(163, 37);
+            trans_btn.Size = new Size(163, 33);
             trans_btn.TabIndex = 4;
             trans_btn.Text = "Transactions";
             trans_btn.UseVisualStyleBackColor = false;
@@ -206,7 +206,7 @@
             main_label_menu.FlatStyle = FlatStyle.Flat;
             main_label_menu.Font = new Font("Segoe UI", 6F, FontStyle.Bold, GraphicsUnit.Point, 0);
             main_label_menu.ForeColor = Color.White;
-            main_label_menu.Location = new Point(3, 96);
+            main_label_menu.Location = new Point(3, 85);
             main_label_menu.Name = "main_label_menu";
             main_label_menu.Size = new Size(28, 11);
             main_label_menu.TabIndex = 3;
@@ -218,12 +218,13 @@
             inv_btn.FlatAppearance.BorderSize = 0;
             inv_btn.FlatStyle = FlatStyle.Flat;
             inv_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            inv_btn.Location = new Point(0, 158);
+            inv_btn.Location = new Point(0, 139);
             inv_btn.Name = "inv_btn";
-            inv_btn.Size = new Size(163, 37);
+            inv_btn.Size = new Size(163, 33);
             inv_btn.TabIndex = 2;
             inv_btn.Text = "Inventory";
             inv_btn.UseVisualStyleBackColor = false;
+            inv_btn.Click += inv_btn_Click;
             // 
             // dashboard_btn
             // 
@@ -231,18 +232,28 @@
             dashboard_btn.FlatAppearance.BorderSize = 0;
             dashboard_btn.FlatStyle = FlatStyle.Flat;
             dashboard_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dashboard_btn.Location = new Point(-3, 116);
+            dashboard_btn.Location = new Point(-3, 102);
             dashboard_btn.Name = "dashboard_btn";
-            dashboard_btn.Size = new Size(163, 37);
+            dashboard_btn.Size = new Size(163, 33);
             dashboard_btn.TabIndex = 0;
             dashboard_btn.Text = "Dashboard";
             dashboard_btn.UseVisualStyleBackColor = false;
+            dashboard_btn.Click += dashboard_btn_Click;
+            // 
+            // fueltrack_icon
+            // 
+            fueltrack_icon.Image = Properties.Resources.fuel_station_vector_icon;
+            fueltrack_icon.Location = new Point(6, 34);
+            fueltrack_icon.Name = "fueltrack_icon";
+            fueltrack_icon.Size = new Size(39, 38);
+            fueltrack_icon.TabIndex = 14;
+            fueltrack_icon.Text = "               ";
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(179, 43);
+            label1.Location = new Point(204, 97);
             label1.Name = "label1";
             label1.Size = new Size(127, 30);
             label1.TabIndex = 6;
@@ -253,9 +264,9 @@
             // 
             button1.BackColor = Color.FromArgb(26, 58, 92);
             button1.ForeColor = SystemColors.ControlLightLight;
-            button1.Location = new Point(756, 49);
+            button1.Location = new Point(781, 102);
             button1.Name = "button1";
-            button1.Size = new Size(97, 30);
+            button1.Size = new Size(97, 26);
             button1.TabIndex = 7;
             button1.Text = "+ New Sale";
             button1.UseVisualStyleBackColor = false;
@@ -264,144 +275,95 @@
             // 
             dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(190, 117);
+            dataGridView1.Location = new Point(215, 162);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(663, 123);
+            dataGridView1.Size = new Size(663, 109);
             dataGridView1.TabIndex = 8;
             // 
             // dataGridView2
             // 
             dataGridView2.BackgroundColor = SystemColors.Control;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(190, 279);
+            dataGridView2.Location = new Point(215, 305);
             dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(663, 235);
+            dataGridView2.Size = new Size(663, 207);
             dataGridView2.TabIndex = 9;
             // 
-            // label2
+            // panel1
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(200, 290);
-            label2.Name = "label2";
-            label2.Size = new Size(43, 17);
-            label2.TabIndex = 10;
-            label2.Text = "Txn ID";
+            panel1.BackColor = SystemColors.ButtonHighlight;
+            panel1.Controls.Add(alert_label);
+            panel1.Controls.Add(usr_avatar);
+            panel1.Controls.Add(role_label);
+            panel1.Controls.Add(date_label);
+            panel1.Location = new Point(-2, -3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1271, 52);
+            panel1.TabIndex = 21;
             // 
-            // label3
+            // alert_label
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(272, 290);
-            label3.Name = "label3";
-            label3.Size = new Size(36, 17);
-            label3.TabIndex = 11;
-            label3.Text = "Time";
+            alert_label.AutoSize = true;
+            alert_label.Location = new Point(740, 22);
+            alert_label.Name = "alert_label";
+            alert_label.Size = new Size(65, 15);
+            alert_label.TabIndex = 3;
+            alert_label.Text = "--ALERTS--";
             // 
-            // label4
+            // usr_avatar
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(368, 290);
-            label4.Name = "label4";
-            label4.Size = new Size(41, 17);
-            label4.TabIndex = 12;
-            label4.Text = "Pump";
+            usr_avatar.BackColor = SystemColors.ControlDark;
+            usr_avatar.BackgroundImageLayout = ImageLayout.None;
+            usr_avatar.Location = new Point(811, 11);
+            usr_avatar.Name = "usr_avatar";
+            usr_avatar.Size = new Size(38, 38);
+            usr_avatar.SizeMode = PictureBoxSizeMode.Zoom;
+            usr_avatar.TabIndex = 2;
+            usr_avatar.TabStop = false;
             // 
-            // label5
+            // role_label
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(433, 290);
-            label5.Name = "label5";
-            label5.Size = new Size(31, 17);
-            label5.TabIndex = 13;
-            label5.Text = "Fuel";
+            role_label.AutoSize = true;
+            role_label.Location = new Point(858, 22);
+            role_label.Name = "role_label";
+            role_label.Size = new Size(55, 15);
+            role_label.TabIndex = 1;
+            role_label.Text = "--ROLE--";
             // 
-            // label6
+            // date_label
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(527, 290);
-            label6.Name = "label6";
-            label6.Size = new Size(39, 17);
-            label6.TabIndex = 14;
-            label6.Text = "Liters";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(589, 290);
-            label7.Name = "label7";
-            label7.Size = new Size(36, 17);
-            label7.TabIndex = 15;
-            label7.Text = "Total";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(686, 290);
-            label8.Name = "label8";
-            label8.Size = new Size(54, 17);
-            label8.TabIndex = 16;
-            label8.Text = "Method";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(773, 290);
-            label9.Name = "label9";
-            label9.Size = new Size(43, 17);
-            label9.TabIndex = 17;
-            label9.Text = "Status";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(420, 159);
-            label10.Name = "label10";
-            label10.Size = new Size(150, 17);
-            label10.TabIndex = 18;
-            label10.Text = "Transactions Data HERE!";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(435, 55);
-            label11.Name = "label11";
-            label11.Size = new Size(0, 17);
-            label11.TabIndex = 19;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new Point(442, 33);
-            label12.Name = "label12";
-            label12.Size = new Size(0, 17);
-            label12.TabIndex = 20;
+            date_label.AutoSize = true;
+            date_label.Location = new Point(14, 22);
+            date_label.Name = "date_label";
+            date_label.Size = new Size(97, 15);
+            date_label.TabIndex = 0;
+            date_label.Text = "DATE GOES HERE";
             // 
             // Transaction
             // 
-            AutoScaleDimensions = new SizeF(7F, 17F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(887, 668);
-            Controls.Add(label12);
-            Controls.Add(label11);
-            Controls.Add(label10);
-            Controls.Add(label9);
-            Controls.Add(label8);
-            Controls.Add(label7);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
+            ClientSize = new Size(927, 601);
+            Controls.Add(panel1);
             Controls.Add(dataGridView2);
             Controls.Add(dataGridView1);
             Controls.Add(button1);
             Controls.Add(label1);
             Controls.Add(menubar_dashboard);
+            FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "Transaction";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FuelTrack — Transaction";
+            Load += Transaction_Load;
             menubar_dashboard.ResumeLayout(false);
             menubar_dashboard.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)usr_avatar).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -425,16 +387,11 @@
         private Button button1;
         private DataGridView dataGridView1;
         private DataGridView dataGridView2;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private Label label6;
-        private Label label7;
-        private Label label8;
-        private Label label9;
-        private Label label10;
-        private Label label11;
-        private Label label12;
+        private Panel panel1;
+        private Label alert_label;
+        private PictureBox usr_avatar;
+        private Label role_label;
+        private Label date_label;
+        private Label fueltrack_icon;
     }
 }
