@@ -16,8 +16,8 @@ namespace FuelTrack
 
         private void login_btn_Click(object sender, EventArgs e)
         {
-           Dashboard dashboard = new Dashboard();
-           dashboard.Show();
+            MainForm main = new MainForm();
+            main.Show();
             this.Hide();
         }
     }

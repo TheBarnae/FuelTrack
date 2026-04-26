@@ -1,6 +1,6 @@
 ﻿namespace FuelTrack
 {
-    partial class Dashboard
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
-            panel1 = new Panel();
-            alert_label = new Label();
-            usr_avatar = new PictureBox();
-            role_label = new Label();
-            date_label = new Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            panelMain = new Panel();
             menubar_dashboard = new Panel();
             logout_btn = new Button();
             audit_btn = new Button();
@@ -48,74 +44,23 @@
             inv_btn = new Button();
             dashboard_btn = new Button();
             fueltrack_icon = new Label();
-            sales_panel = new Panel();
-            today_sales = new Label();
-            liters_panel = new Panel();
-            liters_txt = new Label();
-            transaction_panel = new Panel();
-            transaction_txt = new Label();
-            Low_stocks_alerts = new Panel();
-            low_stox_txt = new Label();
-            inventory_pnel = new Panel();
-            recent_transaction_panel = new Panel();
+            panel1 = new Panel();
+            alert_label = new Label();
+            usr_avatar = new PictureBox();
+            role_label = new Label();
+            date_label = new Label();
+            menubar_dashboard.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)usr_avatar).BeginInit();
-            menubar_dashboard.SuspendLayout();
-            sales_panel.SuspendLayout();
-            liters_panel.SuspendLayout();
-            transaction_panel.SuspendLayout();
-            Low_stocks_alerts.SuspendLayout();
             SuspendLayout();
             // 
-            // panel1
+            // panelMain
             // 
-            panel1.BackColor = SystemColors.ButtonHighlight;
-            panel1.Controls.Add(alert_label);
-            panel1.Controls.Add(usr_avatar);
-            panel1.Controls.Add(role_label);
-            panel1.Controls.Add(date_label);
-            panel1.Location = new Point(-2, -3);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1271, 52);
-            panel1.TabIndex = 0;
-            // 
-            // alert_label
-            // 
-            alert_label.AutoSize = true;
-            alert_label.Location = new Point(740, 22);
-            alert_label.Name = "alert_label";
-            alert_label.Size = new Size(65, 15);
-            alert_label.TabIndex = 3;
-            alert_label.Text = "--ALERTS--";
-            // 
-            // usr_avatar
-            // 
-            usr_avatar.BackColor = SystemColors.ControlDark;
-            usr_avatar.BackgroundImageLayout = ImageLayout.None;
-            usr_avatar.Location = new Point(811, 11);
-            usr_avatar.Name = "usr_avatar";
-            usr_avatar.Size = new Size(38, 38);
-            usr_avatar.SizeMode = PictureBoxSizeMode.Zoom;
-            usr_avatar.TabIndex = 2;
-            usr_avatar.TabStop = false;
-            // 
-            // role_label
-            // 
-            role_label.AutoSize = true;
-            role_label.Location = new Point(858, 22);
-            role_label.Name = "role_label";
-            role_label.Size = new Size(55, 15);
-            role_label.TabIndex = 1;
-            role_label.Text = "--ROLE--";
-            // 
-            // date_label
-            // 
-            date_label.AutoSize = true;
-            date_label.Location = new Point(14, 22);
-            date_label.Name = "date_label";
-            date_label.Size = new Size(97, 15);
-            date_label.TabIndex = 0;
-            date_label.Text = "DATE GOES HERE";
+            panelMain.Dock = DockStyle.Fill;
+            panelMain.Location = new Point(0, 0);
+            panelMain.Name = "panelMain";
+            panelMain.Size = new Size(911, 562);
+            panelMain.TabIndex = 0;
             // 
             // menubar_dashboard
             // 
@@ -137,7 +82,7 @@
             menubar_dashboard.Location = new Point(0, 37);
             menubar_dashboard.Name = "menubar_dashboard";
             menubar_dashboard.Size = new Size(163, 648);
-            menubar_dashboard.TabIndex = 1;
+            menubar_dashboard.TabIndex = 2;
             // 
             // logout_btn
             // 
@@ -151,6 +96,7 @@
             logout_btn.TabIndex = 12;
             logout_btn.Text = "LOGOUT";
             logout_btn.UseVisualStyleBackColor = false;
+            logout_btn.Click += logout_btn_Click;
             // 
             // audit_btn
             // 
@@ -255,7 +201,7 @@
             trans_btn.TabIndex = 4;
             trans_btn.Text = "Transactions";
             trans_btn.UseVisualStyleBackColor = false;
-            
+            trans_btn.Click += trans_btn_Click;
             // 
             // main_label_menu
             // 
@@ -282,7 +228,7 @@
             inv_btn.TabIndex = 2;
             inv_btn.Text = "Inventory";
             inv_btn.UseVisualStyleBackColor = false;
-         
+            inv_btn.Click += inv_btn_Click;
             // 
             // dashboard_btn
             // 
@@ -296,7 +242,7 @@
             dashboard_btn.TabIndex = 0;
             dashboard_btn.Text = "Dashboard";
             dashboard_btn.UseVisualStyleBackColor = false;
-            
+            dashboard_btn.Click += dashboard_btn_Click;
             // 
             // fueltrack_icon
             // 
@@ -307,168 +253,98 @@
             fueltrack_icon.TabIndex = 13;
             fueltrack_icon.Text = "               ";
             // 
-            // sales_panel
+            // panel1
             // 
-            sales_panel.BackColor = Color.WhiteSmoke;
-            sales_panel.Controls.Add(today_sales);
-            sales_panel.Location = new Point(221, 108);
-            sales_panel.Name = "sales_panel";
-            sales_panel.Size = new Size(120, 68);
-            sales_panel.TabIndex = 2;
+            panel1.BackColor = SystemColors.ButtonHighlight;
+            panel1.Controls.Add(alert_label);
+            panel1.Controls.Add(usr_avatar);
+            panel1.Controls.Add(role_label);
+            panel1.Controls.Add(date_label);
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1271, 52);
+            panel1.TabIndex = 14;
             // 
-            // today_sales
+            // alert_label
             // 
-            today_sales.AutoSize = true;
-            today_sales.Font = new Font("Segoe UI", 7F);
-            today_sales.Location = new Point(5, 9);
-            today_sales.Name = "today_sales";
-            today_sales.Size = new Size(61, 12);
-            today_sales.TabIndex = 0;
-            today_sales.Text = "Today's Sales";
+            alert_label.AutoSize = true;
+            alert_label.Location = new Point(740, 22);
+            alert_label.Name = "alert_label";
+            alert_label.Size = new Size(65, 15);
+            alert_label.TabIndex = 3;
+            alert_label.Text = "--ALERTS--";
             // 
-            // liters_panel
+            // usr_avatar
             // 
-            liters_panel.BackColor = Color.WhiteSmoke;
-            liters_panel.Controls.Add(liters_txt);
-            liters_panel.Location = new Point(381, 108);
-            liters_panel.Name = "liters_panel";
-            liters_panel.Size = new Size(120, 68);
-            liters_panel.TabIndex = 3;
+            usr_avatar.BackColor = SystemColors.ControlDark;
+            usr_avatar.BackgroundImageLayout = ImageLayout.None;
+            usr_avatar.Location = new Point(811, 11);
+            usr_avatar.Name = "usr_avatar";
+            usr_avatar.Size = new Size(38, 38);
+            usr_avatar.SizeMode = PictureBoxSizeMode.Zoom;
+            usr_avatar.TabIndex = 2;
+            usr_avatar.TabStop = false;
             // 
-            // liters_txt
+            // role_label
             // 
-            liters_txt.AutoSize = true;
-            liters_txt.Font = new Font("Segoe UI", 7F);
-            liters_txt.Location = new Point(5, 9);
-            liters_txt.Name = "liters_txt";
-            liters_txt.Size = new Size(74, 12);
-            liters_txt.TabIndex = 1;
-            liters_txt.Text = "Liters dispensed";
+            role_label.AutoSize = true;
+            role_label.Location = new Point(858, 22);
+            role_label.Name = "role_label";
+            role_label.Size = new Size(55, 15);
+            role_label.TabIndex = 1;
+            role_label.Text = "--ROLE--";
             // 
-            // transaction_panel
+            // date_label
             // 
-            transaction_panel.BackColor = Color.WhiteSmoke;
-            transaction_panel.Controls.Add(transaction_txt);
-            transaction_panel.Location = new Point(577, 108);
-            transaction_panel.Name = "transaction_panel";
-            transaction_panel.Size = new Size(120, 68);
-            transaction_panel.TabIndex = 4;
+            date_label.AutoSize = true;
+            date_label.Location = new Point(14, 22);
+            date_label.Name = "date_label";
+            date_label.Size = new Size(97, 15);
+            date_label.TabIndex = 0;
+            date_label.Text = "DATE GOES HERE";
             // 
-            // transaction_txt
+            // MainForm
             // 
-            transaction_txt.AutoSize = true;
-            transaction_txt.Font = new Font("Segoe UI", 7F);
-            transaction_txt.Location = new Point(5, 9);
-            transaction_txt.Name = "transaction_txt";
-            transaction_txt.Size = new Size(58, 12);
-            transaction_txt.TabIndex = 2;
-            transaction_txt.Text = "Transactions";
-            // 
-            // Low_stocks_alerts
-            // 
-            Low_stocks_alerts.BackColor = Color.WhiteSmoke;
-            Low_stocks_alerts.Controls.Add(low_stox_txt);
-            Low_stocks_alerts.Location = new Point(738, 108);
-            Low_stocks_alerts.Name = "Low_stocks_alerts";
-            Low_stocks_alerts.Size = new Size(120, 68);
-            Low_stocks_alerts.TabIndex = 5;
-            // 
-            // low_stox_txt
-            // 
-            low_stox_txt.AutoSize = true;
-            low_stox_txt.Font = new Font("Segoe UI", 7F);
-            low_stox_txt.Location = new Point(5, 9);
-            low_stox_txt.Name = "low_stox_txt";
-            low_stox_txt.Size = new Size(33, 12);
-            low_stox_txt.TabIndex = 3;
-            low_stox_txt.Text = "Stocks";
-            // 
-            // inventory_pnel
-            // 
-            inventory_pnel.BackColor = Color.WhiteSmoke;
-            inventory_pnel.Location = new Point(196, 190);
-            inventory_pnel.Name = "inventory_pnel";
-            inventory_pnel.Size = new Size(331, 190);
-            inventory_pnel.TabIndex = 6;
-            // 
-            // recent_transaction_panel
-            // 
-            recent_transaction_panel.BackColor = Color.WhiteSmoke;
-            recent_transaction_panel.Location = new Point(557, 190);
-            recent_transaction_panel.Name = "recent_transaction_panel";
-            recent_transaction_panel.Size = new Size(331, 190);
-            recent_transaction_panel.TabIndex = 7;
-            // 
-            // Dashboard
-            // 
-            AccessibleRole = AccessibleRole.SplitButton;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.Control;
-            BackgroundImageLayout = ImageLayout.None;
-            ClientSize = new Size(927, 601);
-            Controls.Add(recent_transaction_panel);
-            Controls.Add(inventory_pnel);
-            Controls.Add(Low_stocks_alerts);
-            Controls.Add(transaction_panel);
-            Controls.Add(liters_panel);
-            Controls.Add(sales_panel);
+            ClientSize = new Size(911, 562);
             Controls.Add(panel1);
             Controls.Add(menubar_dashboard);
-            FormBorderStyle = FormBorderStyle.None;
+            Controls.Add(panelMain);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            MaximizeBox = false;
-            MinimizeBox = false;
-            Name = "Dashboard";
+            Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FuelTrack — Dashboard";
-            Load += Dashboard_Load;
+            Text = "FuelTrack";
+            menubar_dashboard.ResumeLayout(false);
+            menubar_dashboard.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)usr_avatar).EndInit();
-            menubar_dashboard.ResumeLayout(false);
-            menubar_dashboard.PerformLayout();
-            sales_panel.ResumeLayout(false);
-            sales_panel.PerformLayout();
-            liters_panel.ResumeLayout(false);
-            liters_panel.PerformLayout();
-            transaction_panel.ResumeLayout(false);
-            transaction_panel.PerformLayout();
-            Low_stocks_alerts.ResumeLayout(false);
-            Low_stocks_alerts.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel panel1;
+        private Panel panelMain;
         private Panel menubar_dashboard;
-        private Button dashboard_btn;
-        private Label main_label_menu;
-        private Button inv_btn;
-        private Button trans_btn;
-        private Label manage_btn;
-        private Button employee_btn;
-        private Button suplier_btn;
-        private RichTextBox richTextBox1;
-        private Label rprt_label;
+        private Button logout_btn;
         private Button audit_btn;
         private Button reports_Btn;
-        private Label date_label;
-        private Button logout_btn;
-        private Panel sales_panel;
-        private Panel liters_panel;
-        private Panel transaction_panel;
+        private Label rprt_label;
+        private RichTextBox richTextBox1;
+        private Button employee_btn;
+        private Button suplier_btn;
+        private Label manage_btn;
+        private Button trans_btn;
+        private Label main_label_menu;
+        private Button inv_btn;
+        private Button dashboard_btn;
+        private Label fueltrack_icon;
+        private Panel panel1;
         private Label alert_label;
         private PictureBox usr_avatar;
         private Label role_label;
-        private Panel Low_stocks_alerts;
-        private Panel inventory_pnel;
-        private Panel recent_transaction_panel;
-        private Label today_sales;
-        private Label liters_txt;
-        private Label transaction_txt;
-        private Label low_stox_txt;
-        private Label fueltrack_icon;
+        private Label date_label;
     }
 }

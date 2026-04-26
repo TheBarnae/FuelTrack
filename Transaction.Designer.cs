@@ -93,7 +93,6 @@
             logout_btn.TabIndex = 12;
             logout_btn.Text = "LOGOUT";
             logout_btn.UseVisualStyleBackColor = false;
-            logout_btn.Click += logout_btn_Click;
             // 
             // audit_btn
             // 
@@ -198,6 +197,7 @@
             trans_btn.TabIndex = 4;
             trans_btn.Text = "Transactions";
             trans_btn.UseVisualStyleBackColor = false;
+            
             // 
             // main_label_menu
             // 
@@ -224,7 +224,7 @@
             inv_btn.TabIndex = 2;
             inv_btn.Text = "Inventory";
             inv_btn.UseVisualStyleBackColor = false;
-            inv_btn.Click += inv_btn_Click;
+           
             // 
             // dashboard_btn
             // 
@@ -238,7 +238,7 @@
             dashboard_btn.TabIndex = 0;
             dashboard_btn.Text = "Dashboard";
             dashboard_btn.UseVisualStyleBackColor = false;
-            dashboard_btn.Click += dashboard_btn_Click;
+           
             // 
             // fueltrack_icon
             // 

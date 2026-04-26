@@ -92,13 +92,19 @@ namespace FuelTrack
             rtb.BorderStyle = BorderStyle.None;
             rtb.ReadOnly = true;
         }
-        public static class Navigator
+        public static void LoadForm(Panel panel, Form childForm)
         {
-            public static void Switch(Form current, Form next)
-            {
-                next.Show();
-                current.Hide();
-            }
+            panel.Controls.Clear();
+
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+
+            panel.Controls.Add(childForm);
+            panel.Tag = childForm;
+
+            childForm.Show();
         }
     }
 }
+
