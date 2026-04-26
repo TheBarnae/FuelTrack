@@ -22,6 +22,7 @@ namespace FuelTrack
             UIHelper.setDateLabel(date_label);
             UIHelper.MakeCircular(usr_avatar);
             UIHelper.StyleFuelTrackTitle(richTextBox1);
+            UIHelper.SetButtonActive(dashboard_btn, true);
         }
         public void LoadView(Form form)
         {
@@ -31,16 +32,38 @@ namespace FuelTrack
         private void dashboard_btn_Click(object sender, EventArgs e)
         {
             LoadView(new Dashboard());
+            UIHelper.SetButtonActive(dashboard_btn, true);
+            UIHelper.SetButtonActive(inv_btn, false);
+            UIHelper.SetButtonActive(trans_btn, false);
+            UIHelper.SetButtonActive(employee_btn, false);
+            UIHelper.SetButtonActive(suplier_btn, false);
+            UIHelper.SetButtonActive(reports_Btn, false);
+            UIHelper.SetButtonActive(audit_btn, false);
+
         }
 
         private void inv_btn_Click(object sender, EventArgs e)
         {
             LoadView(new Inventory());
+            UIHelper.SetButtonActive(dashboard_btn, false);
+            UIHelper.SetButtonActive(inv_btn, true);
+            UIHelper.SetButtonActive(trans_btn, false);
+            UIHelper.SetButtonActive(employee_btn, false);
+            UIHelper.SetButtonActive(suplier_btn, false);
+            UIHelper.SetButtonActive(reports_Btn, false);
+            UIHelper.SetButtonActive(audit_btn, false);
         }
 
         private void trans_btn_Click(object sender, EventArgs e)
         {
             LoadView(new Transaction());
+            UIHelper.SetButtonActive(dashboard_btn, false);
+            UIHelper.SetButtonActive(inv_btn, false);
+            UIHelper.SetButtonActive(trans_btn, true);
+            UIHelper.SetButtonActive(employee_btn, false);
+            UIHelper.SetButtonActive(suplier_btn, false);
+            UIHelper.SetButtonActive(reports_Btn, false);
+            UIHelper.SetButtonActive(audit_btn, false);
         }
 
         private void logout_btn_Click(object sender, EventArgs e)
@@ -58,6 +81,54 @@ namespace FuelTrack
 
                 this.Close();
             }
+        }
+
+        private void employee_btn_Click(object sender, EventArgs e)
+        {
+            LoadView(new Employees());
+            UIHelper.SetButtonActive(dashboard_btn, false);
+            UIHelper.SetButtonActive(inv_btn, false);
+            UIHelper.SetButtonActive(trans_btn, false);
+            UIHelper.SetButtonActive(employee_btn, true);
+            UIHelper.SetButtonActive(suplier_btn, false);
+            UIHelper.SetButtonActive(reports_Btn, false);
+            UIHelper.SetButtonActive(audit_btn, false);
+        }
+
+        private void suplier_btn_Click(object sender, EventArgs e)
+        {
+            LoadView(new Suppliers());
+            UIHelper.SetButtonActive(dashboard_btn, false);
+            UIHelper.SetButtonActive(inv_btn, false);
+            UIHelper.SetButtonActive(trans_btn, false);
+            UIHelper.SetButtonActive(employee_btn, false);
+            UIHelper.SetButtonActive(suplier_btn, true);
+            UIHelper.SetButtonActive(reports_Btn, false);
+            UIHelper.SetButtonActive(audit_btn, false);
+        }
+
+        private void reports_Btn_Click(object sender, EventArgs e)
+        {
+            LoadView(new Reports());
+            UIHelper.SetButtonActive(dashboard_btn, false);
+            UIHelper.SetButtonActive(inv_btn, false);
+            UIHelper.SetButtonActive(trans_btn, false);
+            UIHelper.SetButtonActive(employee_btn, false);
+            UIHelper.SetButtonActive(suplier_btn, false);
+            UIHelper.SetButtonActive(reports_Btn, true);
+            UIHelper.SetButtonActive(audit_btn, false);
+        }
+
+        private void audit_btn_Click(object sender, EventArgs e)
+        {
+            LoadView(new Audit_Trail());
+            UIHelper.SetButtonActive(dashboard_btn, false);
+            UIHelper.SetButtonActive(inv_btn, false);
+            UIHelper.SetButtonActive(trans_btn, false);
+            UIHelper.SetButtonActive(employee_btn, false);
+            UIHelper.SetButtonActive(suplier_btn, false);
+            UIHelper.SetButtonActive(reports_Btn, false);
+            UIHelper.SetButtonActive(audit_btn, true);
         }
     }
 }

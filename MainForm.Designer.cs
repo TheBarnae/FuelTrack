@@ -110,6 +110,7 @@
             audit_btn.TabIndex = 11;
             audit_btn.Text = "Audit Trail";
             audit_btn.UseVisualStyleBackColor = false;
+            audit_btn.Click += audit_btn_Click;
             // 
             // reports_Btn
             // 
@@ -123,6 +124,7 @@
             reports_Btn.TabIndex = 10;
             reports_Btn.Text = "Reports";
             reports_Btn.UseVisualStyleBackColor = false;
+            reports_Btn.Click += reports_Btn_Click;
             // 
             // rprt_label
             // 
@@ -162,6 +164,7 @@
             employee_btn.TabIndex = 7;
             employee_btn.Text = "Employees";
             employee_btn.UseVisualStyleBackColor = false;
+            employee_btn.Click += employee_btn_Click;
             // 
             // suplier_btn
             // 
@@ -175,6 +178,7 @@
             suplier_btn.TabIndex = 6;
             suplier_btn.Text = "Suppliers";
             suplier_btn.UseVisualStyleBackColor = false;
+            suplier_btn.Click += suplier_btn_Click;
             // 
             // manage_btn
             // 

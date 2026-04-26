@@ -97,9 +97,9 @@
             menubar_Employees.Controls.Add(dashboard_btn);
             menubar_Employees.Controls.Add(fueltrack_icon);
             menubar_Employees.ForeColor = SystemColors.ActiveCaptionText;
-            menubar_Employees.Location = new Point(0, 42);
+            menubar_Employees.Location = new Point(0, 37);
             menubar_Employees.Name = "menubar_Employees";
-            menubar_Employees.Size = new Size(163, 734);
+            menubar_Employees.Size = new Size(163, 648);
             menubar_Employees.TabIndex = 2;
             // 
             // logout_btn
@@ -108,9 +108,9 @@
             logout_btn.BackgroundImageLayout = ImageLayout.None;
             logout_btn.FlatAppearance.BorderSize = 0;
             logout_btn.FlatStyle = FlatStyle.Flat;
-            logout_btn.Location = new Point(12, 503);
+            logout_btn.Location = new Point(12, 444);
             logout_btn.Name = "logout_btn";
-            logout_btn.Size = new Size(135, 34);
+            logout_btn.Size = new Size(135, 30);
             logout_btn.TabIndex = 12;
             logout_btn.Text = "LOGOUT";
             logout_btn.UseVisualStyleBackColor = false;
@@ -121,9 +121,9 @@
             audit_btn.FlatAppearance.BorderSize = 0;
             audit_btn.FlatStyle = FlatStyle.Flat;
             audit_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            audit_btn.Location = new Point(0, 436);
+            audit_btn.Location = new Point(0, 385);
             audit_btn.Name = "audit_btn";
-            audit_btn.Size = new Size(163, 37);
+            audit_btn.Size = new Size(163, 33);
             audit_btn.TabIndex = 11;
             audit_btn.Text = "Audit Trail";
             audit_btn.UseVisualStyleBackColor = false;
@@ -134,9 +134,9 @@
             reports_Btn.FlatAppearance.BorderSize = 0;
             reports_Btn.FlatStyle = FlatStyle.Flat;
             reports_Btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            reports_Btn.Location = new Point(0, 392);
+            reports_Btn.Location = new Point(0, 346);
             reports_Btn.Name = "reports_Btn";
-            reports_Btn.Size = new Size(163, 37);
+            reports_Btn.Size = new Size(163, 33);
             reports_Btn.TabIndex = 10;
             reports_Btn.Text = "Reports";
             reports_Btn.UseVisualStyleBackColor = false;
@@ -148,7 +148,7 @@
             rprt_label.FlatStyle = FlatStyle.Flat;
             rprt_label.Font = new Font("Segoe UI", 6F, FontStyle.Bold);
             rprt_label.ForeColor = Color.White;
-            rprt_label.Location = new Point(3, 376);
+            rprt_label.Location = new Point(3, 332);
             rprt_label.Name = "rprt_label";
             rprt_label.Size = new Size(39, 11);
             rprt_label.TabIndex = 9;
@@ -160,10 +160,10 @@
             richTextBox1.BorderStyle = BorderStyle.None;
             richTextBox1.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             richTextBox1.ForeColor = Color.White;
-            richTextBox1.Location = new Point(37, 42);
+            richTextBox1.Location = new Point(37, 37);
             richTextBox1.Name = "richTextBox1";
             richTextBox1.ScrollBars = RichTextBoxScrollBars.None;
-            richTextBox1.Size = new Size(100, 36);
+            richTextBox1.Size = new Size(100, 32);
             richTextBox1.TabIndex = 8;
             richTextBox1.Text = "FuelTrack";
             // 
@@ -173,9 +173,9 @@
             employee_btn.FlatAppearance.BorderSize = 0;
             employee_btn.FlatStyle = FlatStyle.Flat;
             employee_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            employee_btn.Location = new Point(0, 269);
+            employee_btn.Location = new Point(0, 237);
             employee_btn.Name = "employee_btn";
-            employee_btn.Size = new Size(163, 37);
+            employee_btn.Size = new Size(163, 33);
             employee_btn.TabIndex = 7;
             employee_btn.Text = "Employees";
             employee_btn.UseVisualStyleBackColor = false;
@@ -186,9 +186,9 @@
             suplier_btn.FlatAppearance.BorderSize = 0;
             suplier_btn.FlatStyle = FlatStyle.Flat;
             suplier_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            suplier_btn.Location = new Point(0, 313);
+            suplier_btn.Location = new Point(0, 276);
             suplier_btn.Name = "suplier_btn";
-            suplier_btn.Size = new Size(163, 37);
+            suplier_btn.Size = new Size(163, 33);
             suplier_btn.TabIndex = 6;
             suplier_btn.Text = "Suppliers";
             suplier_btn.UseVisualStyleBackColor = false;
@@ -200,7 +200,7 @@
             manage_btn.FlatStyle = FlatStyle.Flat;
             manage_btn.Font = new Font("Segoe UI", 6F, FontStyle.Bold);
             manage_btn.ForeColor = Color.White;
-            manage_btn.Location = new Point(3, 253);
+            manage_btn.Location = new Point(3, 223);
             manage_btn.Name = "manage_btn";
             manage_btn.Size = new Size(41, 11);
             manage_btn.TabIndex = 5;
@@ -212,9 +212,9 @@
             trans_btn.FlatAppearance.BorderSize = 0;
             trans_btn.FlatStyle = FlatStyle.Flat;
             trans_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            trans_btn.Location = new Point(0, 202);
+            trans_btn.Location = new Point(0, 178);
             trans_btn.Name = "trans_btn";
-            trans_btn.Size = new Size(163, 37);
+            trans_btn.Size = new Size(163, 33);
             trans_btn.TabIndex = 4;
             trans_btn.Text = "Transactions";
             trans_btn.UseVisualStyleBackColor = false;
@@ -226,7 +226,7 @@
             main_label_menu.FlatStyle = FlatStyle.Flat;
             main_label_menu.Font = new Font("Segoe UI", 6F, FontStyle.Bold, GraphicsUnit.Point, 0);
             main_label_menu.ForeColor = Color.White;
-            main_label_menu.Location = new Point(3, 96);
+            main_label_menu.Location = new Point(3, 85);
             main_label_menu.Name = "main_label_menu";
             main_label_menu.Size = new Size(28, 11);
             main_label_menu.TabIndex = 3;
@@ -238,9 +238,9 @@
             inv_btn.FlatAppearance.BorderSize = 0;
             inv_btn.FlatStyle = FlatStyle.Flat;
             inv_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            inv_btn.Location = new Point(0, 158);
+            inv_btn.Location = new Point(0, 139);
             inv_btn.Name = "inv_btn";
-            inv_btn.Size = new Size(163, 37);
+            inv_btn.Size = new Size(163, 33);
             inv_btn.TabIndex = 2;
             inv_btn.Text = "Inventory";
             inv_btn.UseVisualStyleBackColor = false;
@@ -251,9 +251,9 @@
             dashboard_btn.FlatAppearance.BorderSize = 0;
             dashboard_btn.FlatStyle = FlatStyle.Flat;
             dashboard_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dashboard_btn.Location = new Point(-3, 116);
+            dashboard_btn.Location = new Point(-3, 102);
             dashboard_btn.Name = "dashboard_btn";
-            dashboard_btn.Size = new Size(163, 37);
+            dashboard_btn.Size = new Size(163, 33);
             dashboard_btn.TabIndex = 0;
             dashboard_btn.Text = "Dashboard";
             dashboard_btn.UseVisualStyleBackColor = false;
@@ -261,9 +261,9 @@
             // fueltrack_icon
             // 
             fueltrack_icon.Image = Properties.Resources.fuel_station_vector_icon;
-            fueltrack_icon.Location = new Point(6, 39);
+            fueltrack_icon.Location = new Point(6, 34);
             fueltrack_icon.Name = "fueltrack_icon";
-            fueltrack_icon.Size = new Size(39, 43);
+            fueltrack_icon.Size = new Size(39, 38);
             fueltrack_icon.TabIndex = 13;
             fueltrack_icon.Text = "               ";
             // 
@@ -276,15 +276,15 @@
             Employees_panel.Controls.Add(date_label);
             Employees_panel.Location = new Point(-2, -3);
             Employees_panel.Name = "Employees_panel";
-            Employees_panel.Size = new Size(1271, 59);
+            Employees_panel.Size = new Size(1271, 52);
             Employees_panel.TabIndex = 3;
             // 
             // alert_label
             // 
             alert_label.AutoSize = true;
-            alert_label.Location = new Point(740, 25);
+            alert_label.Location = new Point(740, 22);
             alert_label.Name = "alert_label";
-            alert_label.Size = new Size(70, 17);
+            alert_label.Size = new Size(65, 15);
             alert_label.TabIndex = 3;
             alert_label.Text = "--ALERTS--";
             // 
@@ -292,9 +292,9 @@
             // 
             usr_avatar.BackColor = SystemColors.ControlDark;
             usr_avatar.BackgroundImageLayout = ImageLayout.None;
-            usr_avatar.Location = new Point(811, 12);
+            usr_avatar.Location = new Point(811, 11);
             usr_avatar.Name = "usr_avatar";
-            usr_avatar.Size = new Size(38, 43);
+            usr_avatar.Size = new Size(38, 38);
             usr_avatar.SizeMode = PictureBoxSizeMode.Zoom;
             usr_avatar.TabIndex = 2;
             usr_avatar.TabStop = false;
@@ -302,18 +302,18 @@
             // role_label
             // 
             role_label.AutoSize = true;
-            role_label.Location = new Point(858, 25);
+            role_label.Location = new Point(858, 22);
             role_label.Name = "role_label";
-            role_label.Size = new Size(59, 17);
+            role_label.Size = new Size(55, 15);
             role_label.TabIndex = 1;
             role_label.Text = "--ROLE--";
             // 
             // date_label
             // 
             date_label.AutoSize = true;
-            date_label.Location = new Point(14, 25);
+            date_label.Location = new Point(14, 22);
             date_label.Name = "date_label";
-            date_label.Size = new Size(110, 17);
+            date_label.Size = new Size(97, 15);
             date_label.TabIndex = 0;
             date_label.Text = "DATE GOES HERE";
             // 
@@ -321,7 +321,7 @@
             // 
             Employees_label.AutoSize = true;
             Employees_label.Font = new Font("Segoe UI", 15.75F);
-            Employees_label.Location = new Point(194, 81);
+            Employees_label.Location = new Point(194, 71);
             Employees_label.Name = "Employees_label";
             Employees_label.Size = new Size(112, 30);
             Employees_label.TabIndex = 4;
@@ -331,9 +331,9 @@
             // 
             addemployee_button.BackColor = Color.FromArgb(26, 58, 92);
             addemployee_button.ForeColor = SystemColors.ControlLightLight;
-            addemployee_button.Location = new Point(762, 88);
+            addemployee_button.Location = new Point(762, 78);
             addemployee_button.Name = "addemployee_button";
-            addemployee_button.Size = new Size(115, 29);
+            addemployee_button.Size = new Size(115, 26);
             addemployee_button.TabIndex = 8;
             addemployee_button.Text = "+ Add Employee";
             addemployee_button.UseVisualStyleBackColor = false;
@@ -342,54 +342,54 @@
             // 
             totalemployee_dataGridView.BackgroundColor = SystemColors.Info;
             totalemployee_dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            totalemployee_dataGridView.Location = new Point(194, 129);
+            totalemployee_dataGridView.Location = new Point(194, 114);
             totalemployee_dataGridView.Name = "totalemployee_dataGridView";
-            totalemployee_dataGridView.Size = new Size(199, 81);
+            totalemployee_dataGridView.Size = new Size(199, 71);
             totalemployee_dataGridView.TabIndex = 9;
             // 
             // ondutynow_dataGridView
             // 
             ondutynow_dataGridView.BackgroundColor = SystemColors.Info;
             ondutynow_dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            ondutynow_dataGridView.Location = new Point(440, 129);
+            ondutynow_dataGridView.Location = new Point(440, 114);
             ondutynow_dataGridView.Name = "ondutynow_dataGridView";
-            ondutynow_dataGridView.Size = new Size(199, 81);
+            ondutynow_dataGridView.Size = new Size(199, 71);
             ondutynow_dataGridView.TabIndex = 10;
             // 
             // offduty_dataGridView
             // 
             offduty_dataGridView.BackgroundColor = SystemColors.Info;
             offduty_dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            offduty_dataGridView.Location = new Point(678, 129);
+            offduty_dataGridView.Location = new Point(678, 114);
             offduty_dataGridView.Name = "offduty_dataGridView";
-            offduty_dataGridView.Size = new Size(199, 81);
+            offduty_dataGridView.Size = new Size(199, 71);
             offduty_dataGridView.TabIndex = 11;
             // 
             // employeedata_dataGridView
             // 
             employeedata_dataGridView.BackgroundColor = SystemColors.ControlLightLight;
             employeedata_dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            employeedata_dataGridView.Location = new Point(194, 216);
+            employeedata_dataGridView.Location = new Point(194, 191);
             employeedata_dataGridView.Name = "employeedata_dataGridView";
-            employeedata_dataGridView.Size = new Size(680, 189);
+            employeedata_dataGridView.Size = new Size(680, 167);
             employeedata_dataGridView.TabIndex = 12;
             // 
             // addemployee_dataGridView
             // 
             addemployee_dataGridView.BackgroundColor = SystemColors.ControlLightLight;
             addemployee_dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            addemployee_dataGridView.Location = new Point(194, 411);
+            addemployee_dataGridView.Location = new Point(194, 363);
             addemployee_dataGridView.Name = "addemployee_dataGridView";
-            addemployee_dataGridView.Size = new Size(680, 242);
+            addemployee_dataGridView.Size = new Size(680, 214);
             addemployee_dataGridView.TabIndex = 13;
             // 
             // add_label
             // 
             add_label.AutoSize = true;
             add_label.BackColor = SystemColors.ControlLightLight;
-            add_label.Location = new Point(205, 418);
+            add_label.Location = new Point(205, 369);
             add_label.Name = "add_label";
-            add_label.Size = new Size(144, 17);
+            add_label.Size = new Size(129, 15);
             add_label.TabIndex = 14;
             add_label.Text = "ADD /  EDIT EMPLOYEE";
             // 
@@ -397,43 +397,43 @@
             // 
             fullname_label.AutoSize = true;
             fullname_label.BackColor = SystemColors.ControlLightLight;
-            fullname_label.Location = new Point(205, 445);
+            fullname_label.Location = new Point(205, 393);
             fullname_label.Name = "fullname_label";
-            fullname_label.Size = new Size(66, 17);
+            fullname_label.Size = new Size(61, 15);
             fullname_label.TabIndex = 15;
             fullname_label.Text = "Full Name";
             // 
             // fullname_textBox
             // 
-            fullname_textBox.Location = new Point(205, 465);
+            fullname_textBox.Location = new Point(205, 410);
             fullname_textBox.Name = "fullname_textBox";
-            fullname_textBox.Size = new Size(232, 25);
+            fullname_textBox.Size = new Size(232, 23);
             fullname_textBox.TabIndex = 16;
             // 
             // username_label
             // 
             username_label.AutoSize = true;
             username_label.BackColor = SystemColors.ControlLightLight;
-            username_label.Location = new Point(204, 498);
+            username_label.Location = new Point(204, 439);
             username_label.Name = "username_label";
-            username_label.Size = new Size(67, 17);
+            username_label.Size = new Size(60, 15);
             username_label.TabIndex = 17;
             username_label.Text = "Username";
             // 
             // username_textBox
             // 
-            username_textBox.Location = new Point(205, 518);
+            username_textBox.Location = new Point(205, 457);
             username_textBox.Name = "username_textBox";
-            username_textBox.Size = new Size(232, 25);
+            username_textBox.Size = new Size(232, 23);
             username_textBox.TabIndex = 18;
             // 
             // shiftassignment_label
             // 
             shiftassignment_label.AutoSize = true;
             shiftassignment_label.BackColor = SystemColors.ControlLightLight;
-            shiftassignment_label.Location = new Point(206, 554);
+            shiftassignment_label.Location = new Point(206, 489);
             shiftassignment_label.Name = "shiftassignment_label";
-            shiftassignment_label.Size = new Size(104, 17);
+            shiftassignment_label.Size = new Size(97, 15);
             shiftassignment_label.TabIndex = 19;
             shiftassignment_label.Text = "Shift Assignment";
             // 
@@ -441,9 +441,9 @@
             // 
             rol_label.AutoSize = true;
             rol_label.BackColor = SystemColors.ControlLightLight;
-            rol_label.Location = new Point(549, 445);
+            rol_label.Location = new Point(549, 393);
             rol_label.Name = "rol_label";
-            rol_label.Size = new Size(34, 17);
+            rol_label.Size = new Size(30, 15);
             rol_label.TabIndex = 21;
             rol_label.Text = "Role";
             // 
@@ -451,84 +451,84 @@
             // 
             password_label.AutoSize = true;
             password_label.BackColor = SystemColors.ControlLightLight;
-            password_label.Location = new Point(549, 498);
+            password_label.Location = new Point(549, 439);
             password_label.Name = "password_label";
-            password_label.Size = new Size(64, 17);
+            password_label.Size = new Size(57, 15);
             password_label.TabIndex = 23;
             password_label.Text = "Password";
             // 
             // password_textBox
             // 
-            password_textBox.Location = new Point(549, 518);
+            password_textBox.Location = new Point(549, 457);
             password_textBox.Name = "password_textBox";
-            password_textBox.Size = new Size(232, 25);
+            password_textBox.Size = new Size(232, 23);
             password_textBox.TabIndex = 24;
             // 
             // contactnumber_label
             // 
             contactnumber_label.AutoSize = true;
             contactnumber_label.BackColor = SystemColors.ControlLightLight;
-            contactnumber_label.Location = new Point(549, 554);
+            contactnumber_label.Location = new Point(549, 489);
             contactnumber_label.Name = "contactnumber_label";
-            contactnumber_label.Size = new Size(104, 17);
+            contactnumber_label.Size = new Size(96, 15);
             contactnumber_label.TabIndex = 25;
             contactnumber_label.Text = "Contact Number";
             // 
             // contactnumber_textBox
             // 
-            contactnumber_textBox.Location = new Point(549, 574);
+            contactnumber_textBox.Location = new Point(549, 506);
             contactnumber_textBox.Name = "contactnumber_textBox";
-            contactnumber_textBox.Size = new Size(232, 25);
+            contactnumber_textBox.Size = new Size(232, 23);
             contactnumber_textBox.TabIndex = 26;
             // 
             // shiftassignment_comboBox
             // 
             shiftassignment_comboBox.FormattingEnabled = true;
-            shiftassignment_comboBox.Location = new Point(206, 574);
+            shiftassignment_comboBox.Location = new Point(206, 506);
             shiftassignment_comboBox.Name = "shiftassignment_comboBox";
-            shiftassignment_comboBox.Size = new Size(232, 25);
+            shiftassignment_comboBox.Size = new Size(232, 23);
             shiftassignment_comboBox.TabIndex = 27;
             // 
             // rol_comboBox
             // 
             rol_comboBox.FormattingEnabled = true;
-            rol_comboBox.Location = new Point(549, 465);
+            rol_comboBox.Location = new Point(549, 410);
             rol_comboBox.Name = "rol_comboBox";
-            rol_comboBox.Size = new Size(232, 25);
+            rol_comboBox.Size = new Size(232, 23);
             rol_comboBox.TabIndex = 28;
             // 
             // saveemployee_button
             // 
-            saveemployee_button.Location = new Point(206, 614);
+            saveemployee_button.Location = new Point(206, 542);
             saveemployee_button.Name = "saveemployee_button";
-            saveemployee_button.Size = new Size(109, 23);
+            saveemployee_button.Size = new Size(109, 20);
             saveemployee_button.TabIndex = 29;
             saveemployee_button.Text = "Save Employee";
             saveemployee_button.UseVisualStyleBackColor = true;
             // 
             // clear_button
             // 
-            clear_button.Location = new Point(321, 614);
+            clear_button.Location = new Point(321, 542);
             clear_button.Name = "clear_button";
-            clear_button.Size = new Size(75, 23);
+            clear_button.Size = new Size(75, 20);
             clear_button.TabIndex = 30;
             clear_button.Text = "Clear";
             clear_button.UseVisualStyleBackColor = true;
             // 
             // delete_button
             // 
-            delete_button.Location = new Point(402, 614);
+            delete_button.Location = new Point(402, 542);
             delete_button.Name = "delete_button";
-            delete_button.Size = new Size(75, 23);
+            delete_button.Size = new Size(75, 20);
             delete_button.TabIndex = 31;
             delete_button.Text = "Delete";
             delete_button.UseVisualStyleBackColor = true;
             // 
             // Employees
             // 
-            AutoScaleDimensions = new SizeF(7F, 17F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(927, 681);
+            ClientSize = new Size(927, 601);
             Controls.Add(delete_button);
             Controls.Add(clear_button);
             Controls.Add(saveemployee_button);
