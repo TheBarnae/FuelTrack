@@ -54,13 +54,13 @@
             reporttypes_label = new Label();
             reporttype_label = new Label();
             daterange_label = new Label();
-            comboBox1 = new ComboBox();
-            textBox1 = new TextBox();
+            reporttype_comboBox = new ComboBox();
             fueltype_label = new Label();
-            comboBox2 = new ComboBox();
-            button1 = new Button();
-            button2 = new Button();
+            this.fueltype_comboBox = new ComboBox();
+            this.reportsnewsale_button = new Button();
+            exportpdf_button = new Button();
             datahere_label = new Label();
+            daterange_dateTimePicker = new DateTimePicker();
             menubar_reports.SuspendLayout();
             panel_reports.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)usr_avatar).BeginInit();
@@ -371,20 +371,13 @@
             daterange_label.Text = "Date Range";
             daterange_label.Click += label5_Click;
             // 
-            // comboBox1
+            // reporttype_comboBox
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(215, 287);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(284, 25);
-            comboBox1.TabIndex = 29;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(215, 351);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(284, 25);
-            textBox1.TabIndex = 30;
+            reporttype_comboBox.FormattingEnabled = true;
+            reporttype_comboBox.Location = new Point(215, 287);
+            reporttype_comboBox.Name = "reporttype_comboBox";
+            reporttype_comboBox.Size = new Size(284, 25);
+            reporttype_comboBox.TabIndex = 29;
             // 
             // fueltype_label
             // 
@@ -395,33 +388,33 @@
             fueltype_label.TabIndex = 31;
             fueltype_label.Text = "Fuel Type";
             // 
-            // comboBox2
+            // fueltype_comboBox
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(215, 418);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(284, 25);
-            comboBox2.TabIndex = 32;
+            this.fueltype_comboBox.FormattingEnabled = true;
+            this.fueltype_comboBox.Location = new Point(215, 418);
+            this.fueltype_comboBox.Name = "fueltype_comboBox";
+            this.fueltype_comboBox.Size = new Size(284, 25);
+            this.fueltype_comboBox.TabIndex = 32;
             // 
-            // button1
+            // reportsnewsale_button
             // 
-            button1.BackColor = Color.FromArgb(26, 58, 92);
-            button1.ForeColor = SystemColors.ControlLightLight;
-            button1.Location = new Point(215, 459);
-            button1.Name = "button1";
-            button1.Size = new Size(97, 29);
-            button1.TabIndex = 33;
-            button1.Text = "+ New Sale";
-            button1.UseVisualStyleBackColor = false;
+            this.reportsnewsale_button.BackColor = Color.FromArgb(26, 58, 92);
+            this.reportsnewsale_button.ForeColor = SystemColors.ControlLightLight;
+            this.reportsnewsale_button.Location = new Point(215, 459);
+            this.reportsnewsale_button.Name = "reportsnewsale_button";
+            this.reportsnewsale_button.Size = new Size(97, 29);
+            this.reportsnewsale_button.TabIndex = 33;
+            this.reportsnewsale_button.Text = "+ New Sale";
+            this.reportsnewsale_button.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // exportpdf_button
             // 
-            button2.Location = new Point(318, 459);
-            button2.Name = "button2";
-            button2.Size = new Size(97, 29);
-            button2.TabIndex = 34;
-            button2.Text = "Export PDF";
-            button2.UseVisualStyleBackColor = true;
+            exportpdf_button.Location = new Point(318, 459);
+            exportpdf_button.Name = "exportpdf_button";
+            exportpdf_button.Size = new Size(97, 29);
+            exportpdf_button.TabIndex = 34;
+            exportpdf_button.Text = "Export PDF";
+            exportpdf_button.UseVisualStyleBackColor = true;
             // 
             // datahere_label
             // 
@@ -433,18 +426,25 @@
             datahere_label.Text = "DATA HERE!";
             datahere_label.Click += label7_Click;
             // 
+            // daterange_dateTimePicker
+            // 
+            daterange_dateTimePicker.Location = new Point(215, 355);
+            daterange_dateTimePicker.Name = "daterange_dateTimePicker";
+            daterange_dateTimePicker.Size = new Size(284, 25);
+            daterange_dateTimePicker.TabIndex = 36;
+            // 
             // Reports
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(927, 681);
+            Controls.Add(daterange_dateTimePicker);
             Controls.Add(datahere_label);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(comboBox2);
+            Controls.Add(exportpdf_button);
+            Controls.Add(this.reportsnewsale_button);
+            Controls.Add(this.fueltype_comboBox);
             Controls.Add(fueltype_label);
-            Controls.Add(textBox1);
-            Controls.Add(comboBox1);
+            Controls.Add(reporttype_comboBox);
             Controls.Add(daterange_label);
             Controls.Add(reporttype_label);
             Controls.Add(reporttypes_label);
@@ -498,12 +498,13 @@
         private Label reporttypes_label;
         private Label reporttype_label;
         private Label daterange_label;
-        private ComboBox comboBox1;
-        private TextBox textBox1;
+        private ComboBox reporttype_comboBox;
+        private TextBox datetextBox;
         private Label fueltype_label;
         private ComboBox comboBox2;
         private Button button1;
-        private Button button2;
+        private Button exportpdf_button;
         private Label datahere_label;
+        private DateTimePicker daterange_dateTimePicker;
     }
 }

@@ -43,11 +43,11 @@
             inv_btn = new Button();
             dashboard_btn = new Button();
             fueltrack_icon = new Label();
-            inventory_textBox = new TextBox();
-            inventoryadd_button = new Button();
+            inventorys_textBox = new TextBox();
+            inventorysadd_button = new Button();
             fuelInventory_label = new Label();
             label25 = new Label();
-            fuelInventory_dataGridView = new DataGridView();
+            fuelInventorys_dataGridView = new DataGridView();
             label8 = new Label();
             label9 = new Label();
             label10 = new Label();
@@ -57,7 +57,7 @@
             role_label = new Label();
             date_label = new Label();
             menubar_inventory.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)fuelInventory_dataGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)fuelInventorys_dataGridView).BeginInit();
             inventory_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)usr_avatar).BeginInit();
             SuspendLayout();
@@ -250,24 +250,24 @@
             fueltrack_icon.TabIndex = 14;
             fueltrack_icon.Text = "               ";
             // 
-            // inventory_textBox
+            // inventorys_textBox
             // 
-            inventory_textBox.Location = new Point(636, 150);
-            inventory_textBox.Name = "inventory_textBox";
-            inventory_textBox.Size = new Size(153, 25);
-            inventory_textBox.TabIndex = 3;
-            inventory_textBox.Text = "Search...";
+            inventorys_textBox.Location = new Point(636, 150);
+            inventorys_textBox.Name = "inventorys_textBox";
+            inventorys_textBox.Size = new Size(153, 25);
+            inventorys_textBox.TabIndex = 3;
+            inventorys_textBox.Text = "Search...";
             // 
-            // inventoryadd_button
+            // inventorysadd_button
             // 
-            inventoryadd_button.BackColor = Color.FromArgb(26, 58, 92);
-            inventoryadd_button.ForeColor = SystemColors.ControlLightLight;
-            inventoryadd_button.Location = new Point(795, 147);
-            inventoryadd_button.Name = "inventoryadd_button";
-            inventoryadd_button.Size = new Size(64, 29);
-            inventoryadd_button.TabIndex = 4;
-            inventoryadd_button.Text = "+ Add";
-            inventoryadd_button.UseVisualStyleBackColor = false;
+            inventorysadd_button.BackColor = Color.FromArgb(26, 58, 92);
+            inventorysadd_button.ForeColor = SystemColors.ControlLightLight;
+            inventorysadd_button.Location = new Point(795, 147);
+            inventorysadd_button.Name = "inventorysadd_button";
+            inventorysadd_button.Size = new Size(64, 29);
+            inventorysadd_button.TabIndex = 4;
+            inventorysadd_button.Text = "+ Add";
+            inventorysadd_button.UseVisualStyleBackColor = false;
             // 
             // fuelInventory_label
             // 
@@ -288,14 +288,14 @@
             label25.Size = new Size(0, 17);
             label25.TabIndex = 34;
             // 
-            // fuelInventory_dataGridView
+            // fuelInventorys_dataGridView
             // 
-            fuelInventory_dataGridView.BackgroundColor = SystemColors.Control;
-            fuelInventory_dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            fuelInventory_dataGridView.Location = new Point(251, 222);
-            fuelInventory_dataGridView.Name = "fuelInventory_dataGridView";
-            fuelInventory_dataGridView.Size = new Size(605, 253);
-            fuelInventory_dataGridView.TabIndex = 6;
+            fuelInventorys_dataGridView.BackgroundColor = SystemColors.Control;
+            fuelInventorys_dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            fuelInventorys_dataGridView.Location = new Point(251, 222);
+            fuelInventorys_dataGridView.Name = "fuelInventorys_dataGridView";
+            fuelInventorys_dataGridView.Size = new Size(605, 253);
+            fuelInventorys_dataGridView.TabIndex = 6;
             // 
             // label8
             // 
@@ -382,10 +382,10 @@
             Controls.Add(label9);
             Controls.Add(label8);
             Controls.Add(label25);
-            Controls.Add(fuelInventory_dataGridView);
+            Controls.Add(fuelInventorys_dataGridView);
             Controls.Add(fuelInventory_label);
-            Controls.Add(inventoryadd_button);
-            Controls.Add(inventory_textBox);
+            Controls.Add(inventorysadd_button);
+            Controls.Add(inventorys_textBox);
             Controls.Add(menubar_inventory);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -397,7 +397,7 @@
             Load += Inventory_Load;
             menubar_inventory.ResumeLayout(false);
             menubar_inventory.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)fuelInventory_dataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)fuelInventorys_dataGridView).EndInit();
             inventory_panel.ResumeLayout(false);
             inventory_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)usr_avatar).EndInit();
@@ -420,11 +420,11 @@
         private Label main_label_menu;
         private Button inv_btn;
         private Button dashboard_btn;
-        private TextBox inventory_textBox;
-        private Button inventoryadd_button;
+        private TextBox inventorys_textBox;
+        private Button inventorysadd_button;
         private Label fuelInventory_label;
         private Label label25;
-        private DataGridView fuelInventory_dataGridView;
+        private DataGridView fuelInventorys_dataGridView;
         private Label label8;
         private Label label9;
         private Label label10;

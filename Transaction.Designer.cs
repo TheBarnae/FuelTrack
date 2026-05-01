@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Transaction));
-            menubar_dashboard = new Panel();
+            menubar_transaction = new Panel();
             logout_btn = new Button();
             audit_btn = new Button();
             reports_Btn = new Button();
@@ -43,43 +43,43 @@
             inv_btn = new Button();
             dashboard_btn = new Button();
             fueltrack_icon = new Label();
-            label1 = new Label();
-            button1 = new Button();
-            dataGridView1 = new DataGridView();
-            dataGridView2 = new DataGridView();
-            panel1 = new Panel();
+            transaction_label = new Label();
+            newsale_button = new Button();
+            transactions_dataGridView = new DataGridView();
+            transactionsdata_dataGridView = new DataGridView();
+            transaction_panel = new Panel();
             alert_label = new Label();
             usr_avatar = new PictureBox();
             role_label = new Label();
             date_label = new Label();
-            menubar_dashboard.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
-            panel1.SuspendLayout();
+            menubar_transaction.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)transactions_dataGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)transactionsdata_dataGridView).BeginInit();
+            transaction_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)usr_avatar).BeginInit();
             SuspendLayout();
             // 
-            // menubar_dashboard
+            // menubar_transaction
             // 
-            menubar_dashboard.BackColor = Color.FromArgb(26, 58, 92);
-            menubar_dashboard.Controls.Add(logout_btn);
-            menubar_dashboard.Controls.Add(audit_btn);
-            menubar_dashboard.Controls.Add(reports_Btn);
-            menubar_dashboard.Controls.Add(rprt_label);
-            menubar_dashboard.Controls.Add(richTextBox1);
-            menubar_dashboard.Controls.Add(employee_btn);
-            menubar_dashboard.Controls.Add(suplier_btn);
-            menubar_dashboard.Controls.Add(manage_btn);
-            menubar_dashboard.Controls.Add(trans_btn);
-            menubar_dashboard.Controls.Add(main_label_menu);
-            menubar_dashboard.Controls.Add(inv_btn);
-            menubar_dashboard.Controls.Add(dashboard_btn);
-            menubar_dashboard.Controls.Add(fueltrack_icon);
-            menubar_dashboard.ForeColor = SystemColors.ActiveCaptionText;
-            menubar_dashboard.Location = new Point(0, 42);
-            menubar_dashboard.Name = "menubar_dashboard";
-            menubar_dashboard.Size = new Size(163, 680);
-            menubar_dashboard.TabIndex = 3;
+            menubar_transaction.BackColor = Color.FromArgb(26, 58, 92);
+            menubar_transaction.Controls.Add(logout_btn);
+            menubar_transaction.Controls.Add(audit_btn);
+            menubar_transaction.Controls.Add(reports_Btn);
+            menubar_transaction.Controls.Add(rprt_label);
+            menubar_transaction.Controls.Add(richTextBox1);
+            menubar_transaction.Controls.Add(employee_btn);
+            menubar_transaction.Controls.Add(suplier_btn);
+            menubar_transaction.Controls.Add(manage_btn);
+            menubar_transaction.Controls.Add(trans_btn);
+            menubar_transaction.Controls.Add(main_label_menu);
+            menubar_transaction.Controls.Add(inv_btn);
+            menubar_transaction.Controls.Add(dashboard_btn);
+            menubar_transaction.Controls.Add(fueltrack_icon);
+            menubar_transaction.ForeColor = SystemColors.ActiveCaptionText;
+            menubar_transaction.Location = new Point(0, 42);
+            menubar_transaction.Name = "menubar_transaction";
+            menubar_transaction.Size = new Size(163, 680);
+            menubar_transaction.TabIndex = 3;
             // 
             // logout_btn
             // 
@@ -246,57 +246,57 @@
             fueltrack_icon.TabIndex = 14;
             fueltrack_icon.Text = "               ";
             // 
-            // label1
+            // transaction_label
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(204, 110);
-            label1.Name = "label1";
-            label1.Size = new Size(127, 30);
-            label1.TabIndex = 6;
-            label1.Text = "Transactions";
-            label1.Click += label1_Click;
+            transaction_label.AutoSize = true;
+            transaction_label.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            transaction_label.Location = new Point(204, 110);
+            transaction_label.Name = "transaction_label";
+            transaction_label.Size = new Size(127, 30);
+            transaction_label.TabIndex = 6;
+            transaction_label.Text = "Transactions";
+            transaction_label.Click += label1_Click;
             // 
-            // button1
+            // newsale_button
             // 
-            button1.BackColor = Color.FromArgb(26, 58, 92);
-            button1.ForeColor = SystemColors.ControlLightLight;
-            button1.Location = new Point(781, 116);
-            button1.Name = "button1";
-            button1.Size = new Size(97, 29);
-            button1.TabIndex = 7;
-            button1.Text = "+ New Sale";
-            button1.UseVisualStyleBackColor = false;
+            newsale_button.BackColor = Color.FromArgb(26, 58, 92);
+            newsale_button.ForeColor = SystemColors.ControlLightLight;
+            newsale_button.Location = new Point(781, 116);
+            newsale_button.Name = "newsale_button";
+            newsale_button.Size = new Size(97, 29);
+            newsale_button.TabIndex = 7;
+            newsale_button.Text = "+ New Sale";
+            newsale_button.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // transactions_dataGridView
             // 
-            dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(215, 184);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(663, 124);
-            dataGridView1.TabIndex = 8;
+            transactions_dataGridView.BackgroundColor = SystemColors.ButtonHighlight;
+            transactions_dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            transactions_dataGridView.Location = new Point(215, 184);
+            transactions_dataGridView.Name = "transactions_dataGridView";
+            transactions_dataGridView.Size = new Size(663, 124);
+            transactions_dataGridView.TabIndex = 8;
             // 
-            // dataGridView2
+            // transactionsdata_dataGridView
             // 
-            dataGridView2.BackgroundColor = SystemColors.Control;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(215, 346);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(663, 235);
-            dataGridView2.TabIndex = 9;
+            transactionsdata_dataGridView.BackgroundColor = SystemColors.Control;
+            transactionsdata_dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            transactionsdata_dataGridView.Location = new Point(215, 346);
+            transactionsdata_dataGridView.Name = "transactionsdata_dataGridView";
+            transactionsdata_dataGridView.Size = new Size(663, 235);
+            transactionsdata_dataGridView.TabIndex = 9;
             // 
-            // panel1
+            // transaction_panel
             // 
-            panel1.BackColor = SystemColors.ButtonHighlight;
-            panel1.Controls.Add(alert_label);
-            panel1.Controls.Add(usr_avatar);
-            panel1.Controls.Add(role_label);
-            panel1.Controls.Add(date_label);
-            panel1.Location = new Point(-2, -3);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1271, 59);
-            panel1.TabIndex = 21;
+            transaction_panel.BackColor = SystemColors.ButtonHighlight;
+            transaction_panel.Controls.Add(alert_label);
+            transaction_panel.Controls.Add(usr_avatar);
+            transaction_panel.Controls.Add(role_label);
+            transaction_panel.Controls.Add(date_label);
+            transaction_panel.Location = new Point(-2, -3);
+            transaction_panel.Name = "transaction_panel";
+            transaction_panel.Size = new Size(1271, 59);
+            transaction_panel.TabIndex = 21;
             // 
             // alert_label
             // 
@@ -341,12 +341,12 @@
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(927, 681);
-            Controls.Add(panel1);
-            Controls.Add(dataGridView2);
-            Controls.Add(dataGridView1);
-            Controls.Add(button1);
-            Controls.Add(label1);
-            Controls.Add(menubar_dashboard);
+            Controls.Add(transaction_panel);
+            Controls.Add(transactionsdata_dataGridView);
+            Controls.Add(transactions_dataGridView);
+            Controls.Add(newsale_button);
+            Controls.Add(transaction_label);
+            Controls.Add(menubar_transaction);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
@@ -354,12 +354,12 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FuelTrack — Transaction";
             Load += Transaction_Load;
-            menubar_dashboard.ResumeLayout(false);
-            menubar_dashboard.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            menubar_transaction.ResumeLayout(false);
+            menubar_transaction.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)transactions_dataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)transactionsdata_dataGridView).EndInit();
+            transaction_panel.ResumeLayout(false);
+            transaction_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)usr_avatar).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -367,7 +367,7 @@
 
         #endregion
 
-        private Panel menubar_dashboard;
+        private Panel menubar_transaction;
         private Button logout_btn;
         private Button audit_btn;
         private Button reports_Btn;
@@ -380,11 +380,11 @@
         private Label main_label_menu;
         private Button inv_btn;
         private Button dashboard_btn;
-        private Label label1;
-        private Button button1;
-        private DataGridView dataGridView1;
-        private DataGridView dataGridView2;
-        private Panel panel1;
+        private Label transaction_label;
+        private Button newsale_button;
+        private DataGridView transactions_dataGridView;
+        private DataGridView transactionsdata_dataGridView;
+        private Panel transaction_panel;
         private Label alert_label;
         private PictureBox usr_avatar;
         private Label role_label;
