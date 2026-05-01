@@ -307,6 +307,7 @@
             Controls.Add(panelMain);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MdiChildrenMinimizedAnchorBottom = false;
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FuelTrack";

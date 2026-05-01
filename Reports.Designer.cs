@@ -56,8 +56,8 @@
             daterange_label = new Label();
             reporttype_comboBox = new ComboBox();
             fueltype_label = new Label();
-            this.fueltype_comboBox = new ComboBox();
-            this.reportsnewsale_button = new Button();
+            this.comboBox2 = new ComboBox();
+            this.button1 = new Button();
             exportpdf_button = new Button();
             datahere_label = new Label();
             daterange_dateTimePicker = new DateTimePicker();
@@ -390,22 +390,22 @@
             // 
             // fueltype_comboBox
             // 
-            this.fueltype_comboBox.FormattingEnabled = true;
-            this.fueltype_comboBox.Location = new Point(215, 418);
-            this.fueltype_comboBox.Name = "fueltype_comboBox";
-            this.fueltype_comboBox.Size = new Size(284, 25);
-            this.fueltype_comboBox.TabIndex = 32;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new Point(215, 418);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new Size(284, 25);
+            this.comboBox2.TabIndex = 32;
             // 
-            // reportsnewsale_button
+            // button1
             // 
-            this.reportsnewsale_button.BackColor = Color.FromArgb(26, 58, 92);
-            this.reportsnewsale_button.ForeColor = SystemColors.ControlLightLight;
-            this.reportsnewsale_button.Location = new Point(215, 459);
-            this.reportsnewsale_button.Name = "reportsnewsale_button";
-            this.reportsnewsale_button.Size = new Size(97, 29);
-            this.reportsnewsale_button.TabIndex = 33;
-            this.reportsnewsale_button.Text = "+ New Sale";
-            this.reportsnewsale_button.UseVisualStyleBackColor = false;
+            this.button1.BackColor = Color.FromArgb(26, 58, 92);
+            this.button1.ForeColor = SystemColors.ControlLightLight;
+            this.button1.Location = new Point(215, 459);
+            this.button1.Name = "button1";
+            this.button1.Size = new Size(97, 29);
+            this.button1.TabIndex = 33;
+            this.button1.Text = "+ New Sale";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // exportpdf_button
             // 
@@ -441,8 +441,8 @@
             Controls.Add(daterange_dateTimePicker);
             Controls.Add(datahere_label);
             Controls.Add(exportpdf_button);
-            Controls.Add(this.reportsnewsale_button);
-            Controls.Add(this.fueltype_comboBox);
+            Controls.Add(this.button1);
+            Controls.Add(this.comboBox2);
             Controls.Add(fueltype_label);
             Controls.Add(reporttype_comboBox);
             Controls.Add(daterange_label);
