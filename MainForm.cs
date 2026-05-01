@@ -23,6 +23,12 @@ namespace FuelTrack
             UIHelper.MakeCircular(usr_avatar);
             UIHelper.StyleFuelTrackTitle(richTextBox1);
             UIHelper.SetButtonActive(dashboard_btn, true);
+            UpdateLoggedInUserLabel();
+        }
+
+        private void UpdateLoggedInUserLabel()
+        {
+            role_label.Text = SessionContext.CurrentUser?.DisplayName ?? "--ROLE--";
         }
         public void LoadView(Form form)
         {
@@ -76,6 +82,7 @@ namespace FuelTrack
 
             if (result == DialogResult.Yes)
             {
+                SessionContext.Clear();
                 Login login = new Login();
                 login.Show();
 

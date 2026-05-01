@@ -16,12 +16,14 @@ namespace FuelTrack
     public partial class Dashboard : Form
     {
         private Color _logoutOriginalColor;
+        private readonly System.Windows.Forms.Timer _clockTimer = new System.Windows.Forms.Timer();
         public Dashboard()
         {
             InitializeComponent();
             _logoutOriginalColor = logout_btn.BackColor;
             UIHelper.MakeCircular(usr_avatar);
             UIHelper.StyleFuelTrackTitle(richTextBox1);
+            ConfigureClockTimer();
         }
         private void Dashboard_Load(object sender, EventArgs e)
         {
@@ -36,6 +38,18 @@ namespace FuelTrack
             UIHelper.SetRadius(inventory_pnel, 12);
             UIHelper.SetRadius(recent_transaction_panel, 12);
             UIHelper.DisableCloseButton(this);
+        }
+
+        private void ConfigureClockTimer()
+        {
+            _clockTimer.Interval = 1000;
+            _clockTimer.Tick += clockTimer_Tick;
+            _clockTimer.Start();
+        }
+
+        private void clockTimer_Tick(object sender, EventArgs e)
+        {
+            UIHelper.setDateLabel(date_label);
         }
     }
 }

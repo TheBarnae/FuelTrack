@@ -45,7 +45,6 @@
             dashboard_btn = new Button();
             fueltrack_icon = new Label();
             panel1 = new Panel();
-            alert_label = new Label();
             usr_avatar = new PictureBox();
             role_label = new Label();
             date_label = new Label();
@@ -59,7 +58,7 @@
             panelMain.Dock = DockStyle.Fill;
             panelMain.Location = new Point(0, 0);
             panelMain.Name = "panelMain";
-            panelMain.Size = new Size(911, 562);
+            panelMain.Size = new Size(925, 562);
             panelMain.TabIndex = 0;
             // 
             // menubar_dashboard
@@ -260,7 +259,6 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.ButtonHighlight;
-            panel1.Controls.Add(alert_label);
             panel1.Controls.Add(usr_avatar);
             panel1.Controls.Add(role_label);
             panel1.Controls.Add(date_label);
@@ -269,20 +267,11 @@
             panel1.Size = new Size(1271, 52);
             panel1.TabIndex = 14;
             // 
-            // alert_label
-            // 
-            alert_label.AutoSize = true;
-            alert_label.Location = new Point(740, 22);
-            alert_label.Name = "alert_label";
-            alert_label.Size = new Size(65, 15);
-            alert_label.TabIndex = 3;
-            alert_label.Text = "--ALERTS--";
-            // 
             // usr_avatar
             // 
             usr_avatar.BackColor = SystemColors.ControlDark;
             usr_avatar.BackgroundImageLayout = ImageLayout.None;
-            usr_avatar.Location = new Point(811, 11);
+            usr_avatar.Location = new Point(875, 11);
             usr_avatar.Name = "usr_avatar";
             usr_avatar.Size = new Size(38, 38);
             usr_avatar.SizeMode = PictureBoxSizeMode.Zoom;
@@ -291,12 +280,13 @@
             // 
             // role_label
             // 
-            role_label.AutoSize = true;
-            role_label.Location = new Point(858, 22);
+            role_label.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            role_label.Location = new Point(669, 22);
             role_label.Name = "role_label";
-            role_label.Size = new Size(55, 15);
+            role_label.Size = new Size(200, 15);
             role_label.TabIndex = 1;
             role_label.Text = "--ROLE--";
+            role_label.TextAlign = ContentAlignment.MiddleRight;
             // 
             // date_label
             // 
@@ -311,7 +301,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(911, 562);
+            ClientSize = new Size(925, 562);
             Controls.Add(panel1);
             Controls.Add(menubar_dashboard);
             Controls.Add(panelMain);
@@ -346,7 +336,6 @@
         private Button dashboard_btn;
         private Label fueltrack_icon;
         private Panel panel1;
-        private Label alert_label;
         private PictureBox usr_avatar;
         private Label role_label;
         private Label date_label;
