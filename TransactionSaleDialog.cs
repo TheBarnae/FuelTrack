@@ -11,7 +11,7 @@ namespace FuelTrack
     {
         private readonly Database.Database _database;
         private readonly ComboBox _pumpComboBox = new();
-        private readonly TextBox _fuelTypeTextBox = new();
+        private readonly ComboBox _fuelTypeComboBox = new();
         private readonly ComboBox _employeeComboBox = new();
         private readonly ComboBox _paymentMethodComboBox = new();
         private readonly NumericUpDown _litersNumeric = new();
@@ -51,7 +51,7 @@ namespace FuelTrack
             layout.Controls.Add(CreateLabel("Pump:"), 0, 0);
             layout.Controls.Add(_pumpComboBox, 1, 0);
             layout.Controls.Add(CreateLabel("Fuel type:"), 0, 1);
-            layout.Controls.Add(_fuelTypeTextBox, 1, 1);
+            layout.Controls.Add(_fuelTypeComboBox, 1, 1);
             layout.Controls.Add(CreateLabel("Employee:"), 0, 2);
             layout.Controls.Add(_employeeComboBox, 1, 2);
             layout.Controls.Add(CreateLabel("Payment method:"), 0, 3);
@@ -86,9 +86,8 @@ namespace FuelTrack
             _pumpComboBox.Width = 260;
             _pumpComboBox.SelectedIndexChanged += PumpComboBox_SelectedIndexChanged;
 
-            _fuelTypeTextBox.ReadOnly = true;
-            _fuelTypeTextBox.BackColor = SystemColors.Window;
-            _fuelTypeTextBox.Width = 260;
+            _fuelTypeComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            _fuelTypeComboBox.Width = 260;
 
             _employeeComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             _employeeComboBox.Width = 260;
@@ -126,8 +125,42 @@ namespace FuelTrack
 
         private void TransactionSaleDialog_Load(object? sender, EventArgs e)
         {
+            LoadFuelTypes();
             LoadPumps();
             LoadEmployees();
+        }
+
+        private void LoadFuelTypes()
+        {
+            const string query = @"
+                SELECT fuel_type_id, name
+                FROM fuel_types
+                ORDER BY name;";
+
+            try
+            {
+                using var connection = _database.GetConnection();
+                using var command = new MySqlCommand(query, connection);
+                connection.Open();
+                using var reader = command.ExecuteReader();
+
+                var fuelTypes = new List<FuelTypeLookup>();
+                while (reader.Read())
+                {
+                    fuelTypes.Add(new FuelTypeLookup(
+                        reader.GetInt32("fuel_type_id"),
+                        reader.GetString("name")));
+                }
+
+                _fuelTypeComboBox.DataSource = fuelTypes;
+                _fuelTypeComboBox.DisplayMember = nameof(FuelTypeLookup.DisplayText);
+                _fuelTypeComboBox.ValueMember = nameof(FuelTypeLookup.FuelTypeId);
+                _fuelTypeComboBox.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Unable to load fuel types: {ex.Message}", "New Sale", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void LoadPumps()
@@ -140,7 +173,6 @@ namespace FuelTrack
                     ft.name AS fuel_type_name
                 FROM pumps p
                 LEFT JOIN fuel_types ft ON ft.fuel_type_id = p.fuel_type_id
-                WHERE p.status = 'Active'
                 ORDER BY p.pump_label;";
 
             try
@@ -163,9 +195,15 @@ namespace FuelTrack
                 _pumpComboBox.DataSource = pumps;
                 _pumpComboBox.DisplayMember = nameof(PumpLookup.DisplayText);
 
-                if (_pumpComboBox.Items.Count > 0)
+                _pumpComboBox.SelectedIndex = -1;
+
+                if (pumps.Count == 0)
                 {
-                    _pumpComboBox.SelectedIndex = 0;
+                    MessageBox.Show(
+                        "No pumps were found in the database. Add at least one pump record before creating a sale.",
+                        "New Sale",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)
@@ -223,11 +261,15 @@ namespace FuelTrack
         {
             if (_pumpComboBox.SelectedItem is PumpLookup pump)
             {
-                _fuelTypeTextBox.Text = pump.FuelTypeName;
+                if (pump.FuelTypeId.HasValue)
+                {
+                    _fuelTypeComboBox.SelectedValue = pump.FuelTypeId.Value;
+                }
+
                 return;
             }
 
-            _fuelTypeTextBox.Clear();
+            _fuelTypeComboBox.SelectedIndex = -1;
         }
 
         private void SaveButton_Click(object? sender, EventArgs e)
@@ -238,9 +280,15 @@ namespace FuelTrack
                 return;
             }
 
-            if (pump.FuelTypeId is null)
+            if (_fuelTypeComboBox.SelectedItem is not FuelTypeLookup fuelType)
             {
-                MessageBox.Show("The selected pump is not linked to a fuel type.", "New Sale", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select a fuel type.", "New Sale", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (pump.FuelTypeId is null || fuelType.FuelTypeId != pump.FuelTypeId.Value)
+            {
+                MessageBox.Show("The selected pump and fuel type do not match.", "New Sale", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -266,23 +314,23 @@ namespace FuelTrack
                 INSERT INTO transactions
                     (pump_id, employee_id, fuel_type_id, liters_dispensed, amount_paid, payment_method, transaction_date)
                 VALUES
-                    (@pump_id, @employee_id, @fuel_type_id, @liters_dispensed, @amount_paid, @payment_method, @transaction_date);";
+                    (@pump_id, @employee_id, @fuel_type_id, @liters_dispensed, @amount_paid, @payment_method, NOW());";
 
             try
             {
                 using var connection = _database.GetConnection();
                 using var command = new MySqlCommand(query, connection);
-                command.Parameters.AddWithValue("@pump_id", pump.PumpId);
-                command.Parameters.AddWithValue("@employee_id", employee.EmployeeId);
-                command.Parameters.AddWithValue("@fuel_type_id", pump.FuelTypeId.Value);
-                command.Parameters.AddWithValue("@liters_dispensed", Convert.ToDouble(_litersNumeric.Value));
-                command.Parameters.AddWithValue("@amount_paid", _amountNumeric.Value);
-                command.Parameters.AddWithValue("@payment_method", _paymentMethodComboBox.Text);
-                command.Parameters.AddWithValue("@transaction_date", DateTime.Now);
+                command.Parameters.Add(new MySqlParameter("@pump_id", MySqlDbType.Int32) { Value = pump.PumpId });
+                command.Parameters.Add(new MySqlParameter("@employee_id", MySqlDbType.Int32) { Value = employee.EmployeeId });
+                command.Parameters.Add(new MySqlParameter("@fuel_type_id", MySqlDbType.Int32) { Value = fuelType.FuelTypeId });
+                command.Parameters.Add(new MySqlParameter("@liters_dispensed", MySqlDbType.Float) { Value = Convert.ToDouble(_litersNumeric.Value) });
+                command.Parameters.Add(new MySqlParameter("@amount_paid", MySqlDbType.Decimal) { Value = _amountNumeric.Value });
+                command.Parameters.Add(new MySqlParameter("@payment_method", MySqlDbType.VarChar) { Value = _paymentMethodComboBox.Text });
 
                 connection.Open();
                 if (command.ExecuteNonQuery() == 1)
                 {
+                    MessageBox.Show("Transaction saved successfully.", "New Sale", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     DialogResult = DialogResult.OK;
                     Close();
                 }
@@ -312,6 +360,20 @@ namespace FuelTrack
             public string PumpLabel { get; }
             public string FuelTypeName { get; }
             public string DisplayText => $"{PumpLabel} - {FuelTypeName}";
+            public override string ToString() => DisplayText;
+        }
+
+        private sealed class FuelTypeLookup
+        {
+            public FuelTypeLookup(int fuelTypeId, string name)
+            {
+                FuelTypeId = fuelTypeId;
+                Name = name;
+            }
+
+            public int FuelTypeId { get; }
+            public string Name { get; }
+            public string DisplayText => $"{FuelTypeId} - {Name}";
             public override string ToString() => DisplayText;
         }
 
