@@ -35,7 +35,9 @@
             login_btn = new Button();
             user_txtbox = new TextBox();
             pass_txtbox = new TextBox();
+            password_toggle = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)FuelTrack_Logo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)password_toggle).BeginInit();
             SuspendLayout();
             // 
             // FuelTrack_Logo
@@ -100,12 +102,24 @@
             pass_txtbox.Size = new Size(179, 22);
             pass_txtbox.TabIndex = 7;
             // 
+            // password_toggle
+            // 
+            password_toggle.Cursor = Cursors.Hand;
+            password_toggle.Location = new Point(261, 247);
+            password_toggle.Name = "password_toggle";
+            password_toggle.Size = new Size(21, 21);
+            password_toggle.SizeMode = PictureBoxSizeMode.Zoom;
+            password_toggle.TabIndex = 8;
+            password_toggle.TabStop = false;
+            password_toggle.Click += password_toggle_Click;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(385, 359);
+            Controls.Add(password_toggle);
             Controls.Add(pass_txtbox);
             Controls.Add(user_txtbox);
             Controls.Add(login_btn);
@@ -117,7 +131,9 @@
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FuelTrack — Login";
+            AcceptButton = login_btn;
             ((System.ComponentModel.ISupportInitialize)FuelTrack_Logo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)password_toggle).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -130,5 +146,6 @@
         private Button login_btn;
         private TextBox user_txtbox;
         private TextBox pass_txtbox;
+        private PictureBox password_toggle;
     }
 }

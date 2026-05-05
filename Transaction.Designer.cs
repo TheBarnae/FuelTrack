@@ -51,22 +51,20 @@
             usr_avatar = new PictureBox();
             role_label = new Label();
             date_label = new Label();
-            cash_card = new DataGridView();
             transactions_panel = new DataGridView();
             total_sales = new DataGridView();
             total_sales_label = new Label();
             Transactions_label = new Label();
-            cash_card_label = new Label();
             total_sales_db_label = new Label();
             trans_db_label = new Label();
-            cash_card_db_label = new Label();
+            MOP_datagrid = new DataGridView();
             menubar_transaction.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)transactionsdata_dataGridView).BeginInit();
             transaction_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)usr_avatar).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)cash_card).BeginInit();
             ((System.ComponentModel.ISupportInitialize)transactions_panel).BeginInit();
             ((System.ComponentModel.ISupportInitialize)total_sales).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)MOP_datagrid).BeginInit();
             SuspendLayout();
             // 
             // menubar_transaction
@@ -337,20 +335,11 @@
             date_label.TabIndex = 0;
             date_label.Text = "DATE GOES HERE";
             // 
-            // cash_card
-            // 
-            cash_card.BackgroundColor = SystemColors.Info;
-            cash_card.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            cash_card.Location = new Point(697, 154);
-            cash_card.Name = "cash_card";
-            cash_card.Size = new Size(199, 71);
-            cash_card.TabIndex = 24;
-            // 
             // transactions_panel
             // 
             transactions_panel.BackgroundColor = SystemColors.Info;
             transactions_panel.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            transactions_panel.Location = new Point(459, 154);
+            transactions_panel.Location = new Point(441, 154);
             transactions_panel.Name = "transactions_panel";
             transactions_panel.Size = new Size(199, 71);
             transactions_panel.TabIndex = 23;
@@ -378,21 +367,11 @@
             // 
             Transactions_label.AutoSize = true;
             Transactions_label.BackColor = Color.Transparent;
-            Transactions_label.Location = new Point(459, 157);
+            Transactions_label.Location = new Point(441, 157);
             Transactions_label.Name = "Transactions_label";
             Transactions_label.Size = new Size(67, 15);
             Transactions_label.TabIndex = 26;
             Transactions_label.Text = "Transaction";
-            // 
-            // cash_card_label
-            // 
-            cash_card_label.AutoSize = true;
-            cash_card_label.BackColor = Color.Transparent;
-            cash_card_label.Location = new Point(697, 157);
-            cash_card_label.Name = "cash_card_label";
-            cash_card_label.Size = new Size(69, 15);
-            cash_card_label.TabIndex = 27;
-            cash_card_label.Text = "Cash / Card";
             // 
             // total_sales_db_label
             // 
@@ -408,34 +387,29 @@
             // 
             trans_db_label.BackColor = Color.Transparent;
             trans_db_label.Font = new Font("Segoe UI", 20F);
-            trans_db_label.Location = new Point(470, 181);
+            trans_db_label.Location = new Point(452, 181);
             trans_db_label.Name = "trans_db_label";
             trans_db_label.Size = new Size(177, 40);
             trans_db_label.TabIndex = 29;
             trans_db_label.Text = "Transaction";
             // 
-            // cash_card_db_label
+            // MOP_datagrid
             // 
-            cash_card_db_label.BackColor = Color.Transparent;
-            cash_card_db_label.Font = new Font("Segoe UI", 20F);
-            cash_card_db_label.Location = new Point(710, 181);
-            cash_card_db_label.Name = "cash_card_db_label";
-            cash_card_db_label.Size = new Size(177, 40);
-            cash_card_db_label.TabIndex = 30;
-            cash_card_db_label.Text = "Cash/Card";
+            MOP_datagrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            MOP_datagrid.Location = new Point(671, 154);
+            MOP_datagrid.Name = "MOP_datagrid";
+            MOP_datagrid.Size = new Size(207, 71);
+            MOP_datagrid.TabIndex = 30;
             // 
             // Transaction
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(927, 601);
-            Controls.Add(cash_card_db_label);
             Controls.Add(trans_db_label);
             Controls.Add(total_sales_db_label);
-            Controls.Add(cash_card_label);
             Controls.Add(Transactions_label);
             Controls.Add(total_sales_label);
-            Controls.Add(cash_card);
             Controls.Add(transactions_panel);
             Controls.Add(total_sales);
             Controls.Add(transaction_panel);
@@ -443,6 +417,7 @@
             Controls.Add(newsale_button);
             Controls.Add(transaction_label);
             Controls.Add(menubar_transaction);
+            Controls.Add(MOP_datagrid);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
@@ -456,9 +431,9 @@
             transaction_panel.ResumeLayout(false);
             transaction_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)usr_avatar).EndInit();
-            ((System.ComponentModel.ISupportInitialize)cash_card).EndInit();
             ((System.ComponentModel.ISupportInitialize)transactions_panel).EndInit();
             ((System.ComponentModel.ISupportInitialize)total_sales).EndInit();
+            ((System.ComponentModel.ISupportInitialize)MOP_datagrid).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -487,14 +462,12 @@
         private Label role_label;
         private Label date_label;
         private Label fueltrack_icon;
-        private DataGridView cash_card;
         private DataGridView transactions_panel;
         private DataGridView total_sales;
         private Label total_sales_label;
         private Label Transactions_label;
-        private Label cash_card_label;
         private Label total_sales_db_label;
         private Label trans_db_label;
-        private Label cash_card_db_label;
+        private DataGridView MOP_datagrid;
     }
 }

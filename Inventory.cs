@@ -37,14 +37,15 @@ namespace FuelTrack
 
         private void LoadFuelInventory()
         {
-            const string query = @"SELECT name AS `Fuel type`,
+            const string query = @"SELECT fuel_type_id AS `Fuel Type ID`,
+       name AS `Fuel type`,
        current_stock_liters AS `Current stock (L)`,
        min_stock_threshold AS `Min threshold (L)`,
        price_per_liter AS `Price/L`,
        status AS `Status`,
        updated_at AS `Updated at`
-       FROM Fuel_types
-       ORDER BY name;";
+FROM Fuel_types
+ORDER BY fuel_type_id, name;";
 
             try
             {
@@ -55,11 +56,37 @@ namespace FuelTrack
                 adapter.Fill(table);
                 _inventoryTable = table;
                 fuelInventorys_dataGridView.DataSource = _inventoryTable;
+                RemoveInventoryDuplicates();
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Unable to load fuel inventory: {ex.Message}", "Inventory", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void RemoveInventoryDuplicates()
+        {
+            if (_inventoryTable == null)
+            {
+                return;
+            }
+
+            var seenIds = new HashSet<int>();
+            for (var i = _inventoryTable.Rows.Count - 1; i >= 0; i--)
+            {
+                var row = _inventoryTable.Rows[i];
+                if (!int.TryParse(row["Fuel Type ID"].ToString(), out var id))
+                {
+                    continue;
+                }
+
+                if (!seenIds.Add(id))
+                {
+                    _inventoryTable.Rows.RemoveAt(i);
+                }
+            }
+
+            _inventoryTable.AcceptChanges();
         }
 
         private void ApplyInventoryFilter()

@@ -1,4 +1,6 @@
 using System;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using FuelTrack.Database;
 using MySql.Data.MySqlClient;
@@ -8,6 +10,9 @@ namespace FuelTrack
     public partial class Login : Form
     {
         private readonly Database.Database _database = new Database.Database();
+        private bool _isPasswordVisible;
+        private Image? _showPasswordImage;
+        private Image? _hidePasswordImage;
 
         public Login()
         {
@@ -15,10 +20,59 @@ namespace FuelTrack
             UIHelper.SetRadius(login_btn, 6);
             UIHelper.SetRadius(user_txtbox, 3);
             UIHelper.SetRadius(pass_txtbox, 3);
+            pass_txtbox.UseSystemPasswordChar = true;
+            LoadPasswordToggleImages();
+            UpdatePasswordToggleIcon();
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void password_toggle_Click(object sender, EventArgs e)
+        {
+            _isPasswordVisible = !_isPasswordVisible;
+            pass_txtbox.UseSystemPasswordChar = !_isPasswordVisible;
+            UpdatePasswordToggleIcon();
+        }
+
+        private void LoadPasswordToggleImages()
+        {
+            _showPasswordImage = Properties.Resources.ResourceManager.GetObject("visible") as Image;
+            _hidePasswordImage = Properties.Resources.ResourceManager.GetObject("hide") as Image;
+
+            if (_showPasswordImage != null && _hidePasswordImage != null)
+            {
+                return;
+            }
+
+            _showPasswordImage = LoadImageFromProject("visible.png") ?? _showPasswordImage;
+            _hidePasswordImage = LoadImageFromProject("hide.png") ?? _hidePasswordImage;
+        }
+
+        private static Image? LoadImageFromProject(string fileName)
+        {
+            var baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            var current = new DirectoryInfo(baseDirectory);
+
+            while (current != null)
+            {
+                var candidate = Path.Combine(current.FullName, "img", fileName);
+                if (File.Exists(candidate))
+                {
+                    return Image.FromFile(candidate);
+                }
+
+                current = current.Parent;
+            }
+
+            return null;
+        }
+
+        private void UpdatePasswordToggleIcon()
+        {
+            password_toggle.Image = _isPasswordVisible ? _hidePasswordImage : _showPasswordImage;
+            password_toggle.Visible = password_toggle.Image != null;
         }
 
         private void login_btn_Click(object sender, EventArgs e)

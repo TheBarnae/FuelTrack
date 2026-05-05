@@ -29,8 +29,10 @@ namespace FuelTrack
             UIHelper.SetButtonActive(trans_btn, true);
             UIHelper.DisableCloseButton(this);
             ConfigureTransactionsGrid();
+            ConfigureMopGrid();
             LoadTransactions();
             LoadTodaySummaryStats();
+            
         }
 
         private void ConfigureTransactionsGrid()
@@ -42,6 +44,17 @@ namespace FuelTrack
             transactionsdata_dataGridView.ReadOnly = true;
             transactionsdata_dataGridView.RowHeadersVisible = false;
             transactionsdata_dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
+
+        private void ConfigureMopGrid()
+        {
+            MOP_datagrid.AutoGenerateColumns = true;
+            MOP_datagrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            MOP_datagrid.RowHeadersVisible = false;
+            MOP_datagrid.AllowUserToAddRows = false;
+            MOP_datagrid.AllowUserToDeleteRows = false;
+            MOP_datagrid.ReadOnly = true;
+            MOP_datagrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
         private void LoadTransactions()
@@ -84,8 +97,9 @@ namespace FuelTrack
                 SELECT
                     COALESCE(SUM(t.amount_paid), 0) AS total_sales,
                     COUNT(*) AS transaction_count,
-                    COALESCE(SUM(CASE WHEN t.payment_method = 'Cash' THEN t.amount_paid ELSE 0 END), 0) AS cash_total,
-                    COALESCE(SUM(CASE WHEN t.payment_method IN ('Card', 'GCash') THEN t.amount_paid ELSE 0 END), 0) AS card_total
+                    COALESCE(SUM(CASE WHEN UPPER(TRIM(t.payment_method)) = 'CASH' THEN t.amount_paid ELSE 0 END), 0) AS cash_total,
+                    COALESCE(SUM(CASE WHEN UPPER(TRIM(t.payment_method)) = 'CARD' THEN t.amount_paid ELSE 0 END), 0) AS card_total,
+                    COALESCE(SUM(CASE WHEN UPPER(TRIM(t.payment_method)) = 'GCASH' THEN t.amount_paid ELSE 0 END), 0) AS gcash_total
                 FROM transactions t
                 WHERE t.transaction_date >= CURDATE()
                   AND t.transaction_date < CURDATE() + INTERVAL 1 DAY;";
@@ -103,10 +117,16 @@ namespace FuelTrack
                     var transactionCount = reader.GetInt32("transaction_count");
                     var cashTotal = reader.GetDecimal("cash_total");
                     var cardTotal = reader.GetDecimal("card_total");
+                    var gcashTotal = reader.GetDecimal("gcash_total");
 
                     total_sales_db_label.Text = $"₱{totalSales:N2}";
                     trans_db_label.Text = transactionCount.ToString("N0");
-                    cash_card_db_label.Text = $"₱{cashTotal:N2} / ₱{cardTotal:N2}";
+                    var mopTable = new DataTable();
+                    mopTable.Columns.Add("Cash", typeof(string));
+                    mopTable.Columns.Add("Card", typeof(string));
+                    mopTable.Columns.Add("GCash", typeof(string));
+                    mopTable.Rows.Add($"₱{cashTotal:N2}", $"₱{cardTotal:N2}", $"₱{gcashTotal:N2}");
+                    MOP_datagrid.DataSource = mopTable;
                 }
             }
             catch (Exception ex)

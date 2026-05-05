@@ -18,6 +18,8 @@ namespace FuelTrack
         private readonly NumericUpDown _amountNumeric = new();
         private readonly Button _saveButton = new();
         private readonly Button _cancelButton = new();
+        private decimal _currentPricePerLiter;
+        private bool _isUpdatingTotals;
 
         public TransactionSaleDialog(Database.Database database)
         {
@@ -88,6 +90,7 @@ namespace FuelTrack
 
             _fuelTypeComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             _fuelTypeComboBox.Width = 260;
+            _fuelTypeComboBox.SelectedIndexChanged += FuelTypeComboBox_SelectedIndexChanged;
 
             _employeeComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             _employeeComboBox.Width = 260;
@@ -101,11 +104,13 @@ namespace FuelTrack
             _litersNumeric.Maximum = 1000000;
             _litersNumeric.Width = 260;
             _litersNumeric.ThousandsSeparator = true;
+            _litersNumeric.ValueChanged += LitersNumeric_ValueChanged;
 
             _amountNumeric.DecimalPlaces = 2;
             _amountNumeric.Maximum = 100000000;
             _amountNumeric.Width = 260;
             _amountNumeric.ThousandsSeparator = true;
+            _amountNumeric.ValueChanged += AmountNumeric_ValueChanged;
 
             AcceptButton = _saveButton;
             CancelButton = _cancelButton;
@@ -133,7 +138,7 @@ namespace FuelTrack
         private void LoadFuelTypes()
         {
             const string query = @"
-                SELECT fuel_type_id, name
+                SELECT fuel_type_id, name, price_per_liter, current_stock_liters
                 FROM fuel_types
                 ORDER BY name;";
 
@@ -149,7 +154,13 @@ namespace FuelTrack
                 {
                     fuelTypes.Add(new FuelTypeLookup(
                         reader.GetInt32("fuel_type_id"),
-                        reader.GetString("name")));
+                        reader.GetString("name"),
+                        reader.IsDBNull(reader.GetOrdinal("price_per_liter"))
+                            ? 0m
+                            : reader.GetDecimal("price_per_liter"),
+                        reader.IsDBNull(reader.GetOrdinal("current_stock_liters"))
+                            ? 0m
+                            : reader.GetDecimal("current_stock_liters")));
                 }
 
                 _fuelTypeComboBox.DataSource = fuelTypes;
@@ -272,6 +283,63 @@ namespace FuelTrack
             _fuelTypeComboBox.SelectedIndex = -1;
         }
 
+        private void FuelTypeComboBox_SelectedIndexChanged(object? sender, EventArgs e)
+        {
+            if (_fuelTypeComboBox.SelectedItem is FuelTypeLookup fuelType)
+            {
+                _currentPricePerLiter = fuelType.PricePerLiter;
+                _litersNumeric.Maximum = fuelType.CurrentStock > 0m ? fuelType.CurrentStock : 0m;
+                if (_litersNumeric.Value > _litersNumeric.Maximum)
+                {
+                    _litersNumeric.Value = _litersNumeric.Maximum;
+                }
+                RecalculateAmountFromLiters();
+                return;
+            }
+
+            _currentPricePerLiter = 0m;
+            _litersNumeric.Maximum = 0m;
+            RecalculateAmountFromLiters();
+        }
+
+        private void LitersNumeric_ValueChanged(object? sender, EventArgs e)
+        {
+            if (_isUpdatingTotals)
+            {
+                return;
+            }
+
+            RecalculateAmountFromLiters();
+        }
+
+        private void AmountNumeric_ValueChanged(object? sender, EventArgs e)
+        {
+            if (_isUpdatingTotals)
+            {
+                return;
+            }
+
+            RecalculateLitersFromAmount();
+        }
+
+        private void RecalculateAmountFromLiters()
+        {
+            _isUpdatingTotals = true;
+            _amountNumeric.Value = _currentPricePerLiter <= 0m
+                ? 0m
+                : Math.Round(_litersNumeric.Value * _currentPricePerLiter, 2);
+            _isUpdatingTotals = false;
+        }
+
+        private void RecalculateLitersFromAmount()
+        {
+            _isUpdatingTotals = true;
+            _litersNumeric.Value = _currentPricePerLiter <= 0m
+                ? 0m
+                : Math.Round(_amountNumeric.Value / _currentPricePerLiter, 2);
+            _isUpdatingTotals = false;
+        }
+
         private void SaveButton_Click(object? sender, EventArgs e)
         {
             if (_pumpComboBox.SelectedItem is not PumpLookup pump)
@@ -295,6 +363,18 @@ namespace FuelTrack
             if (_employeeComboBox.SelectedItem is not EmployeeLookup employee)
             {
                 MessageBox.Show("Please select an employee.", "New Sale", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (fuelType.CurrentStock <= 0m)
+            {
+                MessageBox.Show("This fuel type is out of stock.", "New Sale", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (_litersNumeric.Value > fuelType.CurrentStock)
+            {
+                MessageBox.Show("Not enough stock for the requested liters.", "New Sale", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -365,14 +445,18 @@ namespace FuelTrack
 
         private sealed class FuelTypeLookup
         {
-            public FuelTypeLookup(int fuelTypeId, string name)
+            public FuelTypeLookup(int fuelTypeId, string name, decimal pricePerLiter, decimal currentStock)
             {
                 FuelTypeId = fuelTypeId;
                 Name = name;
+                PricePerLiter = pricePerLiter;
+                CurrentStock = currentStock;
             }
 
             public int FuelTypeId { get; }
             public string Name { get; }
+            public decimal PricePerLiter { get; }
+            public decimal CurrentStock { get; }
             public string DisplayText => $"{FuelTypeId} - {Name}";
             public override string ToString() => DisplayText;
         }
