@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 01, 2026 at 07:50 PM
+-- Generation Time: May 03, 2026 at 04:20 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -56,7 +56,9 @@ INSERT INTO `attendance` (`attendance_id`, `employee_id`, `login_time`, `logout_
 (15, 1, '2026-05-01 21:37:16', NULL),
 (16, 1, '2026-05-01 21:40:43', NULL),
 (17, 1, '2026-05-01 21:41:28', NULL),
-(18, 1, '2026-05-02 01:47:15', NULL);
+(18, 1, '2026-05-02 01:47:15', NULL),
+(19, 1, '2026-05-02 01:52:05', NULL),
+(20, 1, '2026-05-02 02:24:32', NULL);
 
 -- --------------------------------------------------------
 
@@ -123,18 +125,19 @@ CREATE TABLE `fuel_types` (
   `current_stock_liters` float DEFAULT 0,
   `min_stock_threshold` float DEFAULT 0,
   `status` enum('Available','Low','Out of Stock') DEFAULT 'Available',
-  `updated_at` datetime DEFAULT NULL
+  `updated_at` datetime DEFAULT NULL,
+  `price_per_liter` decimal(10,2) DEFAULT 0.00
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `fuel_types`
 --
 
-INSERT INTO `fuel_types` (`fuel_type_id`, `name`, `current_stock_liters`, `min_stock_threshold`, `status`, `updated_at`) VALUES
-(1, 'Diesel', 5200, 1000, 'Available', '2026-05-02 01:38:22'),
-(2, 'RON 91', 3100, 800, 'Available', '2026-05-02 01:38:22'),
-(3, 'RON 95', 900, 1000, 'Low', '2026-05-02 01:38:22'),
-(4, 'Premium Diesel', 0, 500, 'Out of Stock', '2026-05-02 01:38:22');
+INSERT INTO `fuel_types` (`fuel_type_id`, `name`, `current_stock_liters`, `min_stock_threshold`, `status`, `updated_at`, `price_per_liter`) VALUES
+(1, 'Diesel', 5200, 1000, 'Available', '2026-05-02 01:38:22', 0.00),
+(2, 'RON 91', 3100, 800, 'Available', '2026-05-02 01:38:22', 0.00),
+(3, 'RON 95', 900, 1000, 'Low', '2026-05-02 01:38:22', 0.00),
+(4, 'Premium Diesel', 0, 500, 'Out of Stock', '2026-05-02 01:38:22', 0.00);
 
 -- --------------------------------------------------------
 
@@ -324,7 +327,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `attendance`
 --
 ALTER TABLE `attendance`
-  MODIFY `attendance_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `attendance_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `audit_trail`

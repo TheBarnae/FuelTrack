@@ -257,6 +257,9 @@
             inventory_search.Size = new Size(153, 23);
             inventory_search.TabIndex = 3;
             inventory_search.Text = "Search...";
+            inventory_search.TextChanged += inventory_search_TextChanged;
+            inventory_search.Enter += inventory_search_Enter;
+            inventory_search.Leave += inventory_search_Leave;
             // 
             // inventorysadd_button
             // 
@@ -268,6 +271,7 @@
             inventorysadd_button.TabIndex = 4;
             inventorysadd_button.Text = "+ Add";
             inventorysadd_button.UseVisualStyleBackColor = false;
+            inventorysadd_button.Click += inventorysadd_button_Click;
             // 
             // fuelInventory_label
             // 

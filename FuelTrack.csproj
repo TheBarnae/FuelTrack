@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include=".github\copilot-instructions.md" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="iTextSharp-LGPL" Version="4.1.6" />
     <PackageReference Include="MySql.Data" Version="9.7.0" />
   </ItemGroup>
