@@ -2,14 +2,16 @@ namespace FuelTrack
 {
     public sealed class UserSession
     {
-        public UserSession(int employeeId, string username, string? fullName, string role)
+        public UserSession(int userId, int employeeId, string username, string? fullName, string role)
         {
+            UserId = userId;
             EmployeeId = employeeId;
             Username = username;
             FullName = fullName ?? string.Empty;
             Role = role;
         }
 
+        public int UserId { get; }
         public int EmployeeId { get; }
         public string Username { get; }
         public string FullName { get; }

@@ -457,6 +457,7 @@
             filter_button.TabIndex = 30;
             filter_button.Text = "Filter";
             filter_button.UseVisualStyleBackColor = false;
+            filter_button.Click += filter_button_Click;
             // 
             // Audit_Trail
             // 
@@ -487,6 +488,7 @@
             Name = "Audit_Trail";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FuelTrack — Audit_Trail";
+            Load += Audit_Trail_Load;
             menubar_AuditTrail.ResumeLayout(false);
             menubar_AuditTrail.PerformLayout();
             AuditTrail_panel.ResumeLayout(false);

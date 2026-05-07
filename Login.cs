@@ -99,6 +99,11 @@ namespace FuelTrack
                 MessageBox.Show("Login succeeded, but attendance could not be recorded.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
+            if (!InsertAuditLog(userSession.UserId, "Auth", "Login", $"{userSession.DisplayName} logged in."))
+            {
+                MessageBox.Show("Login succeeded, but audit log could not be recorded.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
             SessionContext.SetUser(userSession);
 
             MainForm main = new MainForm();
@@ -108,7 +113,8 @@ namespace FuelTrack
 
         private UserSession? AuthenticateUser(string username, string password)
         {
-            const string query = @"SELECT e.employee_id,
+            const string query = @"SELECT u.user_id,
+                   e.employee_id,
                    u.username,
                    u.full_name,
                    u.role
@@ -133,6 +139,7 @@ namespace FuelTrack
                     return null;
                 }
 
+                var userId = reader.GetInt32("user_id");
                 var employeeId = reader.GetInt32("employee_id");
                 var dbUsername = reader.GetString("username");
                 var fullName = reader.IsDBNull(reader.GetOrdinal("full_name"))
@@ -140,7 +147,7 @@ namespace FuelTrack
                     : reader.GetString("full_name");
                 var role = reader.GetString("role");
 
-                return new UserSession(employeeId, dbUsername, fullName, role);
+                return new UserSession(userId, employeeId, dbUsername, fullName, role);
             }
             catch (Exception ex)
             {
@@ -166,6 +173,30 @@ namespace FuelTrack
             catch (Exception ex)
             {
                 MessageBox.Show($"Error while saving attendance: {ex.Message}", "Attendance", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
+        private bool InsertAuditLog(int userId, string module, string actionType, string description)
+        {
+            const string query = @"INSERT INTO audit_trail (user_id, module, action_type, description, action_date)
+VALUES (@user_id, @module, @action_type, @description, @action_date);";
+
+            try
+            {
+                using var connection = _database.GetConnection();
+                using var command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@user_id", userId);
+                command.Parameters.AddWithValue("@module", module);
+                command.Parameters.AddWithValue("@action_type", actionType);
+                command.Parameters.AddWithValue("@description", description);
+                command.Parameters.AddWithValue("@action_date", DateTime.Now);
+
+                connection.Open();
+                return command.ExecuteNonQuery() == 1;
+            }
+            catch
+            {
                 return false;
             }
         }
