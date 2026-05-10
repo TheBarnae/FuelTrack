@@ -127,7 +127,7 @@
             menubar_Suppliers.ForeColor = Color.White;
             menubar_Suppliers.Location = new Point(0, 37);
             menubar_Suppliers.Name = "menubar_Suppliers";
-            menubar_Suppliers.Size = new Size(163, 648);
+            menubar_Suppliers.Size = new Size(168, 733);
             menubar_Suppliers.TabIndex = 3;
             // 
             // logout_btn
@@ -136,7 +136,8 @@
             logout_btn.BackgroundImageLayout = ImageLayout.None;
             logout_btn.FlatAppearance.BorderSize = 0;
             logout_btn.FlatStyle = FlatStyle.Flat;
-            logout_btn.Location = new Point(12, 444);
+            logout_btn.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            logout_btn.Location = new Point(12, 680);
             logout_btn.Name = "logout_btn";
             logout_btn.Size = new Size(135, 30);
             logout_btn.TabIndex = 12;
@@ -149,7 +150,7 @@
             audit_btn.FlatAppearance.BorderSize = 0;
             audit_btn.FlatStyle = FlatStyle.Flat;
             audit_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            audit_btn.Location = new Point(0, 385);
+            audit_btn.Location = new Point(0, 555);
             audit_btn.Name = "audit_btn";
             audit_btn.Size = new Size(163, 33);
             audit_btn.TabIndex = 11;
@@ -162,7 +163,7 @@
             reports_Btn.FlatAppearance.BorderSize = 0;
             reports_Btn.FlatStyle = FlatStyle.Flat;
             reports_Btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            reports_Btn.Location = new Point(0, 346);
+            reports_Btn.Location = new Point(3, 506);
             reports_Btn.Name = "reports_Btn";
             reports_Btn.Size = new Size(163, 33);
             reports_Btn.TabIndex = 10;
@@ -174,11 +175,11 @@
             rprt_label.AutoSize = true;
             rprt_label.BackColor = Color.Transparent;
             rprt_label.FlatStyle = FlatStyle.Flat;
-            rprt_label.Font = new Font("Segoe UI", 6F, FontStyle.Bold);
+            rprt_label.Font = new Font("Segoe UI", 9F);
             rprt_label.ForeColor = Color.White;
-            rprt_label.Location = new Point(3, 332);
+            rprt_label.Location = new Point(6, 474);
             rprt_label.Name = "rprt_label";
-            rprt_label.Size = new Size(39, 11);
+            rprt_label.Size = new Size(54, 15);
             rprt_label.TabIndex = 9;
             rprt_label.Text = "REPORTS";
             // 
@@ -186,12 +187,12 @@
             // 
             richTextBox1.BackColor = Color.Maroon;
             richTextBox1.BorderStyle = BorderStyle.None;
-            richTextBox1.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            richTextBox1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             richTextBox1.ForeColor = Color.White;
             richTextBox1.Location = new Point(37, 37);
             richTextBox1.Name = "richTextBox1";
             richTextBox1.ScrollBars = RichTextBoxScrollBars.None;
-            richTextBox1.Size = new Size(100, 32);
+            richTextBox1.Size = new Size(131, 32);
             richTextBox1.TabIndex = 8;
             richTextBox1.Text = "FuelTrack";
             // 
@@ -201,7 +202,7 @@
             employee_btn.FlatAppearance.BorderSize = 0;
             employee_btn.FlatStyle = FlatStyle.Flat;
             employee_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            employee_btn.Location = new Point(0, 237);
+            employee_btn.Location = new Point(-2, 357);
             employee_btn.Name = "employee_btn";
             employee_btn.Size = new Size(163, 33);
             employee_btn.TabIndex = 7;
@@ -214,7 +215,7 @@
             suplier_btn.FlatAppearance.BorderSize = 0;
             suplier_btn.FlatStyle = FlatStyle.Flat;
             suplier_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            suplier_btn.Location = new Point(0, 276);
+            suplier_btn.Location = new Point(-2, 401);
             suplier_btn.Name = "suplier_btn";
             suplier_btn.Size = new Size(163, 33);
             suplier_btn.TabIndex = 6;
@@ -226,11 +227,11 @@
             manage_btn.AutoSize = true;
             manage_btn.BackColor = Color.Transparent;
             manage_btn.FlatStyle = FlatStyle.Flat;
-            manage_btn.Font = new Font("Segoe UI", 6F, FontStyle.Bold);
+            manage_btn.Font = new Font("Segoe UI", 9F);
             manage_btn.ForeColor = Color.White;
-            manage_btn.Location = new Point(3, 223);
+            manage_btn.Location = new Point(6, 327);
             manage_btn.Name = "manage_btn";
-            manage_btn.Size = new Size(41, 11);
+            manage_btn.Size = new Size(57, 15);
             manage_btn.TabIndex = 5;
             manage_btn.Text = "MANAGE";
             // 
@@ -240,7 +241,7 @@
             trans_btn.FlatAppearance.BorderSize = 0;
             trans_btn.FlatStyle = FlatStyle.Flat;
             trans_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            trans_btn.Location = new Point(0, 178);
+            trans_btn.Location = new Point(3, 245);
             trans_btn.Name = "trans_btn";
             trans_btn.Size = new Size(163, 33);
             trans_btn.TabIndex = 4;
@@ -252,11 +253,11 @@
             main_label_menu.AutoSize = true;
             main_label_menu.BackColor = Color.Transparent;
             main_label_menu.FlatStyle = FlatStyle.Flat;
-            main_label_menu.Font = new Font("Segoe UI", 6F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            main_label_menu.Font = new Font("Segoe UI", 9F);
             main_label_menu.ForeColor = Color.White;
-            main_label_menu.Location = new Point(3, 85);
+            main_label_menu.Location = new Point(12, 119);
             main_label_menu.Name = "main_label_menu";
-            main_label_menu.Size = new Size(28, 11);
+            main_label_menu.Size = new Size(38, 15);
             main_label_menu.TabIndex = 3;
             main_label_menu.Text = "MAIN";
             // 
@@ -266,7 +267,7 @@
             inv_btn.FlatAppearance.BorderSize = 0;
             inv_btn.FlatStyle = FlatStyle.Flat;
             inv_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            inv_btn.Location = new Point(0, 139);
+            inv_btn.Location = new Point(0, 197);
             inv_btn.Name = "inv_btn";
             inv_btn.Size = new Size(163, 33);
             inv_btn.TabIndex = 2;
@@ -279,7 +280,7 @@
             dashboard_btn.FlatAppearance.BorderSize = 0;
             dashboard_btn.FlatStyle = FlatStyle.Flat;
             dashboard_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dashboard_btn.Location = new Point(-3, 102);
+            dashboard_btn.Location = new Point(2, 150);
             dashboard_btn.Name = "dashboard_btn";
             dashboard_btn.Size = new Size(163, 33);
             dashboard_btn.TabIndex = 0;
@@ -310,7 +311,7 @@
             // alert_label
             // 
             alert_label.AutoSize = true;
-            alert_label.Location = new Point(740, 22);
+            alert_label.Location = new Point(778, 22);
             alert_label.Name = "alert_label";
             alert_label.Size = new Size(65, 15);
             alert_label.TabIndex = 3;
@@ -320,7 +321,7 @@
             // 
             usr_avatar.BackColor = SystemColors.ControlDark;
             usr_avatar.BackgroundImageLayout = ImageLayout.None;
-            usr_avatar.Location = new Point(811, 11);
+            usr_avatar.Location = new Point(853, 9);
             usr_avatar.Name = "usr_avatar";
             usr_avatar.Size = new Size(38, 38);
             usr_avatar.SizeMode = PictureBoxSizeMode.Zoom;
@@ -330,7 +331,7 @@
             // role_label
             // 
             role_label.AutoSize = true;
-            role_label.Location = new Point(858, 22);
+            role_label.Location = new Point(900, 22);
             role_label.Name = "role_label";
             role_label.Size = new Size(55, 15);
             role_label.TabIndex = 1;
@@ -348,18 +349,18 @@
             // Employees_label
             // 
             Employees_label.AutoSize = true;
-            Employees_label.Font = new Font("Segoe UI", 15.75F);
-            Employees_label.Location = new Point(180, 63);
+            Employees_label.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Employees_label.Location = new Point(198, 99);
             Employees_label.Name = "Employees_label";
-            Employees_label.Size = new Size(97, 30);
+            Employees_label.Size = new Size(100, 30);
             Employees_label.TabIndex = 5;
             Employees_label.Text = "Suppliers";
             // 
             // supplier_textBox
             // 
-            supplier_textBox.Location = new Point(641, 69);
+            supplier_textBox.Location = new Point(572, 99);
             supplier_textBox.Name = "supplier_textBox";
-            supplier_textBox.Size = new Size(153, 23);
+            supplier_textBox.Size = new Size(252, 23);
             supplier_textBox.TabIndex = 6;
             supplier_textBox.Text = "Search...";
             supplier_textBox.TextChanged += textBox1_TextChanged;
@@ -368,11 +369,13 @@
             // 
             // addsupplier_button
             // 
-            addsupplier_button.BackColor = Color.Maroon;
+            addsupplier_button.BackColor = Color.FromArgb(153, 33, 0);
+            addsupplier_button.BackgroundImageLayout = ImageLayout.None;
+            addsupplier_button.FlatStyle = FlatStyle.Popup;
             addsupplier_button.ForeColor = SystemColors.ControlLightLight;
-            addsupplier_button.Location = new Point(800, 66);
+            addsupplier_button.Location = new Point(832, 93);
             addsupplier_button.Name = "addsupplier_button";
-            addsupplier_button.Size = new Size(115, 26);
+            addsupplier_button.Size = new Size(118, 32);
             addsupplier_button.TabIndex = 9;
             addsupplier_button.Text = "+ Add Supplier";
             addsupplier_button.UseVisualStyleBackColor = false;
@@ -380,47 +383,53 @@
             // supplierdata_dataGridView
             // 
             supplierdata_dataGridView.BackgroundColor = SystemColors.ControlLightLight;
+            supplierdata_dataGridView.BorderStyle = BorderStyle.None;
             supplierdata_dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            supplierdata_dataGridView.Location = new Point(180, 174);
+            supplierdata_dataGridView.Location = new Point(198, 250);
             supplierdata_dataGridView.Name = "supplierdata_dataGridView";
-            supplierdata_dataGridView.Size = new Size(700, 113);
+            supplierdata_dataGridView.Size = new Size(752, 107);
             supplierdata_dataGridView.TabIndex = 13;
             supplierdata_dataGridView.SelectionChanged += supplierdata_dataGridView_SelectionChanged;
             // 
             // addeditsupplier_dataGridView
             // 
             addeditsupplier_dataGridView.BackgroundColor = SystemColors.ControlLightLight;
+            addeditsupplier_dataGridView.BorderStyle = BorderStyle.None;
             addeditsupplier_dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            addeditsupplier_dataGridView.Location = new Point(180, 292);
+            addeditsupplier_dataGridView.Location = new Point(586, 375);
             addeditsupplier_dataGridView.Name = "addeditsupplier_dataGridView";
-            addeditsupplier_dataGridView.Size = new Size(351, 198);
+            addeditsupplier_dataGridView.Size = new Size(364, 246);
             addeditsupplier_dataGridView.TabIndex = 14;
             // 
             // recorddelivery_dataGridView
             // 
             recorddelivery_dataGridView.BackgroundColor = SystemColors.ControlLightLight;
+            recorddelivery_dataGridView.BorderStyle = BorderStyle.None;
+            recorddelivery_dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.None;
             recorddelivery_dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            recorddelivery_dataGridView.Location = new Point(537, 292);
+            recorddelivery_dataGridView.Location = new Point(198, 375);
             recorddelivery_dataGridView.Name = "recorddelivery_dataGridView";
-            recorddelivery_dataGridView.Size = new Size(343, 198);
+            recorddelivery_dataGridView.Size = new Size(371, 246);
             recorddelivery_dataGridView.TabIndex = 15;
             // 
             // deliveryhistory_dataGridView
             // 
             deliveryhistory_dataGridView.BackgroundColor = SystemColors.ControlLightLight;
+            deliveryhistory_dataGridView.BorderStyle = BorderStyle.None;
             deliveryhistory_dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            deliveryhistory_dataGridView.Location = new Point(180, 495);
+            deliveryhistory_dataGridView.Location = new Point(198, 638);
             deliveryhistory_dataGridView.Name = "deliveryhistory_dataGridView";
-            deliveryhistory_dataGridView.Size = new Size(700, 103);
+            deliveryhistory_dataGridView.Size = new Size(752, 118);
             deliveryhistory_dataGridView.TabIndex = 16;
             // 
             // add_label
             // 
             add_label.AutoSize = true;
             add_label.BackColor = SystemColors.ControlLightLight;
-            add_label.Location = new Point(190, 300);
+            add_label.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            add_label.Location = new Point(218, 386);
             add_label.Name = "add_label";
-            add_label.Size = new Size(106, 15);
+            add_label.Size = new Size(138, 20);
             add_label.TabIndex = 17;
             add_label.Text = "Add / Edit Supplier";
             add_label.Click += add_label_Click;
@@ -429,9 +438,10 @@
             // 
             recorddelivery_label.AutoSize = true;
             recorddelivery_label.BackColor = SystemColors.ControlLightLight;
-            recorddelivery_label.Location = new Point(550, 300);
+            recorddelivery_label.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
+            recorddelivery_label.Location = new Point(593, 386);
             recorddelivery_label.Name = "recorddelivery_label";
-            recorddelivery_label.Size = new Size(89, 15);
+            recorddelivery_label.Size = new Size(119, 20);
             recorddelivery_label.TabIndex = 18;
             recorddelivery_label.Text = "Record Delivery";
             // 
@@ -439,7 +449,7 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = SystemColors.ControlLightLight;
-            label2.Location = new Point(190, 323);
+            label2.Location = new Point(215, 424);
             label2.Name = "label2";
             label2.Size = new Size(85, 15);
             label2.TabIndex = 19;
@@ -448,7 +458,7 @@
             // 
             // suppliername_textBox
             // 
-            suppliername_textBox.Location = new Point(190, 341);
+            suppliername_textBox.Location = new Point(214, 442);
             suppliername_textBox.Name = "suppliername_textBox";
             suppliername_textBox.Size = new Size(119, 23);
             suppliername_textBox.TabIndex = 20;
@@ -457,7 +467,7 @@
             // 
             phonenumber_label.AutoSize = true;
             phonenumber_label.BackColor = SystemColors.ControlLightLight;
-            phonenumber_label.Location = new Point(190, 365);
+            phonenumber_label.Location = new Point(215, 468);
             phonenumber_label.Name = "phonenumber_label";
             phonenumber_label.Size = new Size(88, 15);
             phonenumber_label.TabIndex = 21;
@@ -466,7 +476,7 @@
             // 
             // phonenumber_textBox
             // 
-            phonenumber_textBox.Location = new Point(190, 383);
+            phonenumber_textBox.Location = new Point(214, 486);
             phonenumber_textBox.Name = "phonenumber_textBox";
             phonenumber_textBox.Size = new Size(119, 23);
             phonenumber_textBox.TabIndex = 22;
@@ -475,7 +485,7 @@
             // 
             contactperson_label.AutoSize = true;
             contactperson_label.BackColor = SystemColors.ControlLightLight;
-            contactperson_label.Location = new Point(315, 323);
+            contactperson_label.Location = new Point(339, 424);
             contactperson_label.Name = "contactperson_label";
             contactperson_label.Size = new Size(88, 15);
             contactperson_label.TabIndex = 23;
@@ -483,7 +493,7 @@
             // 
             // contactperson_textBox
             // 
-            contactperson_textBox.Location = new Point(315, 341);
+            contactperson_textBox.Location = new Point(343, 442);
             contactperson_textBox.Name = "contactperson_textBox";
             contactperson_textBox.Size = new Size(119, 23);
             contactperson_textBox.TabIndex = 24;
@@ -492,7 +502,7 @@
             // 
             email_label.AutoSize = true;
             email_label.BackColor = SystemColors.ControlLightLight;
-            email_label.Location = new Point(315, 365);
+            email_label.Location = new Point(343, 468);
             email_label.Name = "email_label";
             email_label.Size = new Size(36, 15);
             email_label.TabIndex = 25;
@@ -500,7 +510,7 @@
             // 
             // email_textBox
             // 
-            email_textBox.Location = new Point(315, 383);
+            email_textBox.Location = new Point(343, 485);
             email_textBox.Name = "email_textBox";
             email_textBox.Size = new Size(119, 23);
             email_textBox.TabIndex = 26;
@@ -509,7 +519,7 @@
             // 
             fueltypesupplied_label.AutoSize = true;
             fueltypesupplied_label.BackColor = SystemColors.ControlLightLight;
-            fueltypesupplied_label.Location = new Point(190, 408);
+            fueltypesupplied_label.Location = new Point(214, 517);
             fueltypesupplied_label.Name = "fueltypesupplied_label";
             fueltypesupplied_label.Size = new Size(105, 15);
             fueltypesupplied_label.TabIndex = 27;
@@ -519,7 +529,7 @@
             // 
             status_label.AutoSize = true;
             status_label.BackColor = SystemColors.ControlLightLight;
-            status_label.Location = new Point(315, 408);
+            status_label.Location = new Point(343, 517);
             status_label.Name = "status_label";
             status_label.Size = new Size(39, 15);
             status_label.TabIndex = 28;
@@ -528,7 +538,7 @@
             // fueltypesupplied_comboBox
             // 
             fueltypesupplied_comboBox.FormattingEnabled = true;
-            fueltypesupplied_comboBox.Location = new Point(190, 425);
+            fueltypesupplied_comboBox.Location = new Point(214, 535);
             fueltypesupplied_comboBox.Name = "fueltypesupplied_comboBox";
             fueltypesupplied_comboBox.Size = new Size(121, 23);
             fueltypesupplied_comboBox.TabIndex = 29;
@@ -536,7 +546,7 @@
             // status_comboBox
             // 
             status_comboBox.FormattingEnabled = true;
-            status_comboBox.Location = new Point(313, 425);
+            status_comboBox.Location = new Point(343, 535);
             status_comboBox.Name = "status_comboBox";
             status_comboBox.Size = new Size(121, 23);
             status_comboBox.TabIndex = 30;
@@ -545,7 +555,7 @@
             // 
             address_label.AutoSize = true;
             address_label.BackColor = SystemColors.ControlLightLight;
-            address_label.Location = new Point(190, 450);
+            address_label.Location = new Point(218, 564);
             address_label.Name = "address_label";
             address_label.Size = new Size(49, 15);
             address_label.TabIndex = 31;
@@ -553,7 +563,7 @@
             // 
             // address_textBox
             // 
-            address_textBox.Location = new Point(190, 468);
+            address_textBox.Location = new Point(218, 582);
             address_textBox.Name = "address_textBox";
             address_textBox.Size = new Size(244, 23);
             address_textBox.TabIndex = 32;
@@ -561,37 +571,47 @@
             // 
             // savesupplier_button
             // 
-            savesupplier_button.Location = new Point(445, 342);
+            savesupplier_button.BackColor = Color.FromArgb(243, 113, 0);
+            savesupplier_button.FlatStyle = FlatStyle.Popup;
+            savesupplier_button.ForeColor = Color.White;
+            savesupplier_button.Location = new Point(473, 437);
             savesupplier_button.Name = "savesupplier_button";
-            savesupplier_button.Size = new Size(75, 20);
+            savesupplier_button.Size = new Size(75, 27);
             savesupplier_button.TabIndex = 33;
             savesupplier_button.Text = "Save Supplier";
-            savesupplier_button.UseVisualStyleBackColor = true;
+            savesupplier_button.UseVisualStyleBackColor = false;
             savesupplier_button.Click += button1_Click;
             // 
             // clearsupplier_button
             // 
-            clearsupplier_button.Location = new Point(445, 383);
+            clearsupplier_button.BackColor = Color.FromArgb(221, 152, 34);
+            clearsupplier_button.BackgroundImageLayout = ImageLayout.None;
+            clearsupplier_button.FlatStyle = FlatStyle.Popup;
+            clearsupplier_button.ForeColor = Color.White;
+            clearsupplier_button.Location = new Point(473, 483);
             clearsupplier_button.Name = "clearsupplier_button";
-            clearsupplier_button.Size = new Size(75, 20);
+            clearsupplier_button.Size = new Size(75, 27);
             clearsupplier_button.TabIndex = 34;
             clearsupplier_button.Text = "Clear";
-            clearsupplier_button.UseVisualStyleBackColor = true;
+            clearsupplier_button.UseVisualStyleBackColor = false;
             // 
             // deletesupplier_button
             // 
-            deletesupplier_button.Location = new Point(445, 422);
+            deletesupplier_button.BackColor = Color.Maroon;
+            deletesupplier_button.FlatStyle = FlatStyle.Popup;
+            deletesupplier_button.ForeColor = Color.White;
+            deletesupplier_button.Location = new Point(473, 531);
             deletesupplier_button.Name = "deletesupplier_button";
-            deletesupplier_button.Size = new Size(75, 20);
+            deletesupplier_button.Size = new Size(75, 27);
             deletesupplier_button.TabIndex = 35;
             deletesupplier_button.Text = "Delete";
-            deletesupplier_button.UseVisualStyleBackColor = true;
+            deletesupplier_button.UseVisualStyleBackColor = false;
             // 
             // supplier_label
             // 
             supplier_label.AutoSize = true;
             supplier_label.BackColor = SystemColors.ControlLightLight;
-            supplier_label.Location = new Point(550, 323);
+            supplier_label.Location = new Point(595, 411);
             supplier_label.Name = "supplier_label";
             supplier_label.Size = new Size(50, 15);
             supplier_label.TabIndex = 36;
@@ -601,7 +621,7 @@
             // supplier_comboBox
             // 
             supplier_comboBox.FormattingEnabled = true;
-            supplier_comboBox.Location = new Point(550, 341);
+            supplier_comboBox.Location = new Point(593, 430);
             supplier_comboBox.Name = "supplier_comboBox";
             supplier_comboBox.Size = new Size(121, 23);
             supplier_comboBox.TabIndex = 37;
@@ -610,7 +630,7 @@
             // 
             fueltype_label.AutoSize = true;
             fueltype_label.BackColor = SystemColors.ControlLightLight;
-            fueltype_label.Location = new Point(677, 323);
+            fueltype_label.Location = new Point(729, 413);
             fueltype_label.Name = "fueltype_label";
             fueltype_label.Size = new Size(56, 15);
             fueltype_label.TabIndex = 38;
@@ -619,7 +639,7 @@
             // fueltype_comboBox
             // 
             fueltype_comboBox.FormattingEnabled = true;
-            fueltype_comboBox.Location = new Point(677, 341);
+            fueltype_comboBox.Location = new Point(729, 431);
             fueltype_comboBox.Name = "fueltype_comboBox";
             fueltype_comboBox.Size = new Size(121, 23);
             fueltype_comboBox.TabIndex = 39;
@@ -628,7 +648,7 @@
             // 
             volumeddelivered_label.AutoSize = true;
             volumeddelivered_label.BackColor = SystemColors.ControlLightLight;
-            volumeddelivered_label.Location = new Point(550, 365);
+            volumeddelivered_label.Location = new Point(595, 467);
             volumeddelivered_label.Name = "volumeddelivered_label";
             volumeddelivered_label.Size = new Size(110, 15);
             volumeddelivered_label.TabIndex = 40;
@@ -636,7 +656,7 @@
             // 
             // volumeddeliveried_textBox
             // 
-            volumeddeliveried_textBox.Location = new Point(550, 386);
+            volumeddeliveried_textBox.Location = new Point(595, 485);
             volumeddeliveried_textBox.Name = "volumeddeliveried_textBox";
             volumeddeliveried_textBox.Size = new Size(119, 23);
             volumeddeliveried_textBox.TabIndex = 41;
@@ -645,7 +665,7 @@
             // 
             priceperliter_label.AutoSize = true;
             priceperliter_label.BackColor = SystemColors.ControlLightLight;
-            priceperliter_label.Location = new Point(677, 369);
+            priceperliter_label.Location = new Point(731, 467);
             priceperliter_label.Name = "priceperliter_label";
             priceperliter_label.Size = new Size(97, 15);
             priceperliter_label.TabIndex = 42;
@@ -653,16 +673,16 @@
             // 
             // priceperliter_textBox
             // 
-            priceperliter_textBox.Location = new Point(675, 386);
+            priceperliter_textBox.Location = new Point(731, 485);
             priceperliter_textBox.Name = "priceperliter_textBox";
-            priceperliter_textBox.Size = new Size(119, 23);
+            priceperliter_textBox.Size = new Size(121, 23);
             priceperliter_textBox.TabIndex = 43;
             // 
             // deliverydate_label
             // 
             deliverydate_label.AutoSize = true;
             deliverydate_label.BackColor = SystemColors.ControlLightLight;
-            deliverydate_label.Location = new Point(550, 411);
+            deliverydate_label.Location = new Point(606, 517);
             deliverydate_label.Name = "deliverydate_label";
             deliverydate_label.Size = new Size(76, 15);
             deliverydate_label.TabIndex = 44;
@@ -672,7 +692,7 @@
             // 
             invoicenum_label.AutoSize = true;
             invoicenum_label.BackColor = SystemColors.ControlLightLight;
-            invoicenum_label.Location = new Point(677, 411);
+            invoicenum_label.Location = new Point(731, 517);
             invoicenum_label.Name = "invoicenum_label";
             invoicenum_label.Size = new Size(93, 15);
             invoicenum_label.TabIndex = 46;
@@ -680,7 +700,7 @@
             // 
             // invoicenum_textBox
             // 
-            invoicenum_textBox.Location = new Point(675, 429);
+            invoicenum_textBox.Location = new Point(731, 535);
             invoicenum_textBox.Name = "invoicenum_textBox";
             invoicenum_textBox.Size = new Size(119, 23);
             invoicenum_textBox.TabIndex = 47;
@@ -689,7 +709,7 @@
             // 
             remarks_label.AutoSize = true;
             remarks_label.BackColor = SystemColors.ControlLightLight;
-            remarks_label.Location = new Point(550, 454);
+            remarks_label.Location = new Point(606, 564);
             remarks_label.Name = "remarks_label";
             remarks_label.Size = new Size(52, 15);
             remarks_label.TabIndex = 48;
@@ -697,35 +717,42 @@
             // 
             // remarks_textBox
             // 
-            remarks_textBox.Location = new Point(550, 468);
+            remarks_textBox.Location = new Point(595, 582);
             remarks_textBox.Name = "remarks_textBox";
-            remarks_textBox.Size = new Size(244, 23);
+            remarks_textBox.Size = new Size(255, 23);
             remarks_textBox.TabIndex = 49;
             remarks_textBox.Text = "Optional Notes...";
+            remarks_textBox.TextChanged += remarks_textBox_TextChanged;
             // 
             // confirmdelivery_button
             // 
-            confirmdelivery_button.Location = new Point(804, 358);
+            confirmdelivery_button.BackColor = Color.FromArgb(243, 113, 0);
+            confirmdelivery_button.FlatStyle = FlatStyle.Popup;
+            confirmdelivery_button.ForeColor = Color.White;
+            confirmdelivery_button.Location = new Point(869, 431);
             confirmdelivery_button.Name = "confirmdelivery_button";
-            confirmdelivery_button.Size = new Size(63, 20);
+            confirmdelivery_button.Size = new Size(67, 42);
             confirmdelivery_button.TabIndex = 50;
             confirmdelivery_button.Text = "Confirm Delivery";
-            confirmdelivery_button.UseVisualStyleBackColor = true;
+            confirmdelivery_button.UseVisualStyleBackColor = false;
             confirmdelivery_button.Click += confirmdelivery_button_Click;
             // 
             // canceldelivery_button
             // 
-            canceldelivery_button.Location = new Point(804, 395);
+            canceldelivery_button.BackColor = Color.FromArgb(221, 152, 34);
+            canceldelivery_button.FlatStyle = FlatStyle.Popup;
+            canceldelivery_button.ForeColor = Color.White;
+            canceldelivery_button.Location = new Point(869, 486);
             canceldelivery_button.Name = "canceldelivery_button";
-            canceldelivery_button.Size = new Size(63, 20);
+            canceldelivery_button.Size = new Size(67, 35);
             canceldelivery_button.TabIndex = 51;
             canceldelivery_button.Text = "Cancel";
-            canceldelivery_button.UseVisualStyleBackColor = true;
+            canceldelivery_button.UseVisualStyleBackColor = false;
             canceldelivery_button.Click += canceldelivery_button_Click;
             // 
             // deliverydate_dateTimePicker
             // 
-            deliverydate_dateTimePicker.Location = new Point(550, 429);
+            deliverydate_dateTimePicker.Location = new Point(595, 535);
             deliverydate_dateTimePicker.Name = "deliverydate_dateTimePicker";
             deliverydate_dateTimePicker.Size = new Size(119, 23);
             deliverydate_dateTimePicker.TabIndex = 52;
@@ -734,67 +761,68 @@
             // 
             deliveryhistory_label.AutoSize = true;
             deliveryhistory_label.BackColor = SystemColors.ControlLightLight;
-            deliveryhistory_label.Location = new Point(186, 504);
+            deliveryhistory_label.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
+            deliveryhistory_label.Location = new Point(218, 656);
             deliveryhistory_label.Name = "deliveryhistory_label";
-            deliveryhistory_label.Size = new Size(90, 15);
+            deliveryhistory_label.Size = new Size(121, 20);
             deliveryhistory_label.TabIndex = 53;
             deliveryhistory_label.Text = "Delivery History";
             deliveryhistory_label.Click += label16_Click;
             // 
             // total_suppliers_pnl
             // 
-            total_suppliers_pnl.BackColor = SystemColors.AppWorkspace;
+            total_suppliers_pnl.BackColor = Color.FromArgb(245, 237, 225);
             total_suppliers_pnl.Controls.Add(total_supp_label);
-            total_suppliers_pnl.Location = new Point(180, 96);
+            total_suppliers_pnl.Location = new Point(198, 136);
             total_suppliers_pnl.Name = "total_suppliers_pnl";
-            total_suppliers_pnl.Size = new Size(200, 74);
+            total_suppliers_pnl.Size = new Size(229, 98);
             total_suppliers_pnl.TabIndex = 54;
             // 
             // total_supp_label
             // 
             total_supp_label.AutoSize = true;
-            total_supp_label.Font = new Font("Segoe UI", 10F);
+            total_supp_label.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
             total_supp_label.Location = new Point(6, 9);
             total_supp_label.Name = "total_supp_label";
-            total_supp_label.Size = new Size(97, 19);
+            total_supp_label.Size = new Size(109, 20);
             total_supp_label.TabIndex = 0;
             total_supp_label.Text = "Total Suppliers";
             // 
             // active_contracts_pnl
             // 
-            active_contracts_pnl.BackColor = SystemColors.AppWorkspace;
+            active_contracts_pnl.BackColor = Color.FromArgb(245, 237, 225);
             active_contracts_pnl.Controls.Add(active_label);
-            active_contracts_pnl.Location = new Point(426, 94);
+            active_contracts_pnl.Location = new Point(462, 136);
             active_contracts_pnl.Name = "active_contracts_pnl";
-            active_contracts_pnl.Size = new Size(200, 74);
+            active_contracts_pnl.Size = new Size(229, 98);
             active_contracts_pnl.TabIndex = 55;
             // 
             // active_label
             // 
             active_label.AutoSize = true;
-            active_label.Font = new Font("Segoe UI", 10F);
+            active_label.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
             active_label.Location = new Point(11, 11);
             active_label.Name = "active_label";
-            active_label.Size = new Size(109, 19);
+            active_label.Size = new Size(119, 20);
             active_label.TabIndex = 1;
             active_label.Text = "Active Contracts";
             // 
             // pending_deliver_pnl
             // 
-            pending_deliver_pnl.BackColor = SystemColors.AppWorkspace;
+            pending_deliver_pnl.BackColor = Color.FromArgb(245, 237, 225);
             pending_deliver_pnl.Controls.Add(pending_label);
-            pending_deliver_pnl.Location = new Point(680, 94);
+            pending_deliver_pnl.Location = new Point(721, 136);
             pending_deliver_pnl.Name = "pending_deliver_pnl";
-            pending_deliver_pnl.Size = new Size(200, 74);
+            pending_deliver_pnl.Size = new Size(229, 98);
             pending_deliver_pnl.TabIndex = 55;
             // 
             // pending_label
             // 
             pending_label.AutoSize = true;
-            pending_label.Font = new Font("Segoe UI", 10F);
+            pending_label.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
             pending_label.Location = new Point(11, 11);
             pending_label.Name = "pending_label";
-            pending_label.Size = new Size(120, 19);
+            pending_label.Size = new Size(136, 20);
             pending_label.TabIndex = 1;
             pending_label.Text = "Pending Deliveries";
             // 
@@ -802,11 +830,13 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(927, 601);
+            BackColor = Color.FromArgb(224, 224, 224);
+            ClientSize = new Size(979, 768);
             Controls.Add(pending_deliver_pnl);
             Controls.Add(active_contracts_pnl);
             Controls.Add(total_suppliers_pnl);
             Controls.Add(deliveryhistory_label);
+            Controls.Add(Employees_label);
             Controls.Add(deliverydate_dateTimePicker);
             Controls.Add(canceldelivery_button);
             Controls.Add(confirmdelivery_button);
@@ -848,7 +878,6 @@
             Controls.Add(supplierdata_dataGridView);
             Controls.Add(addsupplier_button);
             Controls.Add(supplier_textBox);
-            Controls.Add(Employees_label);
             Controls.Add(Suppliers_panel);
             Controls.Add(menubar_Suppliers);
             FormBorderStyle = FormBorderStyle.None;

@@ -472,5 +472,10 @@ VALUES (@supplier_id, @fuel_type_id, @dr_number, @volume_liters, @delivery_date,
         {
             ClearDeliveryFields();
         }
+
+        private void remarks_textBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

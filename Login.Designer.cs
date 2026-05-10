@@ -36,13 +36,13 @@
             user_txtbox = new TextBox();
             pass_txtbox = new TextBox();
             password_toggle = new PictureBox();
-            pictureBox1 = new PictureBox();
+            login_pic = new PictureBox();
             leftpanel_login = new Panel();
-            label1 = new Label();
+            welcomelbl = new Label();
             panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)FuelTrack_Logo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)password_toggle).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)login_pic).BeginInit();
             leftpanel_login.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -129,37 +129,37 @@
             password_toggle.TabStop = false;
             password_toggle.Click += password_toggle_Click;
             // 
-            // pictureBox1
+            // login_pic
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(-44, 127);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(547, 377);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 9;
-            pictureBox1.TabStop = false;
+            login_pic.Image = (Image)resources.GetObject("login_pic.Image");
+            login_pic.Location = new Point(-30, 122);
+            login_pic.Name = "login_pic";
+            login_pic.Size = new Size(538, 367);
+            login_pic.SizeMode = PictureBoxSizeMode.StretchImage;
+            login_pic.TabIndex = 9;
+            login_pic.TabStop = false;
             // 
             // leftpanel_login
             // 
             leftpanel_login.BackColor = Color.Maroon;
-            leftpanel_login.Controls.Add(label1);
-            leftpanel_login.Controls.Add(pictureBox1);
+            leftpanel_login.Controls.Add(welcomelbl);
+            leftpanel_login.Controls.Add(login_pic);
             leftpanel_login.Location = new Point(0, -3);
             leftpanel_login.Name = "leftpanel_login";
             leftpanel_login.Size = new Size(476, 556);
             leftpanel_login.TabIndex = 10;
             leftpanel_login.Paint += panel1_Paint;
             // 
-            // label1
+            // welcomelbl
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Yu Gothic", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(90, 62);
-            label1.Name = "label1";
-            label1.Size = new Size(307, 45);
-            label1.TabIndex = 10;
-            label1.Text = "Welcome Admin!";
+            welcomelbl.AutoSize = true;
+            welcomelbl.Font = new Font("Yu Gothic", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            welcomelbl.ForeColor = Color.White;
+            welcomelbl.Location = new Point(88, 41);
+            welcomelbl.Name = "welcomelbl";
+            welcomelbl.Size = new Size(307, 45);
+            welcomelbl.TabIndex = 10;
+            welcomelbl.Text = "Welcome Admin!";
             // 
             // panel1
             // 
@@ -192,7 +192,7 @@
             Text = "FuelTrack — Login";
             ((System.ComponentModel.ISupportInitialize)FuelTrack_Logo).EndInit();
             ((System.ComponentModel.ISupportInitialize)password_toggle).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)login_pic).EndInit();
             leftpanel_login.ResumeLayout(false);
             leftpanel_login.PerformLayout();
             panel1.ResumeLayout(false);
@@ -209,9 +209,9 @@
         private TextBox user_txtbox;
         private TextBox pass_txtbox;
         private PictureBox password_toggle;
-        private PictureBox pictureBox1;
+        private PictureBox login_pic;
         private Panel leftpanel_login;
-        private Label label1;
+        private Label welcomelbl;
         private Panel panel1;
     }
 }

@@ -376,7 +376,7 @@
             // 
             // employeedata_dataGridView
             // 
-            employeedata_dataGridView.BackgroundColor = SystemColors.ControlLightLight;
+            employeedata_dataGridView.BackgroundColor = Color.White;
             employeedata_dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             employeedata_dataGridView.Location = new Point(194, 191);
             employeedata_dataGridView.Name = "employeedata_dataGridView";
@@ -385,7 +385,7 @@
             // 
             // addemployee_dataGridView
             // 
-            addemployee_dataGridView.BackgroundColor = SystemColors.ControlLightLight;
+            addemployee_dataGridView.BackgroundColor = Color.White;
             addemployee_dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             addemployee_dataGridView.Location = new Point(194, 363);
             addemployee_dataGridView.Name = "addemployee_dataGridView";
@@ -508,6 +508,7 @@
             // 
             // saveemployee_button
             // 
+            saveemployee_button.ForeColor = Color.White;
             saveemployee_button.Location = new Point(206, 542);
             saveemployee_button.Name = "saveemployee_button";
             saveemployee_button.Size = new Size(109, 20);
@@ -517,6 +518,7 @@
             // 
             // clear_button
             // 
+            clear_button.ForeColor = Color.White;
             clear_button.Location = new Point(321, 542);
             clear_button.Name = "clear_button";
             clear_button.Size = new Size(75, 20);
@@ -526,6 +528,7 @@
             // 
             // delete_button
             // 
+            delete_button.ForeColor = Color.White;
             delete_button.Location = new Point(402, 542);
             delete_button.Name = "delete_button";
             delete_button.Size = new Size(75, 20);

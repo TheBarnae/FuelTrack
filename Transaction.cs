@@ -32,7 +32,7 @@ namespace FuelTrack
             ConfigureMopGrid();
             LoadTransactions();
             LoadTodaySummaryStats();
-            
+
         }
 
         private void ConfigureTransactionsGrid()
@@ -151,6 +151,21 @@ namespace FuelTrack
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void transactions_panel_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void trans_db_label_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void trans_db_label_Click_1(object sender, EventArgs e)
         {
 
         }
