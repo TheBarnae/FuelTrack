@@ -36,36 +36,46 @@
             user_txtbox = new TextBox();
             pass_txtbox = new TextBox();
             password_toggle = new PictureBox();
+            pictureBox1 = new PictureBox();
+            leftpanel_login = new Panel();
+            label1 = new Label();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)FuelTrack_Logo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)password_toggle).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            leftpanel_login.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // FuelTrack_Logo
             // 
             FuelTrack_Logo.Anchor = AnchorStyles.Top;
             FuelTrack_Logo.Image = Properties.Resources.FUELTRACK_LOGO;
-            FuelTrack_Logo.Location = new Point(116, -1);
+            FuelTrack_Logo.Location = new Point(95, 38);
             FuelTrack_Logo.Name = "FuelTrack_Logo";
-            FuelTrack_Logo.Size = new Size(149, 149);
+            FuelTrack_Logo.Size = new Size(225, 223);
             FuelTrack_Logo.SizeMode = PictureBoxSizeMode.StretchImage;
             FuelTrack_Logo.TabIndex = 0;
             FuelTrack_Logo.TabStop = false;
+            FuelTrack_Logo.Click += FuelTrack_Logo_Click;
             // 
             // user_label
             // 
             user_label.AutoSize = true;
-            user_label.Location = new Point(103, 174);
+            user_label.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            user_label.Location = new Point(95, 285);
             user_label.Name = "user_label";
-            user_label.Size = new Size(60, 15);
+            user_label.Size = new Size(75, 20);
             user_label.TabIndex = 1;
             user_label.Text = "Username";
             // 
             // pass_label
             // 
             pass_label.AutoSize = true;
-            pass_label.Location = new Point(103, 229);
+            pass_label.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            pass_label.Location = new Point(95, 352);
             pass_label.Name = "pass_label";
-            pass_label.Size = new Size(57, 15);
+            pass_label.Size = new Size(70, 20);
             pass_label.TabIndex = 3;
             pass_label.Text = "Password";
             // 
@@ -73,39 +83,45 @@
             // 
             login_btn.Anchor = AnchorStyles.Bottom;
             login_btn.AutoSize = true;
+            login_btn.BackColor = Color.Maroon;
             login_btn.BackgroundImageLayout = ImageLayout.Center;
             login_btn.FlatAppearance.BorderSize = 0;
+            login_btn.Font = new Font("Segoe UI Emoji", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            login_btn.ForeColor = Color.White;
             login_btn.ImageAlign = ContentAlignment.BottomCenter;
-            login_btn.Location = new Point(150, 300);
+            login_btn.Location = new Point(95, 422);
             login_btn.Name = "login_btn";
-            login_btn.Size = new Size(83, 25);
+            login_btn.Size = new Size(225, 45);
             login_btn.TabIndex = 5;
             login_btn.Text = "LOGIN";
-            login_btn.UseVisualStyleBackColor = true;
+            login_btn.UseVisualStyleBackColor = false;
             login_btn.Click += login_btn_Click;
             // 
             // user_txtbox
             // 
+            user_txtbox.BackColor = Color.FromArgb(224, 224, 224);
             user_txtbox.BorderStyle = BorderStyle.None;
             user_txtbox.Font = new Font("Segoe UI", 12F);
-            user_txtbox.Location = new Point(103, 192);
+            user_txtbox.Location = new Point(95, 308);
             user_txtbox.Name = "user_txtbox";
-            user_txtbox.Size = new Size(179, 22);
+            user_txtbox.Size = new Size(225, 22);
             user_txtbox.TabIndex = 6;
             // 
             // pass_txtbox
             // 
+            pass_txtbox.BackColor = Color.FromArgb(224, 224, 224);
             pass_txtbox.BorderStyle = BorderStyle.None;
             pass_txtbox.Font = new Font("Segoe UI", 12F);
-            pass_txtbox.Location = new Point(103, 247);
+            pass_txtbox.Location = new Point(95, 375);
             pass_txtbox.Name = "pass_txtbox";
-            pass_txtbox.Size = new Size(179, 22);
+            pass_txtbox.Size = new Size(225, 22);
             pass_txtbox.TabIndex = 7;
             // 
             // password_toggle
             // 
+            password_toggle.BackColor = Color.Gray;
             password_toggle.Cursor = Cursors.Hand;
-            password_toggle.Location = new Point(261, 247);
+            password_toggle.Location = new Point(299, 375);
             password_toggle.Name = "password_toggle";
             password_toggle.Size = new Size(21, 21);
             password_toggle.SizeMode = PictureBoxSizeMode.Zoom;
@@ -113,29 +129,75 @@
             password_toggle.TabStop = false;
             password_toggle.Click += password_toggle_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(-44, 127);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(547, 377);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 9;
+            pictureBox1.TabStop = false;
+            // 
+            // leftpanel_login
+            // 
+            leftpanel_login.BackColor = Color.Maroon;
+            leftpanel_login.Controls.Add(label1);
+            leftpanel_login.Controls.Add(pictureBox1);
+            leftpanel_login.Location = new Point(0, -3);
+            leftpanel_login.Name = "leftpanel_login";
+            leftpanel_login.Size = new Size(476, 556);
+            leftpanel_login.TabIndex = 10;
+            leftpanel_login.Paint += panel1_Paint;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Yu Gothic", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(90, 62);
+            label1.Name = "label1";
+            label1.Size = new Size(307, 45);
+            label1.TabIndex = 10;
+            label1.Text = "Welcome Admin!";
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.White;
+            panel1.Controls.Add(FuelTrack_Logo);
+            panel1.Controls.Add(user_label);
+            panel1.Controls.Add(password_toggle);
+            panel1.Controls.Add(pass_label);
+            panel1.Controls.Add(pass_txtbox);
+            panel1.Controls.Add(login_btn);
+            panel1.Controls.Add(user_txtbox);
+            panel1.Location = new Point(475, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(407, 525);
+            panel1.TabIndex = 11;
+            // 
             // Login
             // 
+            AcceptButton = login_btn;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(385, 359);
-            Controls.Add(password_toggle);
-            Controls.Add(pass_txtbox);
-            Controls.Add(user_txtbox);
-            Controls.Add(login_btn);
-            Controls.Add(pass_label);
-            Controls.Add(user_label);
-            Controls.Add(FuelTrack_Logo);
+            ClientSize = new Size(877, 525);
+            Controls.Add(panel1);
+            Controls.Add(leftpanel_login);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FuelTrack — Login";
-            AcceptButton = login_btn;
             ((System.ComponentModel.ISupportInitialize)FuelTrack_Logo).EndInit();
             ((System.ComponentModel.ISupportInitialize)password_toggle).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            leftpanel_login.ResumeLayout(false);
+            leftpanel_login.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -147,5 +209,9 @@
         private TextBox user_txtbox;
         private TextBox pass_txtbox;
         private PictureBox password_toggle;
+        private PictureBox pictureBox1;
+        private Panel leftpanel_login;
+        private Label label1;
+        private Panel panel1;
     }
 }

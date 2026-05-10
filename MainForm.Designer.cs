@@ -63,7 +63,7 @@
             // 
             // menubar_dashboard
             // 
-            menubar_dashboard.BackColor = Color.FromArgb(26, 58, 92);
+            menubar_dashboard.BackColor = Color.Maroon;
             menubar_dashboard.Controls.Add(logout_btn);
             menubar_dashboard.Controls.Add(audit_btn);
             menubar_dashboard.Controls.Add(reports_Btn);
@@ -89,7 +89,9 @@
             logout_btn.BackgroundImageLayout = ImageLayout.None;
             logout_btn.FlatAppearance.BorderSize = 0;
             logout_btn.FlatStyle = FlatStyle.Flat;
-            logout_btn.Location = new Point(12, 444);
+            logout_btn.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            logout_btn.ForeColor = Color.White;
+            logout_btn.Location = new Point(14, 483);
             logout_btn.Name = "logout_btn";
             logout_btn.Size = new Size(135, 30);
             logout_btn.TabIndex = 12;
@@ -103,6 +105,7 @@
             audit_btn.FlatAppearance.BorderSize = 0;
             audit_btn.FlatStyle = FlatStyle.Flat;
             audit_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            audit_btn.ForeColor = Color.White;
             audit_btn.Location = new Point(0, 385);
             audit_btn.Name = "audit_btn";
             audit_btn.Size = new Size(163, 33);
@@ -117,6 +120,7 @@
             reports_Btn.FlatAppearance.BorderSize = 0;
             reports_Btn.FlatStyle = FlatStyle.Flat;
             reports_Btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            reports_Btn.ForeColor = Color.White;
             reports_Btn.Location = new Point(0, 346);
             reports_Btn.Name = "reports_Btn";
             reports_Btn.Size = new Size(163, 33);
@@ -140,7 +144,7 @@
             // 
             // richTextBox1
             // 
-            richTextBox1.BackColor = Color.FromArgb(26, 58, 92);
+            richTextBox1.BackColor = Color.Maroon;
             richTextBox1.BorderStyle = BorderStyle.None;
             richTextBox1.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             richTextBox1.ForeColor = Color.White;
@@ -157,6 +161,7 @@
             employee_btn.FlatAppearance.BorderSize = 0;
             employee_btn.FlatStyle = FlatStyle.Flat;
             employee_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            employee_btn.ForeColor = Color.White;
             employee_btn.Location = new Point(0, 237);
             employee_btn.Name = "employee_btn";
             employee_btn.Size = new Size(163, 33);
@@ -171,6 +176,7 @@
             suplier_btn.FlatAppearance.BorderSize = 0;
             suplier_btn.FlatStyle = FlatStyle.Flat;
             suplier_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            suplier_btn.ForeColor = Color.White;
             suplier_btn.Location = new Point(0, 276);
             suplier_btn.Name = "suplier_btn";
             suplier_btn.Size = new Size(163, 33);
@@ -198,6 +204,7 @@
             trans_btn.FlatAppearance.BorderSize = 0;
             trans_btn.FlatStyle = FlatStyle.Flat;
             trans_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            trans_btn.ForeColor = Color.White;
             trans_btn.Location = new Point(0, 178);
             trans_btn.Name = "trans_btn";
             trans_btn.Size = new Size(163, 33);
@@ -225,6 +232,7 @@
             inv_btn.FlatAppearance.BorderSize = 0;
             inv_btn.FlatStyle = FlatStyle.Flat;
             inv_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            inv_btn.ForeColor = Color.White;
             inv_btn.Location = new Point(0, 139);
             inv_btn.Name = "inv_btn";
             inv_btn.Size = new Size(163, 33);
@@ -239,6 +247,7 @@
             dashboard_btn.FlatAppearance.BorderSize = 0;
             dashboard_btn.FlatStyle = FlatStyle.Flat;
             dashboard_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dashboard_btn.ForeColor = Color.White;
             dashboard_btn.Location = new Point(0, 100);
             dashboard_btn.Name = "dashboard_btn";
             dashboard_btn.Size = new Size(163, 33);

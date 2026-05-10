@@ -200,5 +200,15 @@ VALUES (@user_id, @module, @action_type, @description, @action_date);";
                 return false;
             }
         }
+
+        private void FuelTrack_Logo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

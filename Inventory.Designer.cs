@@ -64,7 +64,7 @@
             // 
             // menubar_inventory
             // 
-            menubar_inventory.BackColor = Color.FromArgb(26, 58, 92);
+            menubar_inventory.BackColor = Color.Maroon;
             menubar_inventory.Controls.Add(logout_btn);
             menubar_inventory.Controls.Add(audit_btn);
             menubar_inventory.Controls.Add(reports_Btn);
@@ -78,7 +78,7 @@
             menubar_inventory.Controls.Add(inv_btn);
             menubar_inventory.Controls.Add(dashboard_btn);
             menubar_inventory.Controls.Add(fueltrack_icon);
-            menubar_inventory.ForeColor = SystemColors.ActiveCaptionText;
+            menubar_inventory.ForeColor = Color.White;
             menubar_inventory.Location = new Point(0, 37);
             menubar_inventory.Name = "menubar_inventory";
             menubar_inventory.Size = new Size(163, 648);
@@ -138,7 +138,7 @@
             // 
             // richTextBox1
             // 
-            richTextBox1.BackColor = Color.FromArgb(26, 58, 92);
+            richTextBox1.BackColor = Color.Maroon;
             richTextBox1.BorderStyle = BorderStyle.None;
             richTextBox1.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             richTextBox1.ForeColor = Color.White;
@@ -263,7 +263,7 @@
             // 
             // inventorysadd_button
             // 
-            inventorysadd_button.BackColor = Color.FromArgb(26, 58, 92);
+            inventorysadd_button.BackColor = Color.Maroon;
             inventorysadd_button.ForeColor = SystemColors.ControlLightLight;
             inventorysadd_button.Location = new Point(795, 130);
             inventorysadd_button.Name = "inventorysadd_button";

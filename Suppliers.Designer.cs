@@ -91,10 +91,10 @@
             deliverydate_dateTimePicker = new DateTimePicker();
             deliveryhistory_label = new Label();
             total_suppliers_pnl = new Panel();
-            active_contracts_pnl = new Panel();
-            pending_deliver_pnl = new Panel();
             total_supp_label = new Label();
+            active_contracts_pnl = new Panel();
             active_label = new Label();
+            pending_deliver_pnl = new Panel();
             pending_label = new Label();
             menubar_Suppliers.SuspendLayout();
             Suppliers_panel.SuspendLayout();
@@ -110,7 +110,7 @@
             // 
             // menubar_Suppliers
             // 
-            menubar_Suppliers.BackColor = Color.FromArgb(26, 58, 92);
+            menubar_Suppliers.BackColor = Color.Maroon;
             menubar_Suppliers.Controls.Add(logout_btn);
             menubar_Suppliers.Controls.Add(audit_btn);
             menubar_Suppliers.Controls.Add(reports_Btn);
@@ -124,7 +124,7 @@
             menubar_Suppliers.Controls.Add(inv_btn);
             menubar_Suppliers.Controls.Add(dashboard_btn);
             menubar_Suppliers.Controls.Add(fueltrack_icon);
-            menubar_Suppliers.ForeColor = SystemColors.ActiveCaptionText;
+            menubar_Suppliers.ForeColor = Color.White;
             menubar_Suppliers.Location = new Point(0, 37);
             menubar_Suppliers.Name = "menubar_Suppliers";
             menubar_Suppliers.Size = new Size(163, 648);
@@ -184,7 +184,7 @@
             // 
             // richTextBox1
             // 
-            richTextBox1.BackColor = Color.FromArgb(26, 58, 92);
+            richTextBox1.BackColor = Color.Maroon;
             richTextBox1.BorderStyle = BorderStyle.None;
             richTextBox1.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             richTextBox1.ForeColor = Color.White;
@@ -368,7 +368,7 @@
             // 
             // addsupplier_button
             // 
-            addsupplier_button.BackColor = Color.FromArgb(26, 58, 92);
+            addsupplier_button.BackColor = Color.Maroon;
             addsupplier_button.ForeColor = SystemColors.ControlLightLight;
             addsupplier_button.Location = new Point(800, 66);
             addsupplier_button.Name = "addsupplier_button";
@@ -750,6 +750,16 @@
             total_suppliers_pnl.Size = new Size(200, 74);
             total_suppliers_pnl.TabIndex = 54;
             // 
+            // total_supp_label
+            // 
+            total_supp_label.AutoSize = true;
+            total_supp_label.Font = new Font("Segoe UI", 10F);
+            total_supp_label.Location = new Point(6, 9);
+            total_supp_label.Name = "total_supp_label";
+            total_supp_label.Size = new Size(97, 19);
+            total_supp_label.TabIndex = 0;
+            total_supp_label.Text = "Total Suppliers";
+            // 
             // active_contracts_pnl
             // 
             active_contracts_pnl.BackColor = SystemColors.AppWorkspace;
@@ -758,6 +768,16 @@
             active_contracts_pnl.Name = "active_contracts_pnl";
             active_contracts_pnl.Size = new Size(200, 74);
             active_contracts_pnl.TabIndex = 55;
+            // 
+            // active_label
+            // 
+            active_label.AutoSize = true;
+            active_label.Font = new Font("Segoe UI", 10F);
+            active_label.Location = new Point(11, 11);
+            active_label.Name = "active_label";
+            active_label.Size = new Size(109, 19);
+            active_label.TabIndex = 1;
+            active_label.Text = "Active Contracts";
             // 
             // pending_deliver_pnl
             // 
@@ -768,30 +788,13 @@
             pending_deliver_pnl.Size = new Size(200, 74);
             pending_deliver_pnl.TabIndex = 55;
             // 
-            // total_supp_label
-            // 
-            total_supp_label.AutoSize = true;
-            total_supp_label.Location = new Point(6, 9);
-            total_supp_label.Name = "total_supp_label";
-            total_supp_label.Size = new Size(83, 15);
-            total_supp_label.TabIndex = 0;
-            total_supp_label.Text = "Total Suppliers";
-            // 
-            // active_label
-            // 
-            active_label.AutoSize = true;
-            active_label.Location = new Point(11, 11);
-            active_label.Name = "active_label";
-            active_label.Size = new Size(94, 15);
-            active_label.TabIndex = 1;
-            active_label.Text = "Active Contracts";
-            // 
             // pending_label
             // 
             pending_label.AutoSize = true;
+            pending_label.Font = new Font("Segoe UI", 10F);
             pending_label.Location = new Point(11, 11);
             pending_label.Name = "pending_label";
-            pending_label.Size = new Size(104, 15);
+            pending_label.Size = new Size(120, 19);
             pending_label.TabIndex = 1;
             pending_label.Text = "Pending Deliveries";
             // 

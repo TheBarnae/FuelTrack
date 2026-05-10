@@ -113,7 +113,7 @@
             // 
             // menubar_dashboard
             // 
-            menubar_dashboard.BackColor = Color.FromArgb(26, 58, 92);
+            menubar_dashboard.BackColor = Color.Maroon;
             menubar_dashboard.Controls.Add(logout_btn);
             menubar_dashboard.Controls.Add(audit_btn);
             menubar_dashboard.Controls.Add(reports_Btn);
@@ -130,7 +130,7 @@
             menubar_dashboard.ForeColor = SystemColors.ActiveCaptionText;
             menubar_dashboard.Location = new Point(0, 37);
             menubar_dashboard.Name = "menubar_dashboard";
-            menubar_dashboard.Size = new Size(163, 648);
+            menubar_dashboard.Size = new Size(174, 648);
             menubar_dashboard.TabIndex = 1;
             // 
             // logout_btn
@@ -139,7 +139,9 @@
             logout_btn.BackgroundImageLayout = ImageLayout.None;
             logout_btn.FlatAppearance.BorderSize = 0;
             logout_btn.FlatStyle = FlatStyle.Flat;
-            logout_btn.Location = new Point(12, 444);
+            logout_btn.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            logout_btn.ForeColor = Color.White;
+            logout_btn.Location = new Point(12, 525);
             logout_btn.Name = "logout_btn";
             logout_btn.Size = new Size(135, 30);
             logout_btn.TabIndex = 12;
@@ -152,6 +154,7 @@
             audit_btn.FlatAppearance.BorderSize = 0;
             audit_btn.FlatStyle = FlatStyle.Flat;
             audit_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            audit_btn.ForeColor = Color.White;
             audit_btn.Location = new Point(0, 385);
             audit_btn.Name = "audit_btn";
             audit_btn.Size = new Size(163, 33);
@@ -165,6 +168,7 @@
             reports_Btn.FlatAppearance.BorderSize = 0;
             reports_Btn.FlatStyle = FlatStyle.Flat;
             reports_Btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            reports_Btn.ForeColor = Color.White;
             reports_Btn.Location = new Point(0, 346);
             reports_Btn.Name = "reports_Btn";
             reports_Btn.Size = new Size(163, 33);
@@ -204,6 +208,7 @@
             employee_btn.FlatAppearance.BorderSize = 0;
             employee_btn.FlatStyle = FlatStyle.Flat;
             employee_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            employee_btn.ForeColor = Color.White;
             employee_btn.Location = new Point(0, 237);
             employee_btn.Name = "employee_btn";
             employee_btn.Size = new Size(163, 33);
@@ -217,6 +222,7 @@
             suplier_btn.FlatAppearance.BorderSize = 0;
             suplier_btn.FlatStyle = FlatStyle.Flat;
             suplier_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            suplier_btn.ForeColor = Color.White;
             suplier_btn.Location = new Point(0, 276);
             suplier_btn.Name = "suplier_btn";
             suplier_btn.Size = new Size(163, 33);
@@ -243,6 +249,7 @@
             trans_btn.FlatAppearance.BorderSize = 0;
             trans_btn.FlatStyle = FlatStyle.Flat;
             trans_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            trans_btn.ForeColor = Color.White;
             trans_btn.Location = new Point(0, 178);
             trans_btn.Name = "trans_btn";
             trans_btn.Size = new Size(163, 33);
@@ -269,6 +276,7 @@
             inv_btn.FlatAppearance.BorderSize = 0;
             inv_btn.FlatStyle = FlatStyle.Flat;
             inv_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            inv_btn.ForeColor = Color.White;
             inv_btn.Location = new Point(0, 139);
             inv_btn.Name = "inv_btn";
             inv_btn.Size = new Size(163, 33);
@@ -282,6 +290,7 @@
             dashboard_btn.FlatAppearance.BorderSize = 0;
             dashboard_btn.FlatStyle = FlatStyle.Flat;
             dashboard_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dashboard_btn.ForeColor = Color.White;
             dashboard_btn.Location = new Point(-3, 102);
             dashboard_btn.Name = "dashboard_btn";
             dashboard_btn.Size = new Size(163, 33);
@@ -300,124 +309,137 @@
             // 
             // sales_panel
             // 
-            sales_panel.BackColor = Color.WhiteSmoke;
+            sales_panel.BackColor = Color.Maroon;
             sales_panel.Controls.Add(today_label);
             sales_panel.Controls.Add(today_sales);
-            sales_panel.Location = new Point(221, 108);
+            sales_panel.Location = new Point(221, 203);
             sales_panel.Name = "sales_panel";
-            sales_panel.Size = new Size(120, 68);
+            sales_panel.Size = new Size(160, 93);
             sales_panel.TabIndex = 2;
             // 
             // today_label
             // 
             today_label.AutoSize = true;
-            today_label.Location = new Point(5, 31);
+            today_label.BackColor = Color.Maroon;
+            today_label.Font = new Font("Segoe UI", 13F);
+            today_label.ForeColor = Color.White;
+            today_label.Location = new Point(3, 31);
             today_label.Name = "today_label";
-            today_label.Size = new Size(38, 15);
+            today_label.Size = new Size(59, 25);
             today_label.TabIndex = 1;
             today_label.Text = "label1";
             // 
             // today_sales
             // 
             today_sales.AutoSize = true;
-            today_sales.Font = new Font("Segoe UI", 7F);
-            today_sales.Location = new Point(5, 9);
+            today_sales.Font = new Font("Segoe UI", 9F);
+            today_sales.ForeColor = Color.White;
+            today_sales.Location = new Point(5, 12);
             today_sales.Name = "today_sales";
-            today_sales.Size = new Size(61, 12);
+            today_sales.Size = new Size(75, 15);
             today_sales.TabIndex = 0;
             today_sales.Text = "Today's Sales";
             // 
             // liters_panel
             // 
-            liters_panel.BackColor = Color.WhiteSmoke;
+            liters_panel.BackColor = Color.Maroon;
             liters_panel.Controls.Add(litersdispensed_label);
             liters_panel.Controls.Add(liters_txt);
-            liters_panel.Location = new Point(381, 108);
+            liters_panel.Location = new Point(401, 203);
             liters_panel.Name = "liters_panel";
-            liters_panel.Size = new Size(120, 68);
+            liters_panel.Size = new Size(164, 93);
             liters_panel.TabIndex = 3;
             // 
             // litersdispensed_label
             // 
             litersdispensed_label.AutoSize = true;
-            litersdispensed_label.Location = new Point(5, 31);
+            litersdispensed_label.Font = new Font("Segoe UI", 13F);
+            litersdispensed_label.ForeColor = Color.White;
+            litersdispensed_label.Location = new Point(5, 30);
             litersdispensed_label.Name = "litersdispensed_label";
-            litersdispensed_label.Size = new Size(38, 15);
+            litersdispensed_label.Size = new Size(59, 25);
             litersdispensed_label.TabIndex = 2;
             litersdispensed_label.Text = "label2";
             // 
             // liters_txt
             // 
             liters_txt.AutoSize = true;
-            liters_txt.Font = new Font("Segoe UI", 7F);
+            liters_txt.Font = new Font("Segoe UI", 9F);
+            liters_txt.ForeColor = Color.White;
             liters_txt.Location = new Point(5, 9);
             liters_txt.Name = "liters_txt";
-            liters_txt.Size = new Size(74, 12);
+            liters_txt.Size = new Size(91, 15);
             liters_txt.TabIndex = 1;
             liters_txt.Text = "Liters dispensed";
             // 
             // transaction_panel
             // 
-            transaction_panel.BackColor = Color.WhiteSmoke;
+            transaction_panel.BackColor = Color.Maroon;
             transaction_panel.Controls.Add(transaction_label);
             transaction_panel.Controls.Add(transaction_txt);
-            transaction_panel.Location = new Point(577, 108);
+            transaction_panel.Location = new Point(583, 203);
             transaction_panel.Name = "transaction_panel";
-            transaction_panel.Size = new Size(120, 68);
+            transaction_panel.Size = new Size(164, 93);
             transaction_panel.TabIndex = 4;
             // 
             // transaction_label
             // 
             transaction_label.AutoSize = true;
+            transaction_label.Font = new Font("Segoe UI", 13F);
+            transaction_label.ForeColor = Color.White;
             transaction_label.Location = new Point(5, 31);
             transaction_label.Name = "transaction_label";
-            transaction_label.Size = new Size(38, 15);
+            transaction_label.Size = new Size(59, 25);
             transaction_label.TabIndex = 3;
             transaction_label.Text = "label3";
             // 
             // transaction_txt
             // 
             transaction_txt.AutoSize = true;
-            transaction_txt.Font = new Font("Segoe UI", 7F);
+            transaction_txt.Font = new Font("Segoe UI", 9F);
+            transaction_txt.ForeColor = Color.White;
             transaction_txt.Location = new Point(5, 9);
             transaction_txt.Name = "transaction_txt";
-            transaction_txt.Size = new Size(58, 12);
+            transaction_txt.Size = new Size(72, 15);
             transaction_txt.TabIndex = 2;
             transaction_txt.Text = "Transactions";
             // 
             // Low_stocks_alerts
             // 
-            Low_stocks_alerts.BackColor = Color.WhiteSmoke;
+            Low_stocks_alerts.BackColor = Color.Maroon;
             Low_stocks_alerts.Controls.Add(stocks_label);
             Low_stocks_alerts.Controls.Add(low_stox_txt);
-            Low_stocks_alerts.Location = new Point(738, 108);
+            Low_stocks_alerts.Location = new Point(753, 203);
             Low_stocks_alerts.Name = "Low_stocks_alerts";
-            Low_stocks_alerts.Size = new Size(120, 68);
+            Low_stocks_alerts.Size = new Size(164, 93);
             Low_stocks_alerts.TabIndex = 5;
             // 
             // stocks_label
             // 
             stocks_label.AutoSize = true;
+            stocks_label.Font = new Font("Segoe UI", 13F);
+            stocks_label.ForeColor = Color.White;
             stocks_label.Location = new Point(5, 31);
             stocks_label.Name = "stocks_label";
-            stocks_label.Size = new Size(38, 15);
+            stocks_label.Size = new Size(59, 25);
             stocks_label.TabIndex = 4;
             stocks_label.Text = "label4";
             // 
             // low_stox_txt
             // 
             low_stox_txt.AutoSize = true;
-            low_stox_txt.Font = new Font("Segoe UI", 7F);
+            low_stox_txt.Font = new Font("Segoe UI", 9F);
+            low_stox_txt.ForeColor = Color.White;
             low_stox_txt.Location = new Point(5, 9);
             low_stox_txt.Name = "low_stox_txt";
-            low_stox_txt.Size = new Size(33, 12);
+            low_stox_txt.Size = new Size(41, 15);
             low_stox_txt.TabIndex = 3;
             low_stox_txt.Text = "Stocks";
             // 
             // inventory_pnel
             // 
             inventory_pnel.BackColor = Color.WhiteSmoke;
-            inventory_pnel.Location = new Point(196, 190);
+            inventory_pnel.Location = new Point(221, 321);
             inventory_pnel.Name = "inventory_pnel";
             inventory_pnel.Size = new Size(344, 190);
             inventory_pnel.TabIndex = 6;
@@ -425,9 +447,9 @@
             // recent_transaction_panel
             // 
             recent_transaction_panel.BackColor = Color.WhiteSmoke;
-            recent_transaction_panel.Location = new Point(557, 190);
+            recent_transaction_panel.Location = new Point(594, 321);
             recent_transaction_panel.Name = "recent_transaction_panel";
-            recent_transaction_panel.Size = new Size(343, 190);
+            recent_transaction_panel.Size = new Size(333, 190);
             recent_transaction_panel.TabIndex = 7;
             // 
             // Dashboard
@@ -437,7 +459,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             BackgroundImageLayout = ImageLayout.None;
-            ClientSize = new Size(927, 601);
+            ClientSize = new Size(969, 616);
             Controls.Add(recent_transaction_panel);
             Controls.Add(inventory_pnel);
             Controls.Add(Low_stocks_alerts);
