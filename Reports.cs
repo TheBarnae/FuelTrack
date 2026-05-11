@@ -484,5 +484,10 @@ namespace FuelTrack
         private void label7_Click(object sender, EventArgs e)
         {
         }
+
+        private void Reports_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

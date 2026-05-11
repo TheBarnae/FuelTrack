@@ -131,7 +131,7 @@
             reports_Btn.FlatStyle = FlatStyle.Flat;
             reports_Btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             reports_Btn.ForeColor = Color.White;
-            reports_Btn.Location = new Point(0, 511);
+            reports_Btn.Location = new Point(1, 509);
             reports_Btn.Name = "reports_Btn";
             reports_Btn.Size = new Size(163, 33);
             reports_Btn.TabIndex = 10;
@@ -145,7 +145,7 @@
             rprt_label.FlatStyle = FlatStyle.Flat;
             rprt_label.Font = new Font("Segoe UI", 9F);
             rprt_label.ForeColor = Color.White;
-            rprt_label.Location = new Point(7, 476);
+            rprt_label.Location = new Point(7, 473);
             rprt_label.Name = "rprt_label";
             rprt_label.Size = new Size(54, 15);
             rprt_label.TabIndex = 9;
@@ -344,6 +344,7 @@
             // actiontoday_dataGridView
             // 
             actiontoday_dataGridView.BackgroundColor = SystemColors.Info;
+            actiontoday_dataGridView.BorderStyle = BorderStyle.None;
             actiontoday_dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             actiontoday_dataGridView.Location = new Point(209, 139);
             actiontoday_dataGridView.Name = "actiontoday_dataGridView";
@@ -353,6 +354,7 @@
             // logintoday_dataGridView
             // 
             logintoday_dataGridView.BackgroundColor = SystemColors.Info;
+            logintoday_dataGridView.BorderStyle = BorderStyle.None;
             logintoday_dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             logintoday_dataGridView.Location = new Point(461, 139);
             logintoday_dataGridView.Name = "logintoday_dataGridView";
@@ -362,6 +364,7 @@
             // flaggedactions_dataGridView
             // 
             flaggedactions_dataGridView.BackgroundColor = SystemColors.Info;
+            flaggedactions_dataGridView.BorderStyle = BorderStyle.None;
             flaggedactions_dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             flaggedactions_dataGridView.Location = new Point(714, 139);
             flaggedactions_dataGridView.Name = "flaggedactions_dataGridView";

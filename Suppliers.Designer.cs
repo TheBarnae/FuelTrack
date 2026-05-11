@@ -771,7 +771,7 @@
             // 
             // total_suppliers_pnl
             // 
-            total_suppliers_pnl.BackColor = Color.FromArgb(245, 237, 225);
+            total_suppliers_pnl.BackColor = SystemColors.Info;
             total_suppliers_pnl.Controls.Add(total_supp_label);
             total_suppliers_pnl.Location = new Point(198, 136);
             total_suppliers_pnl.Name = "total_suppliers_pnl";
@@ -790,7 +790,7 @@
             // 
             // active_contracts_pnl
             // 
-            active_contracts_pnl.BackColor = Color.FromArgb(245, 237, 225);
+            active_contracts_pnl.BackColor = SystemColors.Info;
             active_contracts_pnl.Controls.Add(active_label);
             active_contracts_pnl.Location = new Point(462, 136);
             active_contracts_pnl.Name = "active_contracts_pnl";
@@ -809,7 +809,7 @@
             // 
             // pending_deliver_pnl
             // 
-            pending_deliver_pnl.BackColor = Color.FromArgb(245, 237, 225);
+            pending_deliver_pnl.BackColor = SystemColors.Info;
             pending_deliver_pnl.Controls.Add(pending_label);
             pending_deliver_pnl.Location = new Point(721, 136);
             pending_deliver_pnl.Name = "pending_deliver_pnl";

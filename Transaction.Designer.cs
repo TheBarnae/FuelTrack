@@ -109,7 +109,7 @@
             audit_btn.FlatAppearance.BorderSize = 0;
             audit_btn.FlatStyle = FlatStyle.Flat;
             audit_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            audit_btn.Location = new Point(1, 556);
+            audit_btn.Location = new Point(4, 560);
             audit_btn.Name = "audit_btn";
             audit_btn.Size = new Size(163, 33);
             audit_btn.TabIndex = 11;
@@ -136,7 +136,7 @@
             rprt_label.FlatStyle = FlatStyle.Flat;
             rprt_label.Font = new Font("Segoe UI", 9F);
             rprt_label.ForeColor = Color.White;
-            rprt_label.Location = new Point(7, 474);
+            rprt_label.Location = new Point(7, 476);
             rprt_label.Name = "rprt_label";
             rprt_label.Size = new Size(54, 15);
             rprt_label.TabIndex = 9;
@@ -214,7 +214,7 @@
             main_label_menu.FlatStyle = FlatStyle.Flat;
             main_label_menu.Font = new Font("Segoe UI", 9F);
             main_label_menu.ForeColor = Color.White;
-            main_label_menu.Location = new Point(12, 120);
+            main_label_menu.Location = new Point(10, 120);
             main_label_menu.Name = "main_label_menu";
             main_label_menu.Size = new Size(38, 15);
             main_label_menu.TabIndex = 3;
@@ -226,7 +226,7 @@
             inv_btn.FlatAppearance.BorderSize = 0;
             inv_btn.FlatStyle = FlatStyle.Flat;
             inv_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            inv_btn.Location = new Point(1, 198);
+            inv_btn.Location = new Point(2, 197);
             inv_btn.Name = "inv_btn";
             inv_btn.Size = new Size(163, 33);
             inv_btn.TabIndex = 2;
@@ -259,7 +259,7 @@
             // 
             transaction_label.AutoSize = true;
             transaction_label.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold);
-            transaction_label.Location = new Point(205, 111);
+            transaction_label.Location = new Point(200, 111);
             transaction_label.Name = "transaction_label";
             transaction_label.Size = new Size(131, 30);
             transaction_label.TabIndex = 6;
@@ -268,7 +268,7 @@
             // 
             // newsale_button
             // 
-            newsale_button.BackColor = Color.Maroon;
+            newsale_button.BackColor = Color.FromArgb(221, 152, 3);
             newsale_button.FlatStyle = FlatStyle.Popup;
             newsale_button.ForeColor = SystemColors.ControlLightLight;
             newsale_button.Location = new Point(822, 108);
@@ -340,7 +340,8 @@
             // 
             // transactions_panel
             // 
-            transactions_panel.BackgroundColor = Color.FromArgb(245, 237, 225);
+            transactions_panel.BackgroundColor = SystemColors.Info;
+            transactions_panel.BorderStyle = BorderStyle.None;
             transactions_panel.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             transactions_panel.Location = new Point(457, 154);
             transactions_panel.Name = "transactions_panel";
@@ -350,7 +351,8 @@
             // 
             // total_sales
             // 
-            total_sales.BackgroundColor = Color.FromArgb(245, 237, 225);
+            total_sales.BackgroundColor = SystemColors.Info;
+            total_sales.BorderStyle = BorderStyle.None;
             total_sales.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             total_sales.Location = new Point(204, 154);
             total_sales.Name = "total_sales";
@@ -360,7 +362,7 @@
             // total_sales_label
             // 
             total_sales_label.AutoSize = true;
-            total_sales_label.BackColor = Color.FromArgb(245, 237, 225);
+            total_sales_label.BackColor = SystemColors.Info;
             total_sales_label.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
             total_sales_label.ForeColor = Color.Black;
             total_sales_label.Location = new Point(206, 157);
@@ -372,7 +374,7 @@
             // Transactions_label
             // 
             Transactions_label.AutoSize = true;
-            Transactions_label.BackColor = Color.FromArgb(245, 237, 225);
+            Transactions_label.BackColor = SystemColors.Info;
             Transactions_label.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
             Transactions_label.Location = new Point(462, 157);
             Transactions_label.Name = "Transactions_label";
@@ -382,7 +384,7 @@
             // 
             // total_sales_db_label
             // 
-            total_sales_db_label.BackColor = Color.FromArgb(245, 237, 225);
+            total_sales_db_label.BackColor = SystemColors.Info;
             total_sales_db_label.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
             total_sales_db_label.ForeColor = Color.Black;
             total_sales_db_label.Location = new Point(230, 195);
@@ -393,7 +395,7 @@
             // 
             // trans_db_label
             // 
-            trans_db_label.BackColor = Color.FromArgb(245, 237, 225);
+            trans_db_label.BackColor = SystemColors.Info;
             trans_db_label.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
             trans_db_label.ForeColor = Color.Black;
             trans_db_label.Location = new Point(487, 195);
@@ -405,7 +407,8 @@
             // 
             // MOP_datagrid
             // 
-            MOP_datagrid.BackgroundColor = Color.FromArgb(245, 237, 225);
+            MOP_datagrid.BackgroundColor = SystemColors.Info;
+            MOP_datagrid.BorderStyle = BorderStyle.None;
             MOP_datagrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             MOP_datagrid.Location = new Point(712, 154);
             MOP_datagrid.Name = "MOP_datagrid";

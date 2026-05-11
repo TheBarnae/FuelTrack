@@ -87,7 +87,7 @@
             menubar_reports.ForeColor = Color.White;
             menubar_reports.Location = new Point(0, 37);
             menubar_reports.Name = "menubar_reports";
-            menubar_reports.Size = new Size(163, 600);
+            menubar_reports.Size = new Size(163, 733);
             menubar_reports.TabIndex = 3;
             // 
             // logout_btn
@@ -97,7 +97,7 @@
             logout_btn.FlatAppearance.BorderSize = 0;
             logout_btn.FlatStyle = FlatStyle.Flat;
             logout_btn.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            logout_btn.Location = new Point(12, 522);
+            logout_btn.Location = new Point(12, 684);
             logout_btn.Name = "logout_btn";
             logout_btn.Size = new Size(135, 30);
             logout_btn.TabIndex = 12;
@@ -110,7 +110,7 @@
             audit_btn.FlatAppearance.BorderSize = 0;
             audit_btn.FlatStyle = FlatStyle.Flat;
             audit_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            audit_btn.Location = new Point(0, 385);
+            audit_btn.Location = new Point(4, 559);
             audit_btn.Name = "audit_btn";
             audit_btn.Size = new Size(163, 33);
             audit_btn.TabIndex = 11;
@@ -123,7 +123,7 @@
             reports_Btn.FlatAppearance.BorderSize = 0;
             reports_Btn.FlatStyle = FlatStyle.Flat;
             reports_Btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            reports_Btn.Location = new Point(0, 346);
+            reports_Btn.Location = new Point(2, 507);
             reports_Btn.Name = "reports_Btn";
             reports_Btn.Size = new Size(163, 33);
             reports_Btn.TabIndex = 10;
@@ -135,11 +135,11 @@
             rprt_label.AutoSize = true;
             rprt_label.BackColor = Color.Transparent;
             rprt_label.FlatStyle = FlatStyle.Flat;
-            rprt_label.Font = new Font("Segoe UI", 6F, FontStyle.Bold);
+            rprt_label.Font = new Font("Segoe UI", 9F);
             rprt_label.ForeColor = Color.White;
-            rprt_label.Location = new Point(3, 332);
+            rprt_label.Location = new Point(8, 478);
             rprt_label.Name = "rprt_label";
-            rprt_label.Size = new Size(39, 11);
+            rprt_label.Size = new Size(54, 15);
             rprt_label.TabIndex = 9;
             rprt_label.Text = "REPORTS";
             // 
@@ -162,7 +162,7 @@
             employee_btn.FlatAppearance.BorderSize = 0;
             employee_btn.FlatStyle = FlatStyle.Flat;
             employee_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            employee_btn.Location = new Point(0, 237);
+            employee_btn.Location = new Point(-1, 349);
             employee_btn.Name = "employee_btn";
             employee_btn.Size = new Size(163, 33);
             employee_btn.TabIndex = 7;
@@ -175,7 +175,7 @@
             suplier_btn.FlatAppearance.BorderSize = 0;
             suplier_btn.FlatStyle = FlatStyle.Flat;
             suplier_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            suplier_btn.Location = new Point(0, 276);
+            suplier_btn.Location = new Point(-1, 398);
             suplier_btn.Name = "suplier_btn";
             suplier_btn.Size = new Size(163, 33);
             suplier_btn.TabIndex = 6;
@@ -187,11 +187,11 @@
             manage_btn.AutoSize = true;
             manage_btn.BackColor = Color.Transparent;
             manage_btn.FlatStyle = FlatStyle.Flat;
-            manage_btn.Font = new Font("Segoe UI", 6F, FontStyle.Bold);
+            manage_btn.Font = new Font("Segoe UI", 9F);
             manage_btn.ForeColor = Color.White;
-            manage_btn.Location = new Point(3, 223);
+            manage_btn.Location = new Point(4, 319);
             manage_btn.Name = "manage_btn";
-            manage_btn.Size = new Size(41, 11);
+            manage_btn.Size = new Size(57, 15);
             manage_btn.TabIndex = 5;
             manage_btn.Text = "MANAGE";
             // 
@@ -201,7 +201,7 @@
             trans_btn.FlatAppearance.BorderSize = 0;
             trans_btn.FlatStyle = FlatStyle.Flat;
             trans_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            trans_btn.Location = new Point(0, 178);
+            trans_btn.Location = new Point(1, 239);
             trans_btn.Name = "trans_btn";
             trans_btn.Size = new Size(163, 33);
             trans_btn.TabIndex = 4;
@@ -213,11 +213,11 @@
             main_label_menu.AutoSize = true;
             main_label_menu.BackColor = Color.Transparent;
             main_label_menu.FlatStyle = FlatStyle.Flat;
-            main_label_menu.Font = new Font("Segoe UI", 6F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            main_label_menu.Font = new Font("Segoe UI", 9F);
             main_label_menu.ForeColor = Color.White;
-            main_label_menu.Location = new Point(3, 85);
+            main_label_menu.Location = new Point(11, 116);
             main_label_menu.Name = "main_label_menu";
-            main_label_menu.Size = new Size(28, 11);
+            main_label_menu.Size = new Size(38, 15);
             main_label_menu.TabIndex = 3;
             main_label_menu.Text = "MAIN";
             // 
@@ -227,7 +227,7 @@
             inv_btn.FlatAppearance.BorderSize = 0;
             inv_btn.FlatStyle = FlatStyle.Flat;
             inv_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            inv_btn.Location = new Point(0, 139);
+            inv_btn.Location = new Point(1, 194);
             inv_btn.Name = "inv_btn";
             inv_btn.Size = new Size(163, 33);
             inv_btn.TabIndex = 2;
@@ -240,7 +240,7 @@
             dashboard_btn.FlatAppearance.BorderSize = 0;
             dashboard_btn.FlatStyle = FlatStyle.Flat;
             dashboard_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dashboard_btn.Location = new Point(-3, 102);
+            dashboard_btn.Location = new Point(1, 149);
             dashboard_btn.Name = "dashboard_btn";
             dashboard_btn.Size = new Size(163, 33);
             dashboard_btn.TabIndex = 0;
@@ -272,7 +272,7 @@
             // alert_label
             // 
             alert_label.AutoSize = true;
-            alert_label.Location = new Point(740, 22);
+            alert_label.Location = new Point(787, 22);
             alert_label.Name = "alert_label";
             alert_label.Size = new Size(65, 15);
             alert_label.TabIndex = 3;
@@ -282,7 +282,7 @@
             // 
             usr_avatar.BackColor = SystemColors.ControlDark;
             usr_avatar.BackgroundImageLayout = ImageLayout.None;
-            usr_avatar.Location = new Point(811, 11);
+            usr_avatar.Location = new Point(858, 9);
             usr_avatar.Name = "usr_avatar";
             usr_avatar.Size = new Size(38, 38);
             usr_avatar.SizeMode = PictureBoxSizeMode.Zoom;
@@ -292,7 +292,7 @@
             // role_label
             // 
             role_label.AutoSize = true;
-            role_label.Location = new Point(858, 22);
+            role_label.Location = new Point(902, 22);
             role_label.Name = "role_label";
             role_label.Size = new Size(55, 15);
             role_label.TabIndex = 1;
@@ -310,53 +310,62 @@
             // reports_label
             // 
             reports_label.AutoSize = true;
-            reports_label.Font = new Font("Segoe UI", 15.75F);
-            reports_label.Location = new Point(204, 97);
+            reports_label.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold);
+            reports_label.Location = new Point(204, 125);
             reports_label.Name = "reports_label";
-            reports_label.Size = new Size(83, 30);
+            reports_label.Size = new Size(88, 30);
             reports_label.TabIndex = 22;
             reports_label.Text = "Reports";
             // 
             // generatereport_dataGridView
             // 
-            generatereport_dataGridView.BackgroundColor = SystemColors.Control;
+            generatereport_dataGridView.BackgroundColor = SystemColors.ControlLightLight;
+            generatereport_dataGridView.BorderStyle = BorderStyle.None;
+            generatereport_dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.None;
             generatereport_dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            generatereport_dataGridView.Location = new Point(204, 186);
+            generatereport_dataGridView.Location = new Point(204, 167);
             generatereport_dataGridView.Name = "generatereport_dataGridView";
-            generatereport_dataGridView.Size = new Size(327, 276);
+            generatereport_dataGridView.Size = new Size(737, 262);
             generatereport_dataGridView.TabIndex = 23;
             // 
             // reporttypes_dataGridView
             // 
-            reporttypes_dataGridView.BackgroundColor = SystemColors.Control;
+            reporttypes_dataGridView.BackgroundColor = SystemColors.ControlLightLight;
+            reporttypes_dataGridView.BorderStyle = BorderStyle.None;
+            reporttypes_dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.None;
             reporttypes_dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            reporttypes_dataGridView.Location = new Point(559, 186);
+            reporttypes_dataGridView.Location = new Point(204, 454);
             reporttypes_dataGridView.Name = "reporttypes_dataGridView";
-            reporttypes_dataGridView.Size = new Size(327, 276);
+            reporttypes_dataGridView.Size = new Size(727, 285);
             reporttypes_dataGridView.TabIndex = 24;
             // 
             // generatereports_label
             // 
             generatereports_label.AutoSize = true;
-            generatereports_label.Location = new Point(215, 194);
+            generatereports_label.BackColor = SystemColors.ControlLightLight;
+            generatereports_label.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            generatereports_label.Location = new Point(215, 175);
             generatereports_label.Name = "generatereports_label";
-            generatereports_label.Size = new Size(97, 15);
+            generatereports_label.Size = new Size(114, 17);
             generatereports_label.TabIndex = 25;
             generatereports_label.Text = "Generate Reports";
             // 
             // reporttypes_label
             // 
             reporttypes_label.AutoSize = true;
-            reporttypes_label.Location = new Point(570, 194);
+            reporttypes_label.BackColor = SystemColors.ControlLightLight;
+            reporttypes_label.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            reporttypes_label.Location = new Point(223, 469);
             reporttypes_label.Name = "reporttypes_label";
-            reporttypes_label.Size = new Size(74, 15);
+            reporttypes_label.Size = new Size(87, 17);
             reporttypes_label.TabIndex = 26;
             reporttypes_label.Text = "Report Types";
             // 
             // reporttype_label
             // 
             reporttype_label.AutoSize = true;
-            reporttype_label.Location = new Point(215, 233);
+            reporttype_label.BackColor = SystemColors.ControlLightLight;
+            reporttype_label.Location = new Point(226, 213);
             reporttype_label.Name = "reporttype_label";
             reporttype_label.Size = new Size(69, 15);
             reporttype_label.TabIndex = 27;
@@ -365,7 +374,8 @@
             // daterange_label
             // 
             daterange_label.AutoSize = true;
-            daterange_label.Location = new Point(215, 292);
+            daterange_label.BackColor = SystemColors.ControlLightLight;
+            daterange_label.Location = new Point(226, 278);
             daterange_label.Name = "daterange_label";
             daterange_label.Size = new Size(67, 15);
             daterange_label.TabIndex = 28;
@@ -375,15 +385,16 @@
             // reporttype_comboBox
             // 
             reporttype_comboBox.FormattingEnabled = true;
-            reporttype_comboBox.Location = new Point(215, 253);
+            reporttype_comboBox.Location = new Point(226, 231);
             reporttype_comboBox.Name = "reporttype_comboBox";
-            reporttype_comboBox.Size = new Size(284, 23);
+            reporttype_comboBox.Size = new Size(323, 23);
             reporttype_comboBox.TabIndex = 29;
             // 
             // fueltype_label
             // 
             fueltype_label.AutoSize = true;
-            fueltype_label.Location = new Point(215, 349);
+            fueltype_label.BackColor = SystemColors.ControlLightLight;
+            fueltype_label.Location = new Point(579, 208);
             fueltype_label.Name = "fueltype_label";
             fueltype_label.Size = new Size(56, 15);
             fueltype_label.TabIndex = 31;
@@ -392,16 +403,17 @@
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(215, 369);
+            comboBox2.Location = new Point(579, 231);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(284, 23);
+            comboBox2.Size = new Size(328, 23);
             comboBox2.TabIndex = 32;
             // 
             // button1
             // 
-            button1.BackColor = Color.Maroon;
+            button1.BackColor = Color.FromArgb(243, 113, 0);
+            button1.FlatStyle = FlatStyle.Popup;
             button1.ForeColor = SystemColors.ControlLightLight;
-            button1.Location = new Point(227, 405);
+            button1.Location = new Point(226, 344);
             button1.Name = "button1";
             button1.Size = new Size(90, 41);
             button1.TabIndex = 33;
@@ -410,17 +422,21 @@
             // 
             // exportpdf_button
             // 
-            exportpdf_button.Location = new Point(346, 405);
+            exportpdf_button.BackColor = Color.FromArgb(221, 152, 3);
+            exportpdf_button.FlatStyle = FlatStyle.Popup;
+            exportpdf_button.ForeColor = Color.White;
+            exportpdf_button.Location = new Point(341, 344);
             exportpdf_button.Name = "exportpdf_button";
             exportpdf_button.Size = new Size(90, 41);
             exportpdf_button.TabIndex = 34;
             exportpdf_button.Text = "Export PDF";
-            exportpdf_button.UseVisualStyleBackColor = true;
+            exportpdf_button.UseVisualStyleBackColor = false;
             // 
             // datahere_label
             // 
             datahere_label.AutoSize = true;
-            datahere_label.Location = new Point(678, 310);
+            datahere_label.BackColor = SystemColors.ControlLightLight;
+            datahere_label.Location = new Point(535, 607);
             datahere_label.Name = "datahere_label";
             datahere_label.Size = new Size(69, 15);
             datahere_label.TabIndex = 35;
@@ -429,16 +445,16 @@
             // 
             // daterange_dateTimePicker
             // 
-            daterange_dateTimePicker.Location = new Point(215, 313);
+            daterange_dateTimePicker.Location = new Point(226, 296);
             daterange_dateTimePicker.Name = "daterange_dateTimePicker";
-            daterange_dateTimePicker.Size = new Size(284, 23);
+            daterange_dateTimePicker.Size = new Size(323, 23);
             daterange_dateTimePicker.TabIndex = 36;
             // 
             // Reports
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(927, 601);
+            ClientSize = new Size(979, 768);
             Controls.Add(daterange_dateTimePicker);
             Controls.Add(datahere_label);
             Controls.Add(exportpdf_button);
@@ -460,6 +476,7 @@
             Name = "Reports";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FuelTrack — Reports";
+            Load += Reports_Load_1;
             menubar_reports.ResumeLayout(false);
             menubar_reports.PerformLayout();
             panel_reports.ResumeLayout(false);
