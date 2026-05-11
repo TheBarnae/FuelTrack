@@ -58,7 +58,7 @@
             panelMain.Dock = DockStyle.Fill;
             panelMain.Location = new Point(0, 0);
             panelMain.Name = "panelMain";
-            panelMain.Size = new Size(925, 562);
+            panelMain.Size = new Size(984, 656);
             panelMain.TabIndex = 0;
             // 
             // menubar_dashboard
@@ -134,11 +134,11 @@
             rprt_label.AutoSize = true;
             rprt_label.BackColor = Color.Transparent;
             rprt_label.FlatStyle = FlatStyle.Flat;
-            rprt_label.Font = new Font("Segoe UI", 6F, FontStyle.Bold);
+            rprt_label.Font = new Font("Segoe UI", 9F);
             rprt_label.ForeColor = Color.White;
             rprt_label.Location = new Point(3, 332);
             rprt_label.Name = "rprt_label";
-            rprt_label.Size = new Size(39, 11);
+            rprt_label.Size = new Size(54, 15);
             rprt_label.TabIndex = 9;
             rprt_label.Text = "REPORTS";
             // 
@@ -189,12 +189,12 @@
             // 
             manage_btn.AutoSize = true;
             manage_btn.BackColor = Color.Transparent;
-            manage_btn.FlatStyle = FlatStyle.Flat;
-            manage_btn.Font = new Font("Segoe UI", 6F, FontStyle.Bold);
+            manage_btn.FlatStyle = FlatStyle.Popup;
+            manage_btn.Font = new Font("Segoe UI", 9F);
             manage_btn.ForeColor = Color.White;
             manage_btn.Location = new Point(3, 223);
             manage_btn.Name = "manage_btn";
-            manage_btn.Size = new Size(41, 11);
+            manage_btn.Size = new Size(57, 15);
             manage_btn.TabIndex = 5;
             manage_btn.Text = "MANAGE";
             // 
@@ -218,11 +218,11 @@
             main_label_menu.AutoSize = true;
             main_label_menu.BackColor = Color.Transparent;
             main_label_menu.FlatStyle = FlatStyle.Flat;
-            main_label_menu.Font = new Font("Segoe UI", 6F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            main_label_menu.Font = new Font("Segoe UI", 9F);
             main_label_menu.ForeColor = Color.White;
             main_label_menu.Location = new Point(3, 85);
             main_label_menu.Name = "main_label_menu";
-            main_label_menu.Size = new Size(28, 11);
+            main_label_menu.Size = new Size(38, 15);
             main_label_menu.TabIndex = 3;
             main_label_menu.Text = "MAIN";
             // 
@@ -310,7 +310,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(925, 562);
+            ClientSize = new Size(984, 656);
             Controls.Add(panel1);
             Controls.Add(menubar_dashboard);
             Controls.Add(panelMain);

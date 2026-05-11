@@ -56,15 +56,39 @@
             usr_avatar = new PictureBox();
             role_label = new Label();
             date_label = new Label();
+            dashboard = new PictureBox();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            employee = new PictureBox();
+            supplier = new PictureBox();
+            reports = new PictureBox();
+            auditTrial = new PictureBox();
+            logout = new PictureBox();
             menubar_inventory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)fuelInventorys_dataGridView).BeginInit();
             inventory_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)usr_avatar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dashboard).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)employee).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)supplier).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)reports).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)auditTrial).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)logout).BeginInit();
             SuspendLayout();
             // 
             // menubar_inventory
             // 
             menubar_inventory.BackColor = Color.Maroon;
+            menubar_inventory.Controls.Add(logout);
+            menubar_inventory.Controls.Add(auditTrial);
+            menubar_inventory.Controls.Add(reports);
+            menubar_inventory.Controls.Add(supplier);
+            menubar_inventory.Controls.Add(employee);
+            menubar_inventory.Controls.Add(pictureBox2);
+            menubar_inventory.Controls.Add(pictureBox1);
+            menubar_inventory.Controls.Add(dashboard);
             menubar_inventory.Controls.Add(logout_btn);
             menubar_inventory.Controls.Add(audit_btn);
             menubar_inventory.Controls.Add(reports_Btn);
@@ -91,9 +115,9 @@
             logout_btn.FlatAppearance.BorderSize = 0;
             logout_btn.FlatStyle = FlatStyle.Flat;
             logout_btn.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            logout_btn.Location = new Point(13, 679);
+            logout_btn.Location = new Point(30, 679);
             logout_btn.Name = "logout_btn";
-            logout_btn.Size = new Size(135, 30);
+            logout_btn.Size = new Size(118, 30);
             logout_btn.TabIndex = 12;
             logout_btn.Text = "LOGOUT";
             logout_btn.UseVisualStyleBackColor = false;
@@ -104,9 +128,9 @@
             audit_btn.FlatAppearance.BorderSize = 0;
             audit_btn.FlatStyle = FlatStyle.Flat;
             audit_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            audit_btn.Location = new Point(6, 558);
+            audit_btn.Location = new Point(37, 557);
             audit_btn.Name = "audit_btn";
-            audit_btn.Size = new Size(163, 33);
+            audit_btn.Size = new Size(111, 33);
             audit_btn.TabIndex = 11;
             audit_btn.Text = "Audit Trail";
             audit_btn.UseVisualStyleBackColor = false;
@@ -117,9 +141,9 @@
             reports_Btn.FlatAppearance.BorderSize = 0;
             reports_Btn.FlatStyle = FlatStyle.Flat;
             reports_Btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            reports_Btn.Location = new Point(5, 510);
+            reports_Btn.Location = new Point(46, 508);
             reports_Btn.Name = "reports_Btn";
-            reports_Btn.Size = new Size(163, 33);
+            reports_Btn.Size = new Size(84, 33);
             reports_Btn.TabIndex = 10;
             reports_Btn.Text = "Reports";
             reports_Btn.UseVisualStyleBackColor = false;
@@ -157,9 +181,9 @@
             employee_btn.FlatAppearance.BorderSize = 0;
             employee_btn.FlatStyle = FlatStyle.Flat;
             employee_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            employee_btn.Location = new Point(-2, 357);
+            employee_btn.Location = new Point(30, 362);
             employee_btn.Name = "employee_btn";
-            employee_btn.Size = new Size(163, 33);
+            employee_btn.Size = new Size(131, 33);
             employee_btn.TabIndex = 7;
             employee_btn.Text = "Employees";
             employee_btn.UseVisualStyleBackColor = false;
@@ -170,9 +194,9 @@
             suplier_btn.FlatAppearance.BorderSize = 0;
             suplier_btn.FlatStyle = FlatStyle.Flat;
             suplier_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            suplier_btn.Location = new Point(-2, 401);
+            suplier_btn.Location = new Point(39, 408);
             suplier_btn.Name = "suplier_btn";
-            suplier_btn.Size = new Size(163, 33);
+            suplier_btn.Size = new Size(102, 33);
             suplier_btn.TabIndex = 6;
             suplier_btn.Text = "Suppliers";
             suplier_btn.UseVisualStyleBackColor = false;
@@ -196,9 +220,9 @@
             trans_btn.FlatAppearance.BorderSize = 0;
             trans_btn.FlatStyle = FlatStyle.Flat;
             trans_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            trans_btn.Location = new Point(2, 244);
+            trans_btn.Location = new Point(46, 244);
             trans_btn.Name = "trans_btn";
-            trans_btn.Size = new Size(163, 33);
+            trans_btn.Size = new Size(119, 33);
             trans_btn.TabIndex = 4;
             trans_btn.Text = "Transactions";
             trans_btn.UseVisualStyleBackColor = false;
@@ -222,9 +246,9 @@
             inv_btn.FlatAppearance.BorderSize = 0;
             inv_btn.FlatStyle = FlatStyle.Flat;
             inv_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            inv_btn.Location = new Point(0, 196);
+            inv_btn.Location = new Point(37, 196);
             inv_btn.Name = "inv_btn";
-            inv_btn.Size = new Size(163, 33);
+            inv_btn.Size = new Size(126, 33);
             inv_btn.TabIndex = 2;
             inv_btn.Text = "Inventory";
             inv_btn.UseVisualStyleBackColor = false;
@@ -235,9 +259,9 @@
             dashboard_btn.FlatAppearance.BorderSize = 0;
             dashboard_btn.FlatStyle = FlatStyle.Flat;
             dashboard_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dashboard_btn.Location = new Point(2, 150);
+            dashboard_btn.Location = new Point(37, 150);
             dashboard_btn.Name = "dashboard_btn";
-            dashboard_btn.Size = new Size(163, 33);
+            dashboard_btn.Size = new Size(128, 33);
             dashboard_btn.TabIndex = 0;
             dashboard_btn.Text = "Dashboard";
             dashboard_btn.UseVisualStyleBackColor = false;
@@ -279,7 +303,7 @@
             // 
             fuelInventory_label.AutoSize = true;
             fuelInventory_label.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold);
-            fuelInventory_label.Location = new Point(207, 143);
+            fuelInventory_label.Location = new Point(207, 141);
             fuelInventory_label.Name = "fuelInventory_label";
             fuelInventory_label.Size = new Size(151, 30);
             fuelInventory_label.TabIndex = 5;
@@ -379,6 +403,94 @@
             date_label.TabIndex = 0;
             date_label.Text = "DATE GOES HERE";
             // 
+            // dashboard
+            // 
+            dashboard.BackColor = Color.Maroon;
+            dashboard.Image = (Image)resources.GetObject("dashboard.Image");
+            dashboard.Location = new Point(15, 150);
+            dashboard.Name = "dashboard";
+            dashboard.Size = new Size(34, 30);
+            dashboard.SizeMode = PictureBoxSizeMode.StretchImage;
+            dashboard.TabIndex = 60;
+            dashboard.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Maroon;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(15, 199);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(34, 30);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 61;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.Maroon;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(15, 244);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(34, 30);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 62;
+            pictureBox2.TabStop = false;
+            // 
+            // employee
+            // 
+            employee.BackColor = Color.Maroon;
+            employee.Image = (Image)resources.GetObject("employee.Image");
+            employee.Location = new Point(15, 365);
+            employee.Name = "employee";
+            employee.Size = new Size(34, 30);
+            employee.SizeMode = PictureBoxSizeMode.StretchImage;
+            employee.TabIndex = 63;
+            employee.TabStop = false;
+            // 
+            // supplier
+            // 
+            supplier.BackColor = Color.Maroon;
+            supplier.Image = (Image)resources.GetObject("supplier.Image");
+            supplier.Location = new Point(15, 414);
+            supplier.Name = "supplier";
+            supplier.Size = new Size(34, 30);
+            supplier.SizeMode = PictureBoxSizeMode.StretchImage;
+            supplier.TabIndex = 64;
+            supplier.TabStop = false;
+            // 
+            // reports
+            // 
+            reports.BackColor = Color.Maroon;
+            reports.Image = (Image)resources.GetObject("reports.Image");
+            reports.Location = new Point(15, 511);
+            reports.Name = "reports";
+            reports.Size = new Size(34, 30);
+            reports.SizeMode = PictureBoxSizeMode.StretchImage;
+            reports.TabIndex = 65;
+            reports.TabStop = false;
+            // 
+            // auditTrial
+            // 
+            auditTrial.BackColor = Color.Maroon;
+            auditTrial.Image = (Image)resources.GetObject("auditTrial.Image");
+            auditTrial.Location = new Point(13, 557);
+            auditTrial.Name = "auditTrial";
+            auditTrial.Size = new Size(34, 33);
+            auditTrial.SizeMode = PictureBoxSizeMode.StretchImage;
+            auditTrial.TabIndex = 66;
+            auditTrial.TabStop = false;
+            // 
+            // logout
+            // 
+            logout.BackColor = Color.Maroon;
+            logout.Image = (Image)resources.GetObject("logout.Image");
+            logout.Location = new Point(11, 679);
+            logout.Name = "logout";
+            logout.Size = new Size(34, 30);
+            logout.SizeMode = PictureBoxSizeMode.StretchImage;
+            logout.TabIndex = 68;
+            logout.TabStop = false;
+            // 
             // Inventory
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -409,6 +521,14 @@
             inventory_panel.ResumeLayout(false);
             inventory_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)usr_avatar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dashboard).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)employee).EndInit();
+            ((System.ComponentModel.ISupportInitialize)supplier).EndInit();
+            ((System.ComponentModel.ISupportInitialize)reports).EndInit();
+            ((System.ComponentModel.ISupportInitialize)auditTrial).EndInit();
+            ((System.ComponentModel.ISupportInitialize)logout).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -442,5 +562,13 @@
         private Label role_label;
         private Label date_label;
         private Label fueltrack_icon;
+        private PictureBox dashboard;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
+        private PictureBox employee;
+        private PictureBox supplier;
+        private PictureBox reports;
+        private PictureBox auditTrial;
+        private PictureBox logout;
     }
 }

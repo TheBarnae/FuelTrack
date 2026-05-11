@@ -169,6 +169,11 @@ namespace FuelTrack
         {
 
         }
+
+        private void menubar_transaction_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 
 }

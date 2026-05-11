@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Suppliers));
             menubar_Suppliers = new Panel();
             logout_btn = new Button();
             audit_btn = new Button();
@@ -96,6 +97,19 @@
             active_label = new Label();
             pending_deliver_pnl = new Panel();
             pending_label = new Label();
+            addSupplier = new PictureBox();
+            recordDelivery = new PictureBox();
+            totalSupplier = new PictureBox();
+            activeContracts = new PictureBox();
+            pendingDeliveries = new PictureBox();
+            dashboard = new PictureBox();
+            inventory = new PictureBox();
+            transaction = new PictureBox();
+            employee = new PictureBox();
+            supplier = new PictureBox();
+            reports = new PictureBox();
+            auditTrial = new PictureBox();
+            logout = new PictureBox();
             menubar_Suppliers.SuspendLayout();
             Suppliers_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)usr_avatar).BeginInit();
@@ -106,11 +120,32 @@
             total_suppliers_pnl.SuspendLayout();
             active_contracts_pnl.SuspendLayout();
             pending_deliver_pnl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)addSupplier).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)recordDelivery).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)totalSupplier).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)activeContracts).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pendingDeliveries).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dashboard).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)inventory).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)transaction).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)employee).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)supplier).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)reports).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)auditTrial).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)logout).BeginInit();
             SuspendLayout();
             // 
             // menubar_Suppliers
             // 
             menubar_Suppliers.BackColor = Color.Maroon;
+            menubar_Suppliers.Controls.Add(logout);
+            menubar_Suppliers.Controls.Add(auditTrial);
+            menubar_Suppliers.Controls.Add(reports);
+            menubar_Suppliers.Controls.Add(supplier);
+            menubar_Suppliers.Controls.Add(employee);
+            menubar_Suppliers.Controls.Add(transaction);
+            menubar_Suppliers.Controls.Add(inventory);
+            menubar_Suppliers.Controls.Add(dashboard);
             menubar_Suppliers.Controls.Add(logout_btn);
             menubar_Suppliers.Controls.Add(audit_btn);
             menubar_Suppliers.Controls.Add(reports_Btn);
@@ -137,9 +172,9 @@
             logout_btn.FlatAppearance.BorderSize = 0;
             logout_btn.FlatStyle = FlatStyle.Flat;
             logout_btn.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            logout_btn.Location = new Point(12, 680);
+            logout_btn.Location = new Point(37, 680);
             logout_btn.Name = "logout_btn";
-            logout_btn.Size = new Size(135, 30);
+            logout_btn.Size = new Size(110, 30);
             logout_btn.TabIndex = 12;
             logout_btn.Text = "LOGOUT";
             logout_btn.UseVisualStyleBackColor = false;
@@ -150,9 +185,9 @@
             audit_btn.FlatAppearance.BorderSize = 0;
             audit_btn.FlatStyle = FlatStyle.Flat;
             audit_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            audit_btn.Location = new Point(0, 555);
+            audit_btn.Location = new Point(48, 555);
             audit_btn.Name = "audit_btn";
-            audit_btn.Size = new Size(163, 33);
+            audit_btn.Size = new Size(98, 33);
             audit_btn.TabIndex = 11;
             audit_btn.Text = "Audit Trail";
             audit_btn.UseVisualStyleBackColor = false;
@@ -163,9 +198,9 @@
             reports_Btn.FlatAppearance.BorderSize = 0;
             reports_Btn.FlatStyle = FlatStyle.Flat;
             reports_Btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            reports_Btn.Location = new Point(3, 506);
+            reports_Btn.Location = new Point(47, 506);
             reports_Btn.Name = "reports_Btn";
-            reports_Btn.Size = new Size(163, 33);
+            reports_Btn.Size = new Size(83, 33);
             reports_Btn.TabIndex = 10;
             reports_Btn.Text = "Reports";
             reports_Btn.UseVisualStyleBackColor = false;
@@ -202,9 +237,9 @@
             employee_btn.FlatAppearance.BorderSize = 0;
             employee_btn.FlatStyle = FlatStyle.Flat;
             employee_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            employee_btn.Location = new Point(-2, 357);
+            employee_btn.Location = new Point(48, 357);
             employee_btn.Name = "employee_btn";
-            employee_btn.Size = new Size(163, 33);
+            employee_btn.Size = new Size(101, 33);
             employee_btn.TabIndex = 7;
             employee_btn.Text = "Employees";
             employee_btn.UseVisualStyleBackColor = false;
@@ -215,9 +250,9 @@
             suplier_btn.FlatAppearance.BorderSize = 0;
             suplier_btn.FlatStyle = FlatStyle.Flat;
             suplier_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            suplier_btn.Location = new Point(-2, 401);
+            suplier_btn.Location = new Point(47, 405);
             suplier_btn.Name = "suplier_btn";
-            suplier_btn.Size = new Size(163, 33);
+            suplier_btn.Size = new Size(97, 33);
             suplier_btn.TabIndex = 6;
             suplier_btn.Text = "Suppliers";
             suplier_btn.UseVisualStyleBackColor = false;
@@ -241,9 +276,9 @@
             trans_btn.FlatAppearance.BorderSize = 0;
             trans_btn.FlatStyle = FlatStyle.Flat;
             trans_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            trans_btn.Location = new Point(3, 245);
+            trans_btn.Location = new Point(47, 245);
             trans_btn.Name = "trans_btn";
-            trans_btn.Size = new Size(163, 33);
+            trans_btn.Size = new Size(106, 33);
             trans_btn.TabIndex = 4;
             trans_btn.Text = "Transactions";
             trans_btn.UseVisualStyleBackColor = false;
@@ -267,9 +302,9 @@
             inv_btn.FlatAppearance.BorderSize = 0;
             inv_btn.FlatStyle = FlatStyle.Flat;
             inv_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            inv_btn.Location = new Point(0, 197);
+            inv_btn.Location = new Point(42, 197);
             inv_btn.Name = "inv_btn";
-            inv_btn.Size = new Size(163, 33);
+            inv_btn.Size = new Size(109, 33);
             inv_btn.TabIndex = 2;
             inv_btn.Text = "Inventory";
             inv_btn.UseVisualStyleBackColor = false;
@@ -280,9 +315,9 @@
             dashboard_btn.FlatAppearance.BorderSize = 0;
             dashboard_btn.FlatStyle = FlatStyle.Flat;
             dashboard_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dashboard_btn.Location = new Point(2, 150);
+            dashboard_btn.Location = new Point(40, 150);
             dashboard_btn.Name = "dashboard_btn";
-            dashboard_btn.Size = new Size(163, 33);
+            dashboard_btn.Size = new Size(118, 33);
             dashboard_btn.TabIndex = 0;
             dashboard_btn.Text = "Dashboard";
             dashboard_btn.UseVisualStyleBackColor = false;
@@ -350,7 +385,7 @@
             // 
             Employees_label.AutoSize = true;
             Employees_label.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Employees_label.Location = new Point(198, 99);
+            Employees_label.Location = new Point(198, 74);
             Employees_label.Name = "Employees_label";
             Employees_label.Size = new Size(100, 30);
             Employees_label.TabIndex = 5;
@@ -358,7 +393,7 @@
             // 
             // supplier_textBox
             // 
-            supplier_textBox.Location = new Point(572, 99);
+            supplier_textBox.Location = new Point(572, 79);
             supplier_textBox.Name = "supplier_textBox";
             supplier_textBox.Size = new Size(252, 23);
             supplier_textBox.TabIndex = 6;
@@ -373,7 +408,7 @@
             addsupplier_button.BackgroundImageLayout = ImageLayout.None;
             addsupplier_button.FlatStyle = FlatStyle.Popup;
             addsupplier_button.ForeColor = SystemColors.ControlLightLight;
-            addsupplier_button.Location = new Point(832, 93);
+            addsupplier_button.Location = new Point(832, 73);
             addsupplier_button.Name = "addsupplier_button";
             addsupplier_button.Size = new Size(118, 32);
             addsupplier_button.TabIndex = 9;
@@ -385,9 +420,9 @@
             supplierdata_dataGridView.BackgroundColor = SystemColors.ControlLightLight;
             supplierdata_dataGridView.BorderStyle = BorderStyle.None;
             supplierdata_dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            supplierdata_dataGridView.Location = new Point(198, 250);
+            supplierdata_dataGridView.Location = new Point(198, 230);
             supplierdata_dataGridView.Name = "supplierdata_dataGridView";
-            supplierdata_dataGridView.Size = new Size(752, 107);
+            supplierdata_dataGridView.Size = new Size(752, 128);
             supplierdata_dataGridView.TabIndex = 13;
             supplierdata_dataGridView.SelectionChanged += supplierdata_dataGridView_SelectionChanged;
             // 
@@ -427,7 +462,7 @@
             add_label.AutoSize = true;
             add_label.BackColor = SystemColors.ControlLightLight;
             add_label.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            add_label.Location = new Point(218, 386);
+            add_label.Location = new Point(258, 388);
             add_label.Name = "add_label";
             add_label.Size = new Size(138, 20);
             add_label.TabIndex = 17;
@@ -439,7 +474,7 @@
             recorddelivery_label.AutoSize = true;
             recorddelivery_label.BackColor = SystemColors.ControlLightLight;
             recorddelivery_label.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
-            recorddelivery_label.Location = new Point(593, 386);
+            recorddelivery_label.Location = new Point(635, 383);
             recorddelivery_label.Name = "recorddelivery_label";
             recorddelivery_label.Size = new Size(119, 20);
             recorddelivery_label.TabIndex = 18;
@@ -574,7 +609,7 @@
             savesupplier_button.BackColor = Color.FromArgb(243, 113, 0);
             savesupplier_button.FlatStyle = FlatStyle.Popup;
             savesupplier_button.ForeColor = Color.White;
-            savesupplier_button.Location = new Point(473, 437);
+            savesupplier_button.Location = new Point(473, 442);
             savesupplier_button.Name = "savesupplier_button";
             savesupplier_button.Size = new Size(75, 27);
             savesupplier_button.TabIndex = 33;
@@ -600,7 +635,7 @@
             deletesupplier_button.BackColor = Color.Maroon;
             deletesupplier_button.FlatStyle = FlatStyle.Popup;
             deletesupplier_button.ForeColor = Color.White;
-            deletesupplier_button.Location = new Point(473, 531);
+            deletesupplier_button.Location = new Point(473, 529);
             deletesupplier_button.Name = "deletesupplier_button";
             deletesupplier_button.Size = new Size(75, 27);
             deletesupplier_button.TabIndex = 35;
@@ -762,7 +797,7 @@
             deliveryhistory_label.AutoSize = true;
             deliveryhistory_label.BackColor = SystemColors.ControlLightLight;
             deliveryhistory_label.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
-            deliveryhistory_label.Location = new Point(218, 656);
+            deliveryhistory_label.Location = new Point(218, 649);
             deliveryhistory_label.Name = "deliveryhistory_label";
             deliveryhistory_label.Size = new Size(121, 20);
             deliveryhistory_label.TabIndex = 53;
@@ -772,8 +807,9 @@
             // total_suppliers_pnl
             // 
             total_suppliers_pnl.BackColor = SystemColors.Info;
+            total_suppliers_pnl.Controls.Add(totalSupplier);
             total_suppliers_pnl.Controls.Add(total_supp_label);
-            total_suppliers_pnl.Location = new Point(198, 136);
+            total_suppliers_pnl.Location = new Point(198, 116);
             total_suppliers_pnl.Name = "total_suppliers_pnl";
             total_suppliers_pnl.Size = new Size(229, 98);
             total_suppliers_pnl.TabIndex = 54;
@@ -782,7 +818,7 @@
             // 
             total_supp_label.AutoSize = true;
             total_supp_label.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
-            total_supp_label.Location = new Point(6, 9);
+            total_supp_label.Location = new Point(75, 19);
             total_supp_label.Name = "total_supp_label";
             total_supp_label.Size = new Size(109, 20);
             total_supp_label.TabIndex = 0;
@@ -791,8 +827,9 @@
             // active_contracts_pnl
             // 
             active_contracts_pnl.BackColor = SystemColors.Info;
+            active_contracts_pnl.Controls.Add(activeContracts);
             active_contracts_pnl.Controls.Add(active_label);
-            active_contracts_pnl.Location = new Point(462, 136);
+            active_contracts_pnl.Location = new Point(462, 116);
             active_contracts_pnl.Name = "active_contracts_pnl";
             active_contracts_pnl.Size = new Size(229, 98);
             active_contracts_pnl.TabIndex = 55;
@@ -801,7 +838,7 @@
             // 
             active_label.AutoSize = true;
             active_label.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
-            active_label.Location = new Point(11, 11);
+            active_label.Location = new Point(81, 19);
             active_label.Name = "active_label";
             active_label.Size = new Size(119, 20);
             active_label.TabIndex = 1;
@@ -810,8 +847,9 @@
             // pending_deliver_pnl
             // 
             pending_deliver_pnl.BackColor = SystemColors.Info;
+            pending_deliver_pnl.Controls.Add(pendingDeliveries);
             pending_deliver_pnl.Controls.Add(pending_label);
-            pending_deliver_pnl.Location = new Point(721, 136);
+            pending_deliver_pnl.Location = new Point(721, 116);
             pending_deliver_pnl.Name = "pending_deliver_pnl";
             pending_deliver_pnl.Size = new Size(229, 98);
             pending_deliver_pnl.TabIndex = 55;
@@ -820,11 +858,154 @@
             // 
             pending_label.AutoSize = true;
             pending_label.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
-            pending_label.Location = new Point(11, 11);
+            pending_label.Location = new Point(67, 20);
             pending_label.Name = "pending_label";
             pending_label.Size = new Size(136, 20);
             pending_label.TabIndex = 1;
             pending_label.Text = "Pending Deliveries";
+            // 
+            // addSupplier
+            // 
+            addSupplier.BackColor = SystemColors.ControlLightLight;
+            addSupplier.Image = (Image)resources.GetObject("addSupplier.Image");
+            addSupplier.Location = new Point(216, 383);
+            addSupplier.Name = "addSupplier";
+            addSupplier.Size = new Size(34, 30);
+            addSupplier.SizeMode = PictureBoxSizeMode.StretchImage;
+            addSupplier.TabIndex = 56;
+            addSupplier.TabStop = false;
+            // 
+            // recordDelivery
+            // 
+            recordDelivery.BackColor = SystemColors.ControlLightLight;
+            recordDelivery.Image = (Image)resources.GetObject("recordDelivery.Image");
+            recordDelivery.Location = new Point(598, 378);
+            recordDelivery.Name = "recordDelivery";
+            recordDelivery.Size = new Size(34, 30);
+            recordDelivery.SizeMode = PictureBoxSizeMode.StretchImage;
+            recordDelivery.TabIndex = 57;
+            recordDelivery.TabStop = false;
+            // 
+            // totalSupplier
+            // 
+            totalSupplier.BackColor = SystemColors.ControlLightLight;
+            totalSupplier.Image = (Image)resources.GetObject("totalSupplier.Image");
+            totalSupplier.Location = new Point(16, 11);
+            totalSupplier.Name = "totalSupplier";
+            totalSupplier.Size = new Size(49, 47);
+            totalSupplier.SizeMode = PictureBoxSizeMode.StretchImage;
+            totalSupplier.TabIndex = 58;
+            totalSupplier.TabStop = false;
+            // 
+            // activeContracts
+            // 
+            activeContracts.BackColor = SystemColors.ControlLightLight;
+            activeContracts.Image = (Image)resources.GetObject("activeContracts.Image");
+            activeContracts.Location = new Point(18, 11);
+            activeContracts.Name = "activeContracts";
+            activeContracts.Size = new Size(49, 47);
+            activeContracts.SizeMode = PictureBoxSizeMode.StretchImage;
+            activeContracts.TabIndex = 59;
+            activeContracts.TabStop = false;
+            // 
+            // pendingDeliveries
+            // 
+            pendingDeliveries.BackColor = SystemColors.ControlLightLight;
+            pendingDeliveries.Image = (Image)resources.GetObject("pendingDeliveries.Image");
+            pendingDeliveries.Location = new Point(10, 11);
+            pendingDeliveries.Name = "pendingDeliveries";
+            pendingDeliveries.Size = new Size(49, 47);
+            pendingDeliveries.SizeMode = PictureBoxSizeMode.StretchImage;
+            pendingDeliveries.TabIndex = 60;
+            pendingDeliveries.TabStop = false;
+            // 
+            // dashboard
+            // 
+            dashboard.BackColor = Color.Maroon;
+            dashboard.Image = (Image)resources.GetObject("dashboard.Image");
+            dashboard.Location = new Point(16, 152);
+            dashboard.Name = "dashboard";
+            dashboard.Size = new Size(34, 30);
+            dashboard.SizeMode = PictureBoxSizeMode.StretchImage;
+            dashboard.TabIndex = 58;
+            dashboard.TabStop = false;
+            // 
+            // inventory
+            // 
+            inventory.BackColor = Color.Maroon;
+            inventory.Image = (Image)resources.GetObject("inventory.Image");
+            inventory.Location = new Point(16, 200);
+            inventory.Name = "inventory";
+            inventory.Size = new Size(34, 30);
+            inventory.SizeMode = PictureBoxSizeMode.StretchImage;
+            inventory.TabIndex = 59;
+            inventory.TabStop = false;
+            // 
+            // transaction
+            // 
+            transaction.BackColor = Color.Maroon;
+            transaction.Image = (Image)resources.GetObject("transaction.Image");
+            transaction.Location = new Point(16, 248);
+            transaction.Name = "transaction";
+            transaction.Size = new Size(34, 30);
+            transaction.SizeMode = PictureBoxSizeMode.StretchImage;
+            transaction.TabIndex = 60;
+            transaction.TabStop = false;
+            // 
+            // employee
+            // 
+            employee.BackColor = Color.Maroon;
+            employee.Image = (Image)resources.GetObject("employee.Image");
+            employee.Location = new Point(16, 359);
+            employee.Name = "employee";
+            employee.Size = new Size(34, 30);
+            employee.SizeMode = PictureBoxSizeMode.StretchImage;
+            employee.TabIndex = 61;
+            employee.TabStop = false;
+            // 
+            // supplier
+            // 
+            supplier.BackColor = Color.Maroon;
+            supplier.Image = (Image)resources.GetObject("supplier.Image");
+            supplier.Location = new Point(16, 405);
+            supplier.Name = "supplier";
+            supplier.Size = new Size(34, 30);
+            supplier.SizeMode = PictureBoxSizeMode.StretchImage;
+            supplier.TabIndex = 62;
+            supplier.TabStop = false;
+            // 
+            // reports
+            // 
+            reports.BackColor = Color.Maroon;
+            reports.Image = (Image)resources.GetObject("reports.Image");
+            reports.Location = new Point(17, 509);
+            reports.Name = "reports";
+            reports.Size = new Size(34, 30);
+            reports.SizeMode = PictureBoxSizeMode.StretchImage;
+            reports.TabIndex = 63;
+            reports.TabStop = false;
+            // 
+            // auditTrial
+            // 
+            auditTrial.BackColor = Color.Maroon;
+            auditTrial.Image = (Image)resources.GetObject("auditTrial.Image");
+            auditTrial.Location = new Point(18, 555);
+            auditTrial.Name = "auditTrial";
+            auditTrial.Size = new Size(34, 33);
+            auditTrial.SizeMode = PictureBoxSizeMode.StretchImage;
+            auditTrial.TabIndex = 64;
+            auditTrial.TabStop = false;
+            // 
+            // logout
+            // 
+            logout.BackColor = Color.Maroon;
+            logout.Image = (Image)resources.GetObject("logout.Image");
+            logout.Location = new Point(18, 680);
+            logout.Name = "logout";
+            logout.Size = new Size(34, 30);
+            logout.SizeMode = PictureBoxSizeMode.StretchImage;
+            logout.TabIndex = 65;
+            logout.TabStop = false;
             // 
             // Suppliers
             // 
@@ -832,6 +1013,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(224, 224, 224);
             ClientSize = new Size(979, 768);
+            Controls.Add(recordDelivery);
+            Controls.Add(addSupplier);
             Controls.Add(pending_deliver_pnl);
             Controls.Add(active_contracts_pnl);
             Controls.Add(total_suppliers_pnl);
@@ -902,6 +1085,19 @@
             active_contracts_pnl.PerformLayout();
             pending_deliver_pnl.ResumeLayout(false);
             pending_deliver_pnl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)addSupplier).EndInit();
+            ((System.ComponentModel.ISupportInitialize)recordDelivery).EndInit();
+            ((System.ComponentModel.ISupportInitialize)totalSupplier).EndInit();
+            ((System.ComponentModel.ISupportInitialize)activeContracts).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pendingDeliveries).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dashboard).EndInit();
+            ((System.ComponentModel.ISupportInitialize)inventory).EndInit();
+            ((System.ComponentModel.ISupportInitialize)transaction).EndInit();
+            ((System.ComponentModel.ISupportInitialize)employee).EndInit();
+            ((System.ComponentModel.ISupportInitialize)supplier).EndInit();
+            ((System.ComponentModel.ISupportInitialize)reports).EndInit();
+            ((System.ComponentModel.ISupportInitialize)auditTrial).EndInit();
+            ((System.ComponentModel.ISupportInitialize)logout).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -976,5 +1172,18 @@
         private Label total_supp_label;
         private Label active_label;
         private Label pending_label;
+        private PictureBox totalSupplier;
+        private PictureBox activeContracts;
+        private PictureBox pendingDeliveries;
+        private PictureBox addSupplier;
+        private PictureBox recordDelivery;
+        private PictureBox logout;
+        private PictureBox auditTrial;
+        private PictureBox reports;
+        private PictureBox supplier;
+        private PictureBox employee;
+        private PictureBox transaction;
+        private PictureBox inventory;
+        private PictureBox dashboard;
     }
 }
