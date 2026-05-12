@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 12, 2026 at 08:37 PM
+-- Generation Time: May 12, 2026 at 10:32 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -120,7 +120,27 @@ INSERT INTO `attendance` (`attendance_id`, `employee_id`, `login_time`, `logout_
 (80, 1, '2026-05-13 01:53:08', NULL),
 (81, 1, '2026-05-13 02:07:03', NULL),
 (82, 1, '2026-05-13 02:17:09', NULL),
-(83, 3, '2026-05-13 02:27:45', NULL);
+(83, 3, '2026-05-13 02:27:45', NULL),
+(84, 1, '2026-05-13 02:41:22', NULL),
+(85, 1, '2026-05-13 02:51:13', NULL),
+(86, 1, '2026-05-13 03:04:26', NULL),
+(87, 1, '2026-05-13 03:21:28', NULL),
+(88, 1, '2026-05-13 03:28:20', NULL),
+(89, 1, '2026-05-13 03:29:07', NULL),
+(90, 1, '2026-05-13 03:30:02', NULL),
+(91, 1, '2026-05-13 03:31:24', NULL),
+(92, 1, '2026-05-13 03:34:43', NULL),
+(93, 1, '2026-05-13 03:42:47', NULL),
+(94, 1, '2026-05-13 03:44:13', NULL),
+(95, 1, '2026-05-13 03:46:06', NULL),
+(96, 1, '2026-05-13 03:51:20', NULL),
+(97, 1, '2026-05-13 03:58:57', NULL),
+(98, 1, '2026-05-13 04:02:47', NULL),
+(99, 1, '2026-05-13 04:09:39', NULL),
+(100, 1, '2026-05-13 04:18:01', NULL),
+(101, 1, '2026-05-13 04:23:07', NULL),
+(102, 1, '2026-05-13 04:28:24', NULL),
+(103, 3, '2026-05-13 04:28:53', NULL);
 
 -- --------------------------------------------------------
 
@@ -191,7 +211,27 @@ INSERT INTO `audit_trail` (`audit_id`, `user_id`, `module`, `action_type`, `desc
 (47, 1, 'Auth', 'Login', 'Admin - System Admin logged in.', '2026-05-13 01:53:08'),
 (48, 1, 'Auth', 'Login', 'Admin - System Admin logged in.', '2026-05-13 02:07:03'),
 (49, 1, 'Auth', 'Login', 'Admin - System Admin logged in.', '2026-05-13 02:17:09'),
-(50, 3, 'Auth', 'Login', 'Supervisor - Barnae logged in.', '2026-05-13 02:27:45');
+(50, 3, 'Auth', 'Login', 'Supervisor - Barnae logged in.', '2026-05-13 02:27:45'),
+(51, 1, 'Auth', 'Login', 'Admin - System Admin logged in.', '2026-05-13 02:41:22'),
+(52, 1, 'Auth', 'Login', 'Admin - System Admin logged in.', '2026-05-13 02:51:13'),
+(53, 1, 'Auth', 'Login', 'Admin - System Admin logged in.', '2026-05-13 03:04:26'),
+(54, 1, 'Auth', 'Login', 'Admin - System Admin logged in.', '2026-05-13 03:21:28'),
+(55, 1, 'Auth', 'Login', 'Admin - System Admin logged in.', '2026-05-13 03:28:20'),
+(56, 1, 'Auth', 'Login', 'Admin - System Admin logged in.', '2026-05-13 03:29:07'),
+(57, 1, 'Auth', 'Login', 'Admin - System Admin logged in.', '2026-05-13 03:30:02'),
+(58, 1, 'Auth', 'Login', 'Admin - System Admin logged in.', '2026-05-13 03:31:24'),
+(59, 1, 'Auth', 'Login', 'Admin - System Admin logged in.', '2026-05-13 03:34:43'),
+(60, 1, 'Auth', 'Login', 'Admin - System Admin logged in.', '2026-05-13 03:42:47'),
+(61, 1, 'Auth', 'Login', 'Admin - System Admin logged in.', '2026-05-13 03:44:13'),
+(62, 1, 'Auth', 'Login', 'Admin - System Admin logged in.', '2026-05-13 03:46:06'),
+(63, 1, 'Auth', 'Login', 'Admin - System Admin logged in.', '2026-05-13 03:51:20'),
+(64, 1, 'Auth', 'Login', 'Admin - System Admin logged in.', '2026-05-13 03:58:57'),
+(65, 1, 'Auth', 'Login', 'Admin - System Admin logged in.', '2026-05-13 04:02:47'),
+(66, 1, 'Auth', 'Login', 'Admin - System Admin logged in.', '2026-05-13 04:09:39'),
+(67, 1, 'Auth', 'Login', 'Admin - System Admin logged in.', '2026-05-13 04:18:01'),
+(68, 1, 'Auth', 'Login', 'Admin - System Admin logged in.', '2026-05-13 04:23:07'),
+(69, 1, 'Auth', 'Login', 'Admin - System Admin logged in.', '2026-05-13 04:28:24'),
+(70, 3, 'Auth', 'Login', 'Supervisor - Barnae logged in.', '2026-05-13 04:28:53');
 
 -- --------------------------------------------------------
 
@@ -216,8 +256,9 @@ CREATE TABLE `deliveries` (
 --
 
 INSERT INTO `deliveries` (`delivery_id`, `supplier_id`, `fuel_type_id`, `dr_number`, `volume_liters`, `delivery_date`, `received_by`, `price_per_liter`, `status`) VALUES
-(1, 1, 1, '23235', 5000, '2026-05-13 01:36:36', NULL, 123.00, 'Pending'),
-(2, 1, 1, '7423', 12312, '2026-05-13 02:28:09', NULL, 231.00, 'Pending');
+(1, 1, 1, '23235', 5000, '2026-05-13 01:36:36', NULL, 123.00, 'Delivered'),
+(2, 1, 1, '7423', 12312, '2026-05-13 02:28:09', NULL, 231.00, 'Delivered'),
+(3, 1, 4, '6345134', 12342, '2026-05-13 04:03:35', NULL, 2334.00, 'Delivered');
 
 -- --------------------------------------------------------
 
@@ -263,10 +304,10 @@ CREATE TABLE `fuel_types` (
 --
 
 INSERT INTO `fuel_types` (`fuel_type_id`, `name`, `current_stock_liters`, `min_stock_threshold`, `status`, `updated_at`, `price_per_liter`) VALUES
-(1, 'Diesel', 5200, 1000, 'Available', '2026-05-02 01:38:22', 0.00),
+(1, 'Diesel', 21512, 1000, 'Available', '2026-05-13 03:51:50', 0.00),
 (2, 'RON 91', 3100, 800, 'Available', '2026-05-02 01:38:22', 0.00),
-(3, 'RON 95', 900, 1000, 'Low', '2026-05-02 01:38:22', 0.00),
-(4, 'Premium Diesel', 0, 500, 'Out of Stock', '2026-05-02 01:38:22', 0.00);
+(3, 'RON 95', 670, 1000, 'Low', '2026-05-13 03:45:01', 0.00),
+(4, 'Premium Diesel', 12342, 500, 'Out of Stock', '2026-05-02 01:38:22', 0.00);
 
 -- --------------------------------------------------------
 
@@ -286,7 +327,10 @@ CREATE TABLE `pumps` (
 --
 
 INSERT INTO `pumps` (`pump_id`, `fuel_type_id`, `pump_label`, `status`) VALUES
-(1, 1, 'Pump 01', 'Active');
+(1, 1, 'Pump 01', 'Active'),
+(2, 2, 'Pump 02', 'Active'),
+(3, 3, 'Pump 03', 'Active'),
+(4, 4, 'Pump 04', 'Active');
 
 -- --------------------------------------------------------
 
@@ -309,7 +353,8 @@ CREATE TABLE `reports` (
 --
 
 INSERT INTO `reports` (`report_id`, `generated_by`, `report_type`, `date_range_start`, `date_range_end`, `generated_at`, `export_path`) VALUES
-(1, 1, 'Monthly Revenue Report', '2026-05-01', '2026-06-01', '2026-05-05 04:34:09', 'C:\\Users\\ASUS\\OneDrive\\Documents\\Monthly Revenue Report_20260505_043406.pdf');
+(1, 1, 'Monthly Revenue Report', '2026-05-01', '2026-06-01', '2026-05-05 04:34:09', 'C:\\Users\\ASUS\\OneDrive\\Documents\\Monthly Revenue Report_20260505_043406.pdf'),
+(2, 1, 'Daily Sales Summary', '2026-05-13', '2026-05-14', '2026-05-13 04:23:20', 'C:\\Users\\ASUS\\OneDrive\\Documents\\Daily Sales Summary_20260513_042317.pdf');
 
 -- --------------------------------------------------------
 
@@ -367,10 +412,12 @@ CREATE TABLE `transactions` (
 --
 
 INSERT INTO `transactions` (`transaction_id`, `pump_id`, `employee_id`, `fuel_type_id`, `liters_dispensed`, `amount_paid`, `payment_method`, `transaction_date`) VALUES
-(1, 1, 1, 1, 12, 12345.34, 'Cash', '2026-05-03 23:49:34'),
 (2, 1, NULL, 1, 0, 23.00, 'GCash', '2026-05-13 01:04:21'),
 (3, 1, NULL, 1, 234, 3424.00, 'Cash', '2026-05-13 01:22:28'),
-(4, 1, 1, 1, 1000, 1234.00, 'Cash', '2026-05-13 01:33:38');
+(4, 1, 1, 1, 1000, 1234.00, 'Cash', '2026-05-13 01:33:38'),
+(5, 1, 3, 1, 1000, 234.00, 'Cash', '2026-05-13 02:52:54'),
+(6, 3, 3, 3, 230, 123234.00, 'Card', '2026-05-13 03:45:01'),
+(7, 1, 1, 1, 1000, 2344.00, 'Cash', '2026-05-13 03:51:50');
 
 -- --------------------------------------------------------
 
@@ -488,19 +535,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `attendance`
 --
 ALTER TABLE `attendance`
-  MODIFY `attendance_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+  MODIFY `attendance_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
 
 --
 -- AUTO_INCREMENT for table `audit_trail`
 --
 ALTER TABLE `audit_trail`
-  MODIFY `audit_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `audit_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 
 --
 -- AUTO_INCREMENT for table `deliveries`
 --
 ALTER TABLE `deliveries`
-  MODIFY `delivery_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `delivery_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `employees`
@@ -518,13 +565,13 @@ ALTER TABLE `fuel_types`
 -- AUTO_INCREMENT for table `pumps`
 --
 ALTER TABLE `pumps`
-  MODIFY `pump_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `pump_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `reports`
 --
 ALTER TABLE `reports`
-  MODIFY `report_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `report_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `suppliers`
@@ -542,7 +589,7 @@ ALTER TABLE `supplier_fuel_types`
 -- AUTO_INCREMENT for table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `users`
