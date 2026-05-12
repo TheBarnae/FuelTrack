@@ -24,7 +24,7 @@ namespace FuelTrack
             delete_button.Click += btnDelete_Click;
         }
 
-        private void Employees_Load(object sender, EventArgs e)
+        private void Employees_Load(object? sender, EventArgs e)
         {
             UIHelper.setDateLabel(date_label);
             UIHelper.SetButtonActive(employee_btn, true);
@@ -61,6 +61,13 @@ namespace FuelTrack
                 "Afternoon (2PM-10PM)",
                 "Night (10PM-6AM)"
             });
+
+            if (sts_comboBox != null)
+            {
+                sts_comboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+                sts_comboBox.Items.Clear();
+                sts_comboBox.Items.AddRange(new object[] { "Active", "Inactive" });
+            }
         }
 
         private void LoadEmployees()
@@ -115,9 +122,9 @@ namespace FuelTrack
 
                 if (reader.Read())
                 {
-                    SetSummaryCard(totalemployee_dataGridView, reader.GetInt64("total_employees").ToString());
-                    SetSummaryCard(ondutynow_dataGridView, reader.GetInt64("on_duty").ToString());
-                    SetSummaryCard(offduty_dataGridView, reader.GetInt64("off_duty").ToString());
+                    total_emp_db_label.Text = reader.GetInt64("total_employees").ToString();
+                    on_duty_db_lbl.Text = reader.GetInt64("on_duty").ToString();
+                    off_duty_db_lbl.Text = reader.GetInt64("off_duty").ToString();
                 }
             }
             catch (Exception ex)
@@ -126,23 +133,7 @@ namespace FuelTrack
             }
         }
 
-        private static void SetSummaryCard(DataGridView card, string value)
-        {
-            card.Columns.Clear();
-            card.Rows.Clear();
-            card.RowHeadersVisible = false;
-            card.ColumnHeadersVisible = false;
-            card.AllowUserToAddRows = false;
-            card.AllowUserToDeleteRows = false;
-            card.ReadOnly = true;
-            card.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            card.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            card.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
-            card.Columns.Add("value", "value");
-            card.Rows.Add(value);
-        }
-
-        private void employeedata_dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void employeedata_dataGridView_CellClick(object? sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0)
             {
@@ -159,9 +150,15 @@ namespace FuelTrack
             contactnumber_textBox.Text = GetContactNumberByUserId(_selectedEmployeeId);
             rol_comboBox.SelectedItem = row.Cells["role"].Value?.ToString();
             shiftassignment_comboBox.SelectedItem = GetShiftDisplayText(row.Cells["shift"].Value?.ToString());
+
+            // FIX: We must check Columns.Contains, not Cells.Contains
+            if (sts_comboBox != null && employeedata_dataGridView.Columns.Contains("status"))
+            {
+                sts_comboBox.SelectedItem = row.Cells["status"].Value?.ToString();
+            }
         }
 
-        private void btnSaveEmployee_Click(object sender, EventArgs e)
+        private void btnSaveEmployee_Click(object? sender, EventArgs e)
         {
             var fullName = fullname_textBox.Text.Trim();
             var username = username_textBox.Text.Trim();
@@ -169,6 +166,7 @@ namespace FuelTrack
             var contactNumber = contactnumber_textBox.Text.Trim();
             var role = rol_comboBox.SelectedItem?.ToString();
             var shift = GetShiftValue(shiftassignment_comboBox.SelectedItem?.ToString());
+            var status = sts_comboBox?.SelectedItem?.ToString() ?? "Active";
 
             if (string.IsNullOrWhiteSpace(fullName) || string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(contactNumber)
                 || string.IsNullOrWhiteSpace(role) || string.IsNullOrWhiteSpace(shift))
@@ -185,19 +183,19 @@ namespace FuelTrack
                     return;
                 }
 
-                InsertEmployee(fullName, username, password, contactNumber, role, shift);
+                InsertEmployee(fullName, username, password, contactNumber, role, shift, status);
             }
             else
             {
-                UpdateEmployee(fullName, username, password, contactNumber, role, shift);
+                UpdateEmployee(fullName, username, password, contactNumber, role, shift, status);
             }
         }
 
-        private void InsertEmployee(string fullName, string username, string password, string contactNumber, string role, string shift)
+        private void InsertEmployee(string fullName, string username, string password, string contactNumber, string role, string shift, string status)
         {
             const string insertUserQuery = @"
                 INSERT INTO users (username, password_hash, full_name, role, status, created_at)
-                VALUES (@username, @password_hash, @full_name, @role, 'Active', NOW());";
+                VALUES (@username, @password_hash, @full_name, @role, @status, NOW());";
 
             const string insertEmployeeQuery = @"
                 INSERT INTO employees (user_id, contact_number, shift, avatar_initials, created_at)
@@ -216,6 +214,7 @@ namespace FuelTrack
                     userCommand.Parameters.AddWithValue("@password_hash", HashPassword(password));
                     userCommand.Parameters.AddWithValue("@full_name", fullName);
                     userCommand.Parameters.AddWithValue("@role", role);
+                    userCommand.Parameters.AddWithValue("@status", status);
                     userCommand.ExecuteNonQuery();
 
                     var userId = (int)userCommand.LastInsertedId;
@@ -245,7 +244,7 @@ namespace FuelTrack
             }
         }
 
-        private void UpdateEmployee(string fullName, string username, string password, string contactNumber, string role, string shift)
+        private void UpdateEmployee(string fullName, string username, string password, string contactNumber, string role, string shift, string status)
         {
             if (_selectedEmployeeId is null || _selectedUserId is null)
             {
@@ -258,7 +257,7 @@ namespace FuelTrack
                 SET username = @username,
                     full_name = @full_name,
                     role = @role,
-                    status = 'Active'
+                    status = @status
                 WHERE user_id = @user_id;";
 
             const string updateUserWithPasswordQuery = @"
@@ -267,7 +266,7 @@ namespace FuelTrack
                     password_hash = @password_hash,
                     full_name = @full_name,
                     role = @role,
-                    status = 'Active'
+                    status = @status
                 WHERE user_id = @user_id;";
 
             const string updateEmployeeQuery = @"
@@ -290,6 +289,7 @@ namespace FuelTrack
                     userCommand.Parameters.AddWithValue("@username", username);
                     userCommand.Parameters.AddWithValue("@full_name", fullName);
                     userCommand.Parameters.AddWithValue("@role", role);
+                    userCommand.Parameters.AddWithValue("@status", status);
                     userCommand.Parameters.AddWithValue("@user_id", _selectedUserId.Value);
                     if (!string.IsNullOrWhiteSpace(password))
                     {
@@ -322,7 +322,7 @@ namespace FuelTrack
             }
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object? sender, EventArgs e)
         {
             if (_selectedEmployeeId is null || _selectedUserId is null)
             {
@@ -373,12 +373,12 @@ namespace FuelTrack
             }
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
+        private void btnClear_Click(object? sender, EventArgs e)
         {
             ClearFields();
         }
 
-        private void addemployee_button_Click(object sender, EventArgs e)
+        private void addemployee_button_Click(object? sender, EventArgs e)
         {
             ClearFields();
             fullname_textBox.Focus();
@@ -394,6 +394,12 @@ namespace FuelTrack
             contactnumber_textBox.Clear();
             rol_comboBox.SelectedIndex = -1;
             shiftassignment_comboBox.SelectedIndex = -1;
+
+            if (sts_comboBox != null)
+            {
+                sts_comboBox.SelectedIndex = -1;
+            }
+
             employeedata_dataGridView.ClearSelection();
         }
 
@@ -493,5 +499,16 @@ namespace FuelTrack
                 return string.Empty;
             }
         }
+
+        private void totalemployee_dataGridView_CellContentClick(object? sender, DataGridViewCellEventArgs e) { }
+        private void addemployee_dataGridView_CellContentClick(object? sender, DataGridViewCellEventArgs e) { }
+        private void totalemployee_dataGridView_CellContentClick_1(object? sender, DataGridViewCellEventArgs e) { }
+        private void total_emp_label_Click(object sender, EventArgs e) { }
+        private void onDuty_emp_lbl_Click(object sender, EventArgs e) { }
+        private void offDuty_emp_lbl_Click(object sender, EventArgs e) { }
+        private void total_emp_db_label_Click(object sender, EventArgs e) { }
+        private void on_duty_db_lbl_Click(object sender, EventArgs e) { }
+        private void off_duty_db_lbl_Click(object sender, EventArgs e) { }
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) { }
     }
 }

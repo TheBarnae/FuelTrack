@@ -137,5 +137,15 @@ namespace FuelTrack
             UIHelper.SetButtonActive(reports_Btn, false);
             UIHelper.SetButtonActive(audit_btn, true);
         }
+
+        private void logout_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelMain_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

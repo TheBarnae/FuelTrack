@@ -288,17 +288,19 @@ namespace FuelTrack
             if (_fuelTypeComboBox.SelectedItem is FuelTypeLookup fuelType)
             {
                 _currentPricePerLiter = fuelType.PricePerLiter;
-                _litersNumeric.Maximum = fuelType.CurrentStock > 0m ? fuelType.CurrentStock : 0m;
-                if (_litersNumeric.Value > _litersNumeric.Maximum)
-                {
-                    _litersNumeric.Value = _litersNumeric.Maximum;
-                }
+
+                // FIX: Stop limiting the box to 0 if stock is 0. 
+                // Always allow typing up to a million. Validation handles stock limits when saving.
+                _litersNumeric.Maximum = 1000000m;
+
                 RecalculateAmountFromLiters();
                 return;
             }
 
             _currentPricePerLiter = 0m;
-            _litersNumeric.Maximum = 0m;
+
+            // FIX: Always allow typing up to a million.
+            _litersNumeric.Maximum = 1000000m;
             RecalculateAmountFromLiters();
         }
 
@@ -325,23 +327,40 @@ namespace FuelTrack
         private void RecalculateAmountFromLiters()
         {
             _isUpdatingTotals = true;
-            _amountNumeric.Value = _currentPricePerLiter <= 0m
-                ? 0m
-                : Math.Round(_litersNumeric.Value * _currentPricePerLiter, 2);
+
+            // FIX: Only auto-calculate if there is a real price greater than 0.
+            // This prevents it from automatically deleting your numbers!
+            if (_currentPricePerLiter > 0m)
+            {
+                _amountNumeric.Value = Math.Round(_litersNumeric.Value * _currentPricePerLiter, 2);
+            }
+
             _isUpdatingTotals = false;
         }
 
         private void RecalculateLitersFromAmount()
         {
             _isUpdatingTotals = true;
-            _litersNumeric.Value = _currentPricePerLiter <= 0m
-                ? 0m
-                : Math.Round(_amountNumeric.Value / _currentPricePerLiter, 2);
+
+            // FIX: Only auto-calculate if there is a real price greater than 0.
+            if (_currentPricePerLiter > 0m)
+            {
+                _litersNumeric.Value = Math.Round(_amountNumeric.Value / _currentPricePerLiter, 2);
+            }
+
             _isUpdatingTotals = false;
+        }
+
+        private void InitializeComponent()
+        {
+
         }
 
         private void SaveButton_Click(object? sender, EventArgs e)
         {
+            // Forces the NumericUpDown boxes to register what you just typed before checking for zeros!
+            this.ValidateChildren();
+
             if (_pumpComboBox.SelectedItem is not PumpLookup pump)
             {
                 MessageBox.Show("Please select a pump.", "New Sale", MessageBoxButtons.OK, MessageBoxIcon.Warning);

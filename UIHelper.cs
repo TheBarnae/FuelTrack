@@ -35,10 +35,10 @@ namespace FuelTrack
         {
             button.FlatStyle = FlatStyle.Flat;
             button.FlatAppearance.BorderSize = 0;
-            button.BackColor = Color.FromArgb(26, 58, 92); // Default Base Color
+            button.BackColor = Color.FromArgb(128, 0, 0); // Default Base Color
             button.ForeColor = Color.White;
-            button.FlatAppearance.MouseOverBackColor = Color.FromArgb(33, 70, 110);
-            button.FlatAppearance.MouseDownBackColor = Color.FromArgb(20, 45, 75);
+            button.FlatAppearance.MouseOverBackColor = Color.FromArgb(128, 0, 0);
+            button.FlatAppearance.MouseDownBackColor = Color.FromArgb(128, 0, 0);
         }
 
         // New method to toggle the "Active" highlight for the Dashboard/Navigation
@@ -46,11 +46,11 @@ namespace FuelTrack
         {
             if (isActive)
             {
-                button.BackColor = Color.FromArgb(40, 85, 135); // Active Highlight
+                button.BackColor = Color.FromArgb(162, 72, 87); // Active Highlight
             }
             else
             {
-                button.BackColor = Color.FromArgb(26, 58, 92); // Reset to Base
+                button.BackColor = Color.FromArgb(128, 0, 0); // Reset to Base
             }
         }
 

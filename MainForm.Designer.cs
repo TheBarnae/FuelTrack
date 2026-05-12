@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             panelMain = new Panel();
             menubar_dashboard = new Panel();
+            logout = new PictureBox();
             logout_btn = new Button();
             audit_btn = new Button();
             reports_Btn = new Button();
@@ -45,10 +46,11 @@
             dashboard_btn = new Button();
             fueltrack_icon = new Label();
             panel1 = new Panel();
-            usr_avatar = new PictureBox();
             role_label = new Label();
             date_label = new Label();
+            usr_avatar = new PictureBox();
             menubar_dashboard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)logout).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)usr_avatar).BeginInit();
             SuspendLayout();
@@ -58,12 +60,13 @@
             panelMain.Dock = DockStyle.Fill;
             panelMain.Location = new Point(0, 0);
             panelMain.Name = "panelMain";
-            panelMain.Size = new Size(984, 656);
+            panelMain.Size = new Size(990, 747);
             panelMain.TabIndex = 0;
             // 
             // menubar_dashboard
             // 
             menubar_dashboard.BackColor = Color.Maroon;
+            menubar_dashboard.Controls.Add(logout);
             menubar_dashboard.Controls.Add(logout_btn);
             menubar_dashboard.Controls.Add(audit_btn);
             menubar_dashboard.Controls.Add(reports_Btn);
@@ -80,8 +83,20 @@
             menubar_dashboard.ForeColor = SystemColors.ActiveCaptionText;
             menubar_dashboard.Location = new Point(0, 37);
             menubar_dashboard.Name = "menubar_dashboard";
-            menubar_dashboard.Size = new Size(163, 648);
+            menubar_dashboard.Size = new Size(163, 710);
             menubar_dashboard.TabIndex = 2;
+            // 
+            // logout
+            // 
+            logout.BackColor = Color.Maroon;
+            logout.Image = (Image)resources.GetObject("logout.Image");
+            logout.Location = new Point(14, 638);
+            logout.Name = "logout";
+            logout.Size = new Size(34, 30);
+            logout.SizeMode = PictureBoxSizeMode.StretchImage;
+            logout.TabIndex = 66;
+            logout.TabStop = false;
+            logout.Click += logout_Click;
             // 
             // logout_btn
             // 
@@ -91,7 +106,7 @@
             logout_btn.FlatStyle = FlatStyle.Flat;
             logout_btn.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             logout_btn.ForeColor = Color.White;
-            logout_btn.Location = new Point(14, 483);
+            logout_btn.Location = new Point(25, 638);
             logout_btn.Name = "logout_btn";
             logout_btn.Size = new Size(135, 30);
             logout_btn.TabIndex = 12;
@@ -138,7 +153,7 @@
             rprt_label.ForeColor = Color.White;
             rprt_label.Location = new Point(3, 332);
             rprt_label.Name = "rprt_label";
-            rprt_label.Size = new Size(54, 15);
+            rprt_label.Size = new Size(55, 15);
             rprt_label.TabIndex = 9;
             rprt_label.Text = "REPORTS";
             // 
@@ -273,24 +288,13 @@
             panel1.Controls.Add(date_label);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1271, 52);
+            panel1.Size = new Size(1271, 46);
             panel1.TabIndex = 14;
-            // 
-            // usr_avatar
-            // 
-            usr_avatar.BackColor = SystemColors.ControlDark;
-            usr_avatar.BackgroundImageLayout = ImageLayout.None;
-            usr_avatar.Location = new Point(875, 11);
-            usr_avatar.Name = "usr_avatar";
-            usr_avatar.Size = new Size(38, 38);
-            usr_avatar.SizeMode = PictureBoxSizeMode.Zoom;
-            usr_avatar.TabIndex = 2;
-            usr_avatar.TabStop = false;
             // 
             // role_label
             // 
             role_label.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            role_label.Location = new Point(669, 22);
+            role_label.Location = new Point(712, 17);
             role_label.Name = "role_label";
             role_label.Size = new Size(200, 15);
             role_label.TabIndex = 1;
@@ -302,15 +306,26 @@
             date_label.AutoSize = true;
             date_label.Location = new Point(14, 22);
             date_label.Name = "date_label";
-            date_label.Size = new Size(97, 15);
+            date_label.Size = new Size(98, 15);
             date_label.TabIndex = 0;
             date_label.Text = "DATE GOES HERE";
+            // 
+            // usr_avatar
+            // 
+            usr_avatar.BackColor = SystemColors.ControlDark;
+            usr_avatar.BackgroundImageLayout = ImageLayout.None;
+            usr_avatar.Location = new Point(928, 9);
+            usr_avatar.Name = "usr_avatar";
+            usr_avatar.Size = new Size(33, 30);
+            usr_avatar.SizeMode = PictureBoxSizeMode.Zoom;
+            usr_avatar.TabIndex = 2;
+            usr_avatar.TabStop = false;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(984, 656);
+            ClientSize = new Size(990, 747);
             Controls.Add(panel1);
             Controls.Add(menubar_dashboard);
             Controls.Add(panelMain);
@@ -322,6 +337,7 @@
             Text = "FuelTrack";
             menubar_dashboard.ResumeLayout(false);
             menubar_dashboard.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)logout).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)usr_avatar).EndInit();
@@ -349,5 +365,6 @@
         private PictureBox usr_avatar;
         private Label role_label;
         private Label date_label;
+        private PictureBox logout;
     }
 }

@@ -23,16 +23,24 @@ namespace FuelTrack
             UIHelper.StyleFuelTrackTitle(richTextBox1);
             newsale_button.Click += newsale_button_Click;
         }
+
         private void Transaction_Load(object sender, EventArgs e)
         {
+            // Sets the date for the top-left corner
             UIHelper.setDateLabel(date_label);
+
+            // Sets the live date for the "Today's Date" card
+            label2.Text = DateTime.Now.ToString("MMM dd, yyyy");
+
             UIHelper.SetButtonActive(trans_btn, true);
             UIHelper.DisableCloseButton(this);
             ConfigureTransactionsGrid();
+
+            // Keep the grid configuration so your yellow panel doesn't break
             ConfigureMopGrid();
+
             LoadTransactions();
             LoadTodaySummaryStats();
-
         }
 
         private void ConfigureTransactionsGrid()
@@ -55,6 +63,8 @@ namespace FuelTrack
             MOP_datagrid.AllowUserToDeleteRows = false;
             MOP_datagrid.ReadOnly = true;
             MOP_datagrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            // I REMOVED the "Visible = false" line from here so your UI stays intact.
         }
 
         private void LoadTransactions()
@@ -115,18 +125,9 @@ namespace FuelTrack
                 {
                     var totalSales = reader.GetDecimal("total_sales");
                     var transactionCount = reader.GetInt32("transaction_count");
-                    var cashTotal = reader.GetDecimal("cash_total");
-                    var cardTotal = reader.GetDecimal("card_total");
-                    var gcashTotal = reader.GetDecimal("gcash_total");
 
                     total_sales_db_label.Text = $"₱{totalSales:N2}";
                     trans_db_label.Text = transactionCount.ToString("N0");
-                    var mopTable = new DataTable();
-                    mopTable.Columns.Add("Cash", typeof(string));
-                    mopTable.Columns.Add("Card", typeof(string));
-                    mopTable.Columns.Add("GCash", typeof(string));
-                    mopTable.Rows.Add($"₱{cashTotal:N2}", $"₱{cardTotal:N2}", $"₱{gcashTotal:N2}");
-                    MOP_datagrid.DataSource = mopTable;
                 }
             }
             catch (Exception ex)
@@ -174,6 +175,20 @@ namespace FuelTrack
         {
 
         }
-    }
 
+        private void inv_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void newsale_button_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void newsale_button_Click_2(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

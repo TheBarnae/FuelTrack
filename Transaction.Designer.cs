@@ -30,6 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Transaction));
             menubar_transaction = new Panel();
+            logout = new PictureBox();
+            auditTrial = new PictureBox();
+            reports = new PictureBox();
+            supplier = new PictureBox();
+            employee = new PictureBox();
+            pictureBox1 = new PictureBox();
+            inventory = new PictureBox();
+            dashboard = new PictureBox();
             logout_btn = new Button();
             audit_btn = new Button();
             reports_Btn = new Button();
@@ -58,34 +66,26 @@
             total_sales_db_label = new Label();
             trans_db_label = new Label();
             MOP_datagrid = new DataGridView();
-            dashboard = new PictureBox();
-            inventory = new PictureBox();
-            pictureBox1 = new PictureBox();
-            employee = new PictureBox();
-            supplier = new PictureBox();
-            reports = new PictureBox();
-            auditTrial = new PictureBox();
-            logout = new PictureBox();
             label1 = new Label();
             label2 = new Label();
             pictureBox4 = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
             menubar_transaction.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)logout).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)auditTrial).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)reports).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)supplier).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)employee).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)inventory).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dashboard).BeginInit();
             ((System.ComponentModel.ISupportInitialize)transactionsdata_dataGridView).BeginInit();
             transaction_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)usr_avatar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)transactions_panel).BeginInit();
             ((System.ComponentModel.ISupportInitialize)total_sales).BeginInit();
             ((System.ComponentModel.ISupportInitialize)MOP_datagrid).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dashboard).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)inventory).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)employee).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)supplier).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)reports).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)auditTrial).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)logout).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -121,6 +121,94 @@
             menubar_transaction.Size = new Size(168, 733);
             menubar_transaction.TabIndex = 3;
             menubar_transaction.Paint += menubar_transaction_Paint;
+            // 
+            // logout
+            // 
+            logout.BackColor = Color.Maroon;
+            logout.Image = (Image)resources.GetObject("logout.Image");
+            logout.Location = new Point(14, 681);
+            logout.Name = "logout";
+            logout.Size = new Size(34, 30);
+            logout.SizeMode = PictureBoxSizeMode.StretchImage;
+            logout.TabIndex = 67;
+            logout.TabStop = false;
+            // 
+            // auditTrial
+            // 
+            auditTrial.BackColor = Color.Maroon;
+            auditTrial.Image = (Image)resources.GetObject("auditTrial.Image");
+            auditTrial.Location = new Point(21, 560);
+            auditTrial.Name = "auditTrial";
+            auditTrial.Size = new Size(34, 33);
+            auditTrial.SizeMode = PictureBoxSizeMode.StretchImage;
+            auditTrial.TabIndex = 65;
+            auditTrial.TabStop = false;
+            // 
+            // reports
+            // 
+            reports.BackColor = Color.Maroon;
+            reports.Image = (Image)resources.GetObject("reports.Image");
+            reports.Location = new Point(21, 507);
+            reports.Name = "reports";
+            reports.Size = new Size(34, 30);
+            reports.SizeMode = PictureBoxSizeMode.StretchImage;
+            reports.TabIndex = 64;
+            reports.TabStop = false;
+            // 
+            // supplier
+            // 
+            supplier.BackColor = Color.Maroon;
+            supplier.Image = (Image)resources.GetObject("supplier.Image");
+            supplier.Location = new Point(21, 405);
+            supplier.Name = "supplier";
+            supplier.Size = new Size(34, 30);
+            supplier.SizeMode = PictureBoxSizeMode.StretchImage;
+            supplier.TabIndex = 63;
+            supplier.TabStop = false;
+            // 
+            // employee
+            // 
+            employee.BackColor = Color.Maroon;
+            employee.Image = (Image)resources.GetObject("employee.Image");
+            employee.Location = new Point(21, 358);
+            employee.Name = "employee";
+            employee.Size = new Size(34, 30);
+            employee.SizeMode = PictureBoxSizeMode.StretchImage;
+            employee.TabIndex = 62;
+            employee.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Maroon;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(21, 248);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(34, 30);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 61;
+            pictureBox1.TabStop = false;
+            // 
+            // inventory
+            // 
+            inventory.BackColor = Color.Maroon;
+            inventory.Image = (Image)resources.GetObject("inventory.Image");
+            inventory.Location = new Point(21, 200);
+            inventory.Name = "inventory";
+            inventory.Size = new Size(34, 30);
+            inventory.SizeMode = PictureBoxSizeMode.StretchImage;
+            inventory.TabIndex = 60;
+            inventory.TabStop = false;
+            // 
+            // dashboard
+            // 
+            dashboard.BackColor = Color.Maroon;
+            dashboard.Image = (Image)resources.GetObject("dashboard.Image");
+            dashboard.Location = new Point(21, 154);
+            dashboard.Name = "dashboard";
+            dashboard.Size = new Size(34, 30);
+            dashboard.SizeMode = PictureBoxSizeMode.StretchImage;
+            dashboard.TabIndex = 59;
+            dashboard.TabStop = false;
             // 
             // logout_btn
             // 
@@ -171,7 +259,7 @@
             rprt_label.ForeColor = Color.White;
             rprt_label.Location = new Point(8, 476);
             rprt_label.Name = "rprt_label";
-            rprt_label.Size = new Size(54, 15);
+            rprt_label.Size = new Size(55, 15);
             rprt_label.TabIndex = 9;
             rprt_label.Text = "REPORTS";
             // 
@@ -265,6 +353,7 @@
             inv_btn.TabIndex = 2;
             inv_btn.Text = "Inventory";
             inv_btn.UseVisualStyleBackColor = false;
+            inv_btn.Click += inv_btn_Click;
             // 
             // dashboard_btn
             // 
@@ -310,6 +399,7 @@
             newsale_button.TabIndex = 7;
             newsale_button.Text = "+ New Sale";
             newsale_button.UseVisualStyleBackColor = false;
+            newsale_button.Click += newsale_button_Click_2;
             // 
             // transactionsdata_dataGridView
             // 
@@ -338,7 +428,7 @@
             alert_label.AutoSize = true;
             alert_label.Location = new Point(784, 22);
             alert_label.Name = "alert_label";
-            alert_label.Size = new Size(65, 15);
+            alert_label.Size = new Size(66, 15);
             alert_label.TabIndex = 3;
             alert_label.Text = "--ALERTS--";
             // 
@@ -367,7 +457,7 @@
             date_label.AutoSize = true;
             date_label.Location = new Point(14, 22);
             date_label.Name = "date_label";
-            date_label.Size = new Size(97, 15);
+            date_label.Size = new Size(98, 15);
             date_label.TabIndex = 0;
             date_label.Text = "DATE GOES HERE";
             // 
@@ -447,94 +537,6 @@
             MOP_datagrid.Name = "MOP_datagrid";
             MOP_datagrid.Size = new Size(229, 123);
             MOP_datagrid.TabIndex = 30;
-            // 
-            // dashboard
-            // 
-            dashboard.BackColor = Color.Maroon;
-            dashboard.Image = (Image)resources.GetObject("dashboard.Image");
-            dashboard.Location = new Point(21, 154);
-            dashboard.Name = "dashboard";
-            dashboard.Size = new Size(34, 30);
-            dashboard.SizeMode = PictureBoxSizeMode.StretchImage;
-            dashboard.TabIndex = 59;
-            dashboard.TabStop = false;
-            // 
-            // inventory
-            // 
-            inventory.BackColor = Color.Maroon;
-            inventory.Image = (Image)resources.GetObject("inventory.Image");
-            inventory.Location = new Point(21, 200);
-            inventory.Name = "inventory";
-            inventory.Size = new Size(34, 30);
-            inventory.SizeMode = PictureBoxSizeMode.StretchImage;
-            inventory.TabIndex = 60;
-            inventory.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = Color.Maroon;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(21, 248);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(34, 30);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 61;
-            pictureBox1.TabStop = false;
-            // 
-            // employee
-            // 
-            employee.BackColor = Color.Maroon;
-            employee.Image = (Image)resources.GetObject("employee.Image");
-            employee.Location = new Point(21, 358);
-            employee.Name = "employee";
-            employee.Size = new Size(34, 30);
-            employee.SizeMode = PictureBoxSizeMode.StretchImage;
-            employee.TabIndex = 62;
-            employee.TabStop = false;
-            // 
-            // supplier
-            // 
-            supplier.BackColor = Color.Maroon;
-            supplier.Image = (Image)resources.GetObject("supplier.Image");
-            supplier.Location = new Point(21, 405);
-            supplier.Name = "supplier";
-            supplier.Size = new Size(34, 30);
-            supplier.SizeMode = PictureBoxSizeMode.StretchImage;
-            supplier.TabIndex = 63;
-            supplier.TabStop = false;
-            // 
-            // reports
-            // 
-            reports.BackColor = Color.Maroon;
-            reports.Image = (Image)resources.GetObject("reports.Image");
-            reports.Location = new Point(21, 507);
-            reports.Name = "reports";
-            reports.Size = new Size(34, 30);
-            reports.SizeMode = PictureBoxSizeMode.StretchImage;
-            reports.TabIndex = 64;
-            reports.TabStop = false;
-            // 
-            // auditTrial
-            // 
-            auditTrial.BackColor = Color.Maroon;
-            auditTrial.Image = (Image)resources.GetObject("auditTrial.Image");
-            auditTrial.Location = new Point(21, 560);
-            auditTrial.Name = "auditTrial";
-            auditTrial.Size = new Size(34, 33);
-            auditTrial.SizeMode = PictureBoxSizeMode.StretchImage;
-            auditTrial.TabIndex = 65;
-            auditTrial.TabStop = false;
-            // 
-            // logout
-            // 
-            logout.BackColor = Color.Maroon;
-            logout.Image = (Image)resources.GetObject("logout.Image");
-            logout.Location = new Point(14, 681);
-            logout.Name = "logout";
-            logout.Size = new Size(34, 30);
-            logout.SizeMode = PictureBoxSizeMode.StretchImage;
-            logout.TabIndex = 67;
-            logout.TabStop = false;
             // 
             // label1
             // 
@@ -623,6 +625,14 @@
             Load += Transaction_Load;
             menubar_transaction.ResumeLayout(false);
             menubar_transaction.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)logout).EndInit();
+            ((System.ComponentModel.ISupportInitialize)auditTrial).EndInit();
+            ((System.ComponentModel.ISupportInitialize)reports).EndInit();
+            ((System.ComponentModel.ISupportInitialize)supplier).EndInit();
+            ((System.ComponentModel.ISupportInitialize)employee).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)inventory).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dashboard).EndInit();
             ((System.ComponentModel.ISupportInitialize)transactionsdata_dataGridView).EndInit();
             transaction_panel.ResumeLayout(false);
             transaction_panel.PerformLayout();
@@ -630,14 +640,6 @@
             ((System.ComponentModel.ISupportInitialize)transactions_panel).EndInit();
             ((System.ComponentModel.ISupportInitialize)total_sales).EndInit();
             ((System.ComponentModel.ISupportInitialize)MOP_datagrid).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dashboard).EndInit();
-            ((System.ComponentModel.ISupportInitialize)inventory).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)employee).EndInit();
-            ((System.ComponentModel.ISupportInitialize)supplier).EndInit();
-            ((System.ComponentModel.ISupportInitialize)reports).EndInit();
-            ((System.ComponentModel.ISupportInitialize)auditTrial).EndInit();
-            ((System.ComponentModel.ISupportInitialize)logout).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();

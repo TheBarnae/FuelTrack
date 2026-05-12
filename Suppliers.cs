@@ -14,21 +14,18 @@ namespace FuelTrack
     {
         private readonly Database.Database _database = new Database.Database();
         private DataTable? _supplierTable;
-        private Label? _totalSuppliersValueLabel;
-        private Label? _activeContractsValueLabel;
-        private Label? _pendingDeliveriesValueLabel;
 
         public Suppliers()
         {
             InitializeComponent();
         }
 
-        private void Suppliers_Load(object sender, EventArgs e)
+        private void Suppliers_Load(object? sender, EventArgs e)
         {
             status_comboBox.Items.Clear();
             status_comboBox.Items.AddRange(new object[] { "Active", "Inactive" });
             status_comboBox.SelectedIndex = 0;
-            InitializeSummaryPanels();
+
             ConfigureSupplierGrids();
             InitializeSupplierControls();
             LoadSuppliers();
@@ -56,27 +53,6 @@ namespace FuelTrack
             LoadFuelTypeDropdowns();
         }
 
-        private void InitializeSummaryPanels()
-        {
-            _totalSuppliersValueLabel = CreateSummaryValueLabel(total_suppliers_pnl);
-            _activeContractsValueLabel = CreateSummaryValueLabel(active_contracts_pnl);
-            _pendingDeliveriesValueLabel = CreateSummaryValueLabel(pending_deliver_pnl);
-        }
-
-        private static Label CreateSummaryValueLabel(Control parent)
-        {
-            var valueLabel = new Label
-            {
-                AutoSize = true,
-                Font = new Font("Segoe UI", 18F, FontStyle.Bold),
-                Location = new Point(12, 18),
-                Text = "0"
-            };
-
-            parent.Controls.Add(valueLabel);
-            return valueLabel;
-        }
-
         private void LoadSupplierStats()
         {
             const string totalQuery = "SELECT COUNT(*) FROM Suppliers;";
@@ -85,9 +61,11 @@ namespace FuelTrack
 
             try
             {
-                _totalSuppliersValueLabel!.Text = ExecuteScalarCount(totalQuery).ToString();
-                _activeContractsValueLabel!.Text = ExecuteScalarCount(activeQuery).ToString();
-                _pendingDeliveriesValueLabel!.Text = ExecuteScalarCount(pendingQuery).ToString();
+                // UPDATED: Now sends data directly to your designer labels!
+                // Make sure your middle label is named "act_con_db_lbl" in the designer properties.
+                if (total_sup_db_lbl != null) total_sup_db_lbl.Text = ExecuteScalarCount(totalQuery).ToString();
+                if (act_cont_db_lbl != null) act_cont_db_lbl.Text = ExecuteScalarCount(activeQuery).ToString();
+                if (pend_del_db_lbl != null) pend_del_db_lbl.Text = ExecuteScalarCount(pendingQuery).ToString();
             }
             catch (Exception ex)
             {
@@ -193,7 +171,7 @@ ORDER BY company_name;";
                 $"[Supplier name] LIKE '%{searchText}%' OR [Contact person] LIKE '%{searchText}%'";
         }
 
-        private void supplierdata_dataGridView_SelectionChanged(object sender, EventArgs e)
+        private void supplierdata_dataGridView_SelectionChanged(object? sender, EventArgs e)
         {
             if (supplierdata_dataGridView.CurrentRow?.DataBoundItem is not DataRowView rowView)
             {
@@ -400,42 +378,17 @@ VALUES (@supplier_id, @fuel_type_id, @dr_number, @volume_liters, @delivery_date,
             remarks_textBox.Clear();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void textBox1_TextChanged(object? sender, EventArgs e)
         {
             ApplySupplierFilter();
         }
 
-        private void add_label_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object? sender, EventArgs e)
         {
             SaveSupplier();
         }
 
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label16_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void supplier_textBox_Enter(object sender, EventArgs e)
+        private void supplier_textBox_Enter(object? sender, EventArgs e)
         {
             if (supplier_textBox.Text.Equals("Search...", StringComparison.OrdinalIgnoreCase))
             {
@@ -444,7 +397,7 @@ VALUES (@supplier_id, @fuel_type_id, @dr_number, @volume_liters, @delivery_date,
             }
         }
 
-        private void supplier_textBox_Leave(object sender, EventArgs e)
+        private void supplier_textBox_Leave(object? sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(supplier_textBox.Text))
             {
@@ -453,29 +406,35 @@ VALUES (@supplier_id, @fuel_type_id, @dr_number, @volume_liters, @delivery_date,
             }
         }
 
-        private void clearsupplier_button_Click(object sender, EventArgs e)
+        private void clearsupplier_button_Click(object? sender, EventArgs e)
         {
             ClearSupplierFields();
         }
 
-        private void deletesupplier_button_Click(object sender, EventArgs e)
+        private void deletesupplier_button_Click(object? sender, EventArgs e)
         {
             DeleteSupplier();
         }
 
-        private void confirmdelivery_button_Click(object sender, EventArgs e)
+        private void confirmdelivery_button_Click(object? sender, EventArgs e)
         {
             RecordDelivery();
         }
 
-        private void canceldelivery_button_Click(object sender, EventArgs e)
+        private void canceldelivery_button_Click(object? sender, EventArgs e)
         {
             ClearDeliveryFields();
         }
 
-        private void remarks_textBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        // --- EMPTY EVENT HANDLERS (Do not delete these to avoid Designer errors) ---
+        private void remarks_textBox_TextChanged(object? sender, EventArgs e) { }
+        private void label3_Click_1(object? sender, EventArgs e) { }
+        private void total_sup_db_lbl_Click(object? sender, EventArgs e) { }
+        private void pend_del_db_lbl_Click(object? sender, EventArgs e) { }
+        private void add_label_Click(object? sender, EventArgs e) { }
+        private void label2_Click(object? sender, EventArgs e) { }
+        private void label3_Click(object? sender, EventArgs e) { }
+        private void label9_Click(object? sender, EventArgs e) { }
+        private void label16_Click(object? sender, EventArgs e) { }
     }
 }

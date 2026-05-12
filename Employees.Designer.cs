@@ -30,6 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Employees));
             menubar_Employees = new Panel();
+            logout = new PictureBox();
+            auditTrial = new PictureBox();
+            reports = new PictureBox();
+            supplier = new PictureBox();
+            employee = new PictureBox();
+            pictureBox1 = new PictureBox();
+            inventory = new PictureBox();
+            dashboard = new PictureBox();
             logout_btn = new Button();
             audit_btn = new Button();
             reports_Btn = new Button();
@@ -51,8 +59,6 @@
             Employees_label = new Label();
             addemployee_button = new Button();
             totalemployee_dataGridView = new DataGridView();
-            ondutynow_dataGridView = new DataGridView();
-            offduty_dataGridView = new DataGridView();
             employeedata_dataGridView = new DataGridView();
             addemployee_dataGridView = new DataGridView();
             add_label = new Label();
@@ -71,32 +77,34 @@
             saveemployee_button = new Button();
             clear_button = new Button();
             delete_button = new Button();
-            dashboard = new PictureBox();
-            inventory = new PictureBox();
-            pictureBox1 = new PictureBox();
-            employee = new PictureBox();
-            supplier = new PictureBox();
-            reports = new PictureBox();
-            auditTrial = new PictureBox();
-            logout = new PictureBox();
             addEmployee = new PictureBox();
+            dataGridView1 = new DataGridView();
+            dataGridView2 = new DataGridView();
+            total_emp_label = new Label();
+            onDuty_emp_lbl = new Label();
+            offDuty_emp_lbl = new Label();
+            total_emp_db_label = new Label();
+            on_duty_db_lbl = new Label();
+            off_duty_db_lbl = new Label();
+            sts_comboBox = new ComboBox();
+            status_comboBox = new Label();
             menubar_Employees.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)logout).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)auditTrial).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)reports).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)supplier).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)employee).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)inventory).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dashboard).BeginInit();
             Employees_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)usr_avatar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)totalemployee_dataGridView).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)ondutynow_dataGridView).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)offduty_dataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)employeedata_dataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)addemployee_dataGridView).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dashboard).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)inventory).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)employee).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)supplier).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)reports).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)auditTrial).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)logout).BeginInit();
             ((System.ComponentModel.ISupportInitialize)addEmployee).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
             // 
             // menubar_Employees
@@ -128,6 +136,94 @@
             menubar_Employees.Name = "menubar_Employees";
             menubar_Employees.Size = new Size(163, 733);
             menubar_Employees.TabIndex = 2;
+            // 
+            // logout
+            // 
+            logout.BackColor = Color.Maroon;
+            logout.Image = (Image)resources.GetObject("logout.Image");
+            logout.Location = new Point(14, 689);
+            logout.Name = "logout";
+            logout.Size = new Size(34, 30);
+            logout.SizeMode = PictureBoxSizeMode.StretchImage;
+            logout.TabIndex = 67;
+            logout.TabStop = false;
+            // 
+            // auditTrial
+            // 
+            auditTrial.BackColor = Color.Maroon;
+            auditTrial.Image = (Image)resources.GetObject("auditTrial.Image");
+            auditTrial.Location = new Point(13, 557);
+            auditTrial.Name = "auditTrial";
+            auditTrial.Size = new Size(34, 33);
+            auditTrial.SizeMode = PictureBoxSizeMode.StretchImage;
+            auditTrial.TabIndex = 66;
+            auditTrial.TabStop = false;
+            // 
+            // reports
+            // 
+            reports.BackColor = Color.Maroon;
+            reports.Image = (Image)resources.GetObject("reports.Image");
+            reports.Location = new Point(13, 509);
+            reports.Name = "reports";
+            reports.Size = new Size(34, 30);
+            reports.SizeMode = PictureBoxSizeMode.StretchImage;
+            reports.TabIndex = 65;
+            reports.TabStop = false;
+            // 
+            // supplier
+            // 
+            supplier.BackColor = Color.Maroon;
+            supplier.Image = (Image)resources.GetObject("supplier.Image");
+            supplier.Location = new Point(13, 403);
+            supplier.Name = "supplier";
+            supplier.Size = new Size(34, 30);
+            supplier.SizeMode = PictureBoxSizeMode.StretchImage;
+            supplier.TabIndex = 64;
+            supplier.TabStop = false;
+            // 
+            // employee
+            // 
+            employee.BackColor = Color.Maroon;
+            employee.Image = (Image)resources.GetObject("employee.Image");
+            employee.Location = new Point(13, 355);
+            employee.Name = "employee";
+            employee.Size = new Size(34, 30);
+            employee.SizeMode = PictureBoxSizeMode.StretchImage;
+            employee.TabIndex = 63;
+            employee.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Maroon;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(13, 245);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(34, 30);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 62;
+            pictureBox1.TabStop = false;
+            // 
+            // inventory
+            // 
+            inventory.BackColor = Color.Maroon;
+            inventory.Image = (Image)resources.GetObject("inventory.Image");
+            inventory.Location = new Point(13, 194);
+            inventory.Name = "inventory";
+            inventory.Size = new Size(34, 30);
+            inventory.SizeMode = PictureBoxSizeMode.StretchImage;
+            inventory.TabIndex = 61;
+            inventory.TabStop = false;
+            // 
+            // dashboard
+            // 
+            dashboard.BackColor = Color.Maroon;
+            dashboard.Image = (Image)resources.GetObject("dashboard.Image");
+            dashboard.Location = new Point(13, 148);
+            dashboard.Name = "dashboard";
+            dashboard.Size = new Size(34, 30);
+            dashboard.SizeMode = PictureBoxSizeMode.StretchImage;
+            dashboard.TabIndex = 60;
+            dashboard.TabStop = false;
             // 
             // logout_btn
             // 
@@ -181,7 +277,7 @@
             rprt_label.ForeColor = Color.White;
             rprt_label.Location = new Point(8, 477);
             rprt_label.Name = "rprt_label";
-            rprt_label.Size = new Size(54, 15);
+            rprt_label.Size = new Size(55, 15);
             rprt_label.TabIndex = 9;
             rprt_label.Text = "REPORTS";
             // 
@@ -320,7 +416,7 @@
             alert_label.AutoSize = true;
             alert_label.Location = new Point(780, 22);
             alert_label.Name = "alert_label";
-            alert_label.Size = new Size(65, 15);
+            alert_label.Size = new Size(66, 15);
             alert_label.TabIndex = 3;
             alert_label.Text = "--ALERTS--";
             // 
@@ -349,7 +445,7 @@
             date_label.AutoSize = true;
             date_label.Location = new Point(14, 22);
             date_label.Name = "date_label";
-            date_label.Size = new Size(97, 15);
+            date_label.Size = new Size(98, 15);
             date_label.TabIndex = 0;
             date_label.Text = "DATE GOES HERE";
             // 
@@ -380,30 +476,11 @@
             totalemployee_dataGridView.BackgroundColor = SystemColors.Info;
             totalemployee_dataGridView.BorderStyle = BorderStyle.None;
             totalemployee_dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            totalemployee_dataGridView.Location = new Point(208, 143);
+            totalemployee_dataGridView.Location = new Point(208, 139);
             totalemployee_dataGridView.Name = "totalemployee_dataGridView";
             totalemployee_dataGridView.Size = new Size(229, 98);
             totalemployee_dataGridView.TabIndex = 9;
-            // 
-            // ondutynow_dataGridView
-            // 
-            ondutynow_dataGridView.BackgroundColor = SystemColors.Info;
-            ondutynow_dataGridView.BorderStyle = BorderStyle.None;
-            ondutynow_dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            ondutynow_dataGridView.Location = new Point(451, 142);
-            ondutynow_dataGridView.Name = "ondutynow_dataGridView";
-            ondutynow_dataGridView.Size = new Size(229, 98);
-            ondutynow_dataGridView.TabIndex = 10;
-            // 
-            // offduty_dataGridView
-            // 
-            offduty_dataGridView.BackgroundColor = SystemColors.Info;
-            offduty_dataGridView.BorderStyle = BorderStyle.None;
-            offduty_dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            offduty_dataGridView.Location = new Point(698, 141);
-            offduty_dataGridView.Name = "offduty_dataGridView";
-            offduty_dataGridView.Size = new Size(229, 98);
-            offduty_dataGridView.TabIndex = 11;
+            totalemployee_dataGridView.CellContentClick += totalemployee_dataGridView_CellContentClick_1;
             // 
             // employeedata_dataGridView
             // 
@@ -578,94 +655,6 @@
             delete_button.Text = "Delete";
             delete_button.UseVisualStyleBackColor = false;
             // 
-            // dashboard
-            // 
-            dashboard.BackColor = Color.Maroon;
-            dashboard.Image = (Image)resources.GetObject("dashboard.Image");
-            dashboard.Location = new Point(13, 148);
-            dashboard.Name = "dashboard";
-            dashboard.Size = new Size(34, 30);
-            dashboard.SizeMode = PictureBoxSizeMode.StretchImage;
-            dashboard.TabIndex = 60;
-            dashboard.TabStop = false;
-            // 
-            // inventory
-            // 
-            inventory.BackColor = Color.Maroon;
-            inventory.Image = (Image)resources.GetObject("inventory.Image");
-            inventory.Location = new Point(13, 194);
-            inventory.Name = "inventory";
-            inventory.Size = new Size(34, 30);
-            inventory.SizeMode = PictureBoxSizeMode.StretchImage;
-            inventory.TabIndex = 61;
-            inventory.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = Color.Maroon;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(13, 245);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(34, 30);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 62;
-            pictureBox1.TabStop = false;
-            // 
-            // employee
-            // 
-            employee.BackColor = Color.Maroon;
-            employee.Image = (Image)resources.GetObject("employee.Image");
-            employee.Location = new Point(13, 355);
-            employee.Name = "employee";
-            employee.Size = new Size(34, 30);
-            employee.SizeMode = PictureBoxSizeMode.StretchImage;
-            employee.TabIndex = 63;
-            employee.TabStop = false;
-            // 
-            // supplier
-            // 
-            supplier.BackColor = Color.Maroon;
-            supplier.Image = (Image)resources.GetObject("supplier.Image");
-            supplier.Location = new Point(13, 403);
-            supplier.Name = "supplier";
-            supplier.Size = new Size(34, 30);
-            supplier.SizeMode = PictureBoxSizeMode.StretchImage;
-            supplier.TabIndex = 64;
-            supplier.TabStop = false;
-            // 
-            // reports
-            // 
-            reports.BackColor = Color.Maroon;
-            reports.Image = (Image)resources.GetObject("reports.Image");
-            reports.Location = new Point(13, 509);
-            reports.Name = "reports";
-            reports.Size = new Size(34, 30);
-            reports.SizeMode = PictureBoxSizeMode.StretchImage;
-            reports.TabIndex = 65;
-            reports.TabStop = false;
-            // 
-            // auditTrial
-            // 
-            auditTrial.BackColor = Color.Maroon;
-            auditTrial.Image = (Image)resources.GetObject("auditTrial.Image");
-            auditTrial.Location = new Point(13, 557);
-            auditTrial.Name = "auditTrial";
-            auditTrial.Size = new Size(34, 33);
-            auditTrial.SizeMode = PictureBoxSizeMode.StretchImage;
-            auditTrial.TabIndex = 66;
-            auditTrial.TabStop = false;
-            // 
-            // logout
-            // 
-            logout.BackColor = Color.Maroon;
-            logout.Image = (Image)resources.GetObject("logout.Image");
-            logout.Location = new Point(14, 689);
-            logout.Name = "logout";
-            logout.Size = new Size(34, 30);
-            logout.SizeMode = PictureBoxSizeMode.StretchImage;
-            logout.TabIndex = 67;
-            logout.TabStop = false;
-            // 
             // addEmployee
             // 
             addEmployee.BackColor = SystemColors.ControlLightLight;
@@ -677,11 +666,132 @@
             addEmployee.TabIndex = 57;
             addEmployee.TabStop = false;
             // 
+            // dataGridView1
+            // 
+            dataGridView1.BackgroundColor = SystemColors.Info;
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(452, 139);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(229, 98);
+            dataGridView1.TabIndex = 58;
+            // 
+            // dataGridView2
+            // 
+            dataGridView2.BackgroundColor = SystemColors.Info;
+            dataGridView2.BorderStyle = BorderStyle.None;
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Location = new Point(698, 139);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.Size = new Size(229, 98);
+            dataGridView2.TabIndex = 59;
+            // 
+            // total_emp_label
+            // 
+            total_emp_label.AutoSize = true;
+            total_emp_label.BackColor = Color.Transparent;
+            total_emp_label.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
+            total_emp_label.Location = new Point(213, 145);
+            total_emp_label.Name = "total_emp_label";
+            total_emp_label.Size = new Size(119, 20);
+            total_emp_label.TabIndex = 60;
+            total_emp_label.Text = "Total Employees";
+            total_emp_label.Click += total_emp_label_Click;
+            // 
+            // onDuty_emp_lbl
+            // 
+            onDuty_emp_lbl.AutoSize = true;
+            onDuty_emp_lbl.BackColor = Color.Transparent;
+            onDuty_emp_lbl.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
+            onDuty_emp_lbl.Location = new Point(457, 143);
+            onDuty_emp_lbl.Name = "onDuty_emp_lbl";
+            onDuty_emp_lbl.Size = new Size(66, 20);
+            onDuty_emp_lbl.TabIndex = 61;
+            onDuty_emp_lbl.Text = "On Duty";
+            onDuty_emp_lbl.Click += onDuty_emp_lbl_Click;
+            // 
+            // offDuty_emp_lbl
+            // 
+            offDuty_emp_lbl.AutoSize = true;
+            offDuty_emp_lbl.BackColor = Color.Transparent;
+            offDuty_emp_lbl.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
+            offDuty_emp_lbl.Location = new Point(703, 142);
+            offDuty_emp_lbl.Name = "offDuty_emp_lbl";
+            offDuty_emp_lbl.Size = new Size(65, 20);
+            offDuty_emp_lbl.TabIndex = 62;
+            offDuty_emp_lbl.Text = "Off duty";
+            offDuty_emp_lbl.Click += offDuty_emp_lbl_Click;
+            // 
+            // total_emp_db_label
+            // 
+            total_emp_db_label.BackColor = SystemColors.Info;
+            total_emp_db_label.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
+            total_emp_db_label.ForeColor = Color.Black;
+            total_emp_db_label.Location = new Point(255, 175);
+            total_emp_db_label.Name = "total_emp_db_label";
+            total_emp_db_label.Size = new Size(154, 40);
+            total_emp_db_label.TabIndex = 63;
+            total_emp_db_label.Text = "Total employee Here";
+            total_emp_db_label.Click += total_emp_db_label_Click;
+            // 
+            // on_duty_db_lbl
+            // 
+            on_duty_db_lbl.BackColor = SystemColors.Info;
+            on_duty_db_lbl.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
+            on_duty_db_lbl.ForeColor = Color.Black;
+            on_duty_db_lbl.Location = new Point(487, 175);
+            on_duty_db_lbl.Name = "on_duty_db_lbl";
+            on_duty_db_lbl.Size = new Size(154, 40);
+            on_duty_db_lbl.TabIndex = 64;
+            on_duty_db_lbl.Text = "On Duty Here";
+            on_duty_db_lbl.Click += on_duty_db_lbl_Click;
+            // 
+            // off_duty_db_lbl
+            // 
+            off_duty_db_lbl.BackColor = SystemColors.Info;
+            off_duty_db_lbl.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
+            off_duty_db_lbl.ForeColor = Color.Black;
+            off_duty_db_lbl.Location = new Point(738, 175);
+            off_duty_db_lbl.Name = "off_duty_db_lbl";
+            off_duty_db_lbl.Size = new Size(154, 40);
+            off_duty_db_lbl.TabIndex = 65;
+            off_duty_db_lbl.Text = "Off Duty Here";
+            off_duty_db_lbl.Click += off_duty_db_lbl_Click;
+            // 
+            // sts_comboBox
+            // 
+            sts_comboBox.FormattingEnabled = true;
+            sts_comboBox.Location = new Point(255, 692);
+            sts_comboBox.Name = "sts_comboBox";
+            sts_comboBox.Size = new Size(264, 23);
+            sts_comboBox.TabIndex = 66;
+            sts_comboBox.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            // 
+            // status_comboBox
+            // 
+            status_comboBox.AutoSize = true;
+            status_comboBox.BackColor = SystemColors.ControlLightLight;
+            status_comboBox.Location = new Point(255, 674);
+            status_comboBox.Name = "status_comboBox";
+            status_comboBox.Size = new Size(39, 15);
+            status_comboBox.TabIndex = 67;
+            status_comboBox.Text = "Status";
+            // 
             // Employees
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(979, 768);
+            Controls.Add(status_comboBox);
+            Controls.Add(sts_comboBox);
+            Controls.Add(off_duty_db_lbl);
+            Controls.Add(on_duty_db_lbl);
+            Controls.Add(total_emp_db_label);
+            Controls.Add(offDuty_emp_lbl);
+            Controls.Add(onDuty_emp_lbl);
+            Controls.Add(total_emp_label);
+            Controls.Add(dataGridView2);
+            Controls.Add(dataGridView1);
             Controls.Add(addEmployee);
             Controls.Add(delete_button);
             Controls.Add(clear_button);
@@ -701,8 +811,6 @@
             Controls.Add(add_label);
             Controls.Add(addemployee_dataGridView);
             Controls.Add(employeedata_dataGridView);
-            Controls.Add(offduty_dataGridView);
-            Controls.Add(ondutynow_dataGridView);
             Controls.Add(totalemployee_dataGridView);
             Controls.Add(addemployee_button);
             Controls.Add(Employees_label);
@@ -716,23 +824,23 @@
             Text = "FuelTrack — Employees";
             menubar_Employees.ResumeLayout(false);
             menubar_Employees.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)logout).EndInit();
+            ((System.ComponentModel.ISupportInitialize)auditTrial).EndInit();
+            ((System.ComponentModel.ISupportInitialize)reports).EndInit();
+            ((System.ComponentModel.ISupportInitialize)supplier).EndInit();
+            ((System.ComponentModel.ISupportInitialize)employee).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)inventory).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dashboard).EndInit();
             Employees_panel.ResumeLayout(false);
             Employees_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)usr_avatar).EndInit();
             ((System.ComponentModel.ISupportInitialize)totalemployee_dataGridView).EndInit();
-            ((System.ComponentModel.ISupportInitialize)ondutynow_dataGridView).EndInit();
-            ((System.ComponentModel.ISupportInitialize)offduty_dataGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)employeedata_dataGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)addemployee_dataGridView).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dashboard).EndInit();
-            ((System.ComponentModel.ISupportInitialize)inventory).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)employee).EndInit();
-            ((System.ComponentModel.ISupportInitialize)supplier).EndInit();
-            ((System.ComponentModel.ISupportInitialize)reports).EndInit();
-            ((System.ComponentModel.ISupportInitialize)auditTrial).EndInit();
-            ((System.ComponentModel.ISupportInitialize)logout).EndInit();
             ((System.ComponentModel.ISupportInitialize)addEmployee).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -761,8 +869,6 @@
         private Label Employees_label;
         private Button addemployee_button;
         private DataGridView totalemployee_dataGridView;
-        private DataGridView ondutynow_dataGridView;
-        private DataGridView offduty_dataGridView;
         private DataGridView employeedata_dataGridView;
         private DataGridView addemployee_dataGridView;
         private Label add_label;
@@ -790,5 +896,15 @@
         private PictureBox auditTrial;
         private PictureBox logout;
         private PictureBox addEmployee;
+        private DataGridView dataGridView1;
+        private DataGridView dataGridView2;
+        private Label total_emp_label;
+        private Label onDuty_emp_lbl;
+        private Label offDuty_emp_lbl;
+        private Label total_emp_db_label;
+        private Label on_duty_db_lbl;
+        private Label off_duty_db_lbl;
+        private ComboBox sts_comboBox;
+        private Label status_comboBox;
     }
 }
