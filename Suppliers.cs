@@ -378,6 +378,64 @@ VALUES (@supplier_id, @fuel_type_id, @dr_number, @volume_liters, @delivery_date,
             remarks_textBox.Clear();
         }
 
+        private void UpdateDeliveryStatus(string newStatus)
+{
+    // 1. Get the selected delivery from the bottom grid (image_8ec03a.png)
+    if (deliveryhistory_dataGridView.CurrentRow?.DataBoundItem is not DataRowView rowView)
+    {
+        MessageBox.Show("Please select a delivery from the history table.", "Status Update", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        return;
+    }
+
+    string currentStatus = rowView["Status"].ToString();
+    if (currentStatus != "Pending")
+    {
+        MessageBox.Show("Only Pending deliveries can be updated.", "Status Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        return;
+    }
+
+    // Capture necessary data from the selected row
+    string fuelTypeName = rowView["Fuel type"].ToString();
+    decimal volumeToAdd = Convert.ToDecimal(rowView["Volume (L)"]);
+    string drNumber = rowView["DR No."].ToString();
+
+    using var connection = _database.GetConnection();
+    connection.Open();
+    using var transaction = connection.BeginTransaction();
+
+    try
+    {
+        // 2. Update the Deliveries table status
+        const string updateDeliveryQuery = "UPDATE Deliveries SET status = @status WHERE dr_number = @dr_number;";
+        using var cmdUpdate = new MySqlCommand(updateDeliveryQuery, connection, transaction);
+        cmdUpdate.Parameters.AddWithValue("@status", newStatus);
+        cmdUpdate.Parameters.AddWithValue("@dr_number", drNumber);
+        cmdUpdate.ExecuteNonQuery();
+
+        // 3. If "Delivered", update Fuel_types stock
+        if (newStatus == "Delivered")
+        {
+            const string updateStockQuery = "UPDATE Fuel_types SET current_stock_liters = current_stock_liters + @volume WHERE name = @fuel_name;";
+            using var cmdStock = new MySqlCommand(updateStockQuery, connection, transaction);
+            cmdStock.Parameters.AddWithValue("@volume", volumeToAdd);
+            cmdStock.Parameters.AddWithValue("@fuel_name", fuelTypeName);
+            cmdStock.ExecuteNonQuery();
+        }
+
+        transaction.Commit();
+        MessageBox.Show($"Delivery {newStatus} successfully. Stock updated for {fuelTypeName}.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        
+        // Refresh the UI
+        LoadDeliveryHistory();
+        LoadSupplierStats();
+    }
+    catch (Exception ex)
+    {
+        transaction.Rollback();
+        MessageBox.Show($"Failed to update status: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+    }
+}
+
         private void textBox1_TextChanged(object? sender, EventArgs e)
         {
             ApplySupplierFilter();
@@ -436,5 +494,12 @@ VALUES (@supplier_id, @fuel_type_id, @dr_number, @volume_liters, @delivery_date,
         private void label3_Click(object? sender, EventArgs e) { }
         private void label9_Click(object? sender, EventArgs e) { }
         private void label16_Click(object? sender, EventArgs e) { }
+
+        private void confirm_del_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

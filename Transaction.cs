@@ -30,7 +30,7 @@ namespace FuelTrack
             UIHelper.setDateLabel(date_label);
 
             // Sets the live date for the "Today's Date" card
-            label2.Text = DateTime.Now.ToString("MMM dd, yyyy");
+            cr_ca_db_lbl.Text = DateTime.Now.ToString("MMM dd, yyyy");
 
             UIHelper.SetButtonActive(trans_btn, true);
             UIHelper.DisableCloseButton(this);
@@ -63,8 +63,6 @@ namespace FuelTrack
             MOP_datagrid.AllowUserToDeleteRows = false;
             MOP_datagrid.ReadOnly = true;
             MOP_datagrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
-            // I REMOVED the "Visible = false" line from here so your UI stays intact.
         }
 
         private void LoadTransactions()
@@ -125,9 +123,15 @@ namespace FuelTrack
                 {
                     var totalSales = reader.GetDecimal("total_sales");
                     var transactionCount = reader.GetInt32("transaction_count");
+                    var cashTotal = reader.GetDecimal("cash_total");
+                    var cardTotal = reader.GetDecimal("card_total");
 
                     total_sales_db_label.Text = $"₱{totalSales:N2}";
                     trans_db_label.Text = transactionCount.ToString("N0");
+
+                    // NOTE: Replace "cashcard_db_label" with the actual label name
+                    // from your .Designer.cs that sits inside the "Card/Cash" summary card.
+                    cr_ca_db_lbl.Text = $"₱{cashTotal:N2} / ₱{cardTotal:N2}";
                 }
             }
             catch (Exception ex)
@@ -187,6 +191,16 @@ namespace FuelTrack
         }
 
         private void newsale_button_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cr_ca_db_lbl_Click(object sender, EventArgs e)
         {
 
         }

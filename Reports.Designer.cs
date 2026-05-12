@@ -67,7 +67,7 @@
             button1 = new Button();
             exportpdf_button = new Button();
             daterange_dateTimePicker = new DateTimePicker();
-            reporttypes_dataGridView = new DataGridView();
+            dataGridView1 = new DataGridView();
             menubar_reports.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)logout).BeginInit();
             ((System.ComponentModel.ISupportInitialize)auditTrial).BeginInit();
@@ -80,7 +80,7 @@
             panel_reports.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)usr_avatar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)generatereport_dataGridView).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)reporttypes_dataGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // menubar_reports
@@ -434,9 +434,9 @@
             generatereport_dataGridView.BorderStyle = BorderStyle.None;
             generatereport_dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.None;
             generatereport_dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            generatereport_dataGridView.Location = new Point(203, 153);
+            generatereport_dataGridView.Location = new Point(215, 451);
             generatereport_dataGridView.Name = "generatereport_dataGridView";
-            generatereport_dataGridView.Size = new Size(737, 262);
+            generatereport_dataGridView.Size = new Size(696, 262);
             generatereport_dataGridView.TabIndex = 23;
             // 
             // generatereports_label
@@ -528,16 +528,17 @@
             daterange_dateTimePicker.Size = new Size(323, 23);
             daterange_dateTimePicker.TabIndex = 36;
             // 
-            // reporttypes_dataGridView
+            // dataGridView1
             // 
-            reporttypes_dataGridView.BackgroundColor = SystemColors.ControlLightLight;
-            reporttypes_dataGridView.BorderStyle = BorderStyle.None;
-            reporttypes_dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            reporttypes_dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            reporttypes_dataGridView.Location = new Point(203, 438);
-            reporttypes_dataGridView.Name = "reporttypes_dataGridView";
-            reporttypes_dataGridView.Size = new Size(736, 301);
-            reporttypes_dataGridView.TabIndex = 24;
+            dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(215, 157);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(696, 262);
+            dataGridView1.TabIndex = 37;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // Reports
             // 
@@ -553,11 +554,11 @@
             Controls.Add(daterange_label);
             Controls.Add(reporttype_label);
             Controls.Add(generatereports_label);
-            Controls.Add(reporttypes_dataGridView);
             Controls.Add(generatereport_dataGridView);
             Controls.Add(reports_label);
             Controls.Add(panel_reports);
             Controls.Add(menubar_reports);
+            Controls.Add(dataGridView1);
             FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
             Name = "Reports";
@@ -578,7 +579,7 @@
             panel_reports.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)usr_avatar).EndInit();
             ((System.ComponentModel.ISupportInitialize)generatereport_dataGridView).EndInit();
-            ((System.ComponentModel.ISupportInitialize)reporttypes_dataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -624,6 +625,6 @@
         private PictureBox pictureBox2;
         private PictureBox auditTrial;
         private PictureBox logout;
-        private DataGridView reporttypes_dataGridView;
+        private DataGridView dataGridView1;
     }
 }

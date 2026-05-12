@@ -61,14 +61,6 @@ namespace FuelTrack
             generatereport_dataGridView.AllowUserToAddRows = false;
             generatereport_dataGridView.AllowUserToDeleteRows = false;
             generatereport_dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
-            reporttypes_dataGridView.AutoGenerateColumns = true;
-            reporttypes_dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            reporttypes_dataGridView.RowHeadersVisible = false;
-            reporttypes_dataGridView.ReadOnly = true;
-            reporttypes_dataGridView.AllowUserToAddRows = false;
-            reporttypes_dataGridView.AllowUserToDeleteRows = false;
-            reporttypes_dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
         private void PopulateReportTypes()
@@ -83,8 +75,6 @@ namespace FuelTrack
             {
                 table.Rows.Add(reportType);
             }
-
-            reporttypes_dataGridView.DataSource = table;
         }
 
         private void PopulateFuelTypes()
@@ -486,6 +476,11 @@ namespace FuelTrack
         }
 
         private void Reports_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

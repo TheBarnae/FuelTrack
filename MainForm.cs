@@ -26,9 +26,21 @@ namespace FuelTrack
             UpdateLoggedInUserLabel();
         }
 
+
+
         private void UpdateLoggedInUserLabel()
         {
-            role_label.Text = SessionContext.CurrentUser?.DisplayName ?? "--ROLE--";
+            var currentUser = SessionContext.CurrentUser;
+
+            // Updates the role text
+            role_label.Text = currentUser?.DisplayName ?? "--ROLE--";
+
+            // Updates the avatar with initials if a user is logged in
+            if (currentUser != null)
+            {
+                string nameToUse = currentUser.DisplayName ?? "User";
+                UIHelper.SetProfileInitials(usr_avatar, nameToUse);
+            }
         }
         public void LoadView(Form form)
         {
@@ -144,6 +156,11 @@ namespace FuelTrack
         }
 
         private void panelMain_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void usr_avatar_Click(object sender, EventArgs e)
         {
 
         }

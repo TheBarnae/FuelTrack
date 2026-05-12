@@ -106,6 +106,39 @@ namespace FuelTrack
             childForm.Show();
         }
 
+        public static void SetProfileInitials(PictureBox pic, string fullName)
+        {
+            if (string.IsNullOrWhiteSpace(fullName)) return;
+
+            // Extract Initials
+            string[] names = fullName.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            string initials = names.Length > 1
+                ? (names[0][0].ToString() + names[names.Length - 1][0].ToString()).ToUpper()
+                : names[0][0].ToString().ToUpper();
+
+            // Create Bitmap
+            Bitmap bmp = new Bitmap(pic.Width, pic.Height);
+            using (Graphics g = Graphics.FromImage(bmp))
+            {
+                g.SmoothingMode = SmoothingMode.AntiAlias;
+
+                // Background Color (Matching your sidebar theme)
+                g.Clear(Color.FromArgb(162, 72, 87));
+
+                // Text Formatting
+                Font font = new Font("Segoe UI", 12, FontStyle.Bold);
+                Brush brush = new SolidBrush(Color.White);
+
+                StringFormat sf = new StringFormat();
+                sf.Alignment = StringAlignment.Center;
+                sf.LineAlignment = StringAlignment.Center;
+
+                g.DrawString(initials, font, brush, new Rectangle(0, 0, pic.Width, pic.Height), sf);
+            }
+
+            pic.Image = bmp;
+        }
+
 
     }
 }

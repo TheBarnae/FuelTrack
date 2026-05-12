@@ -353,53 +353,26 @@ namespace FuelTrack
 
         private void InitializeComponent()
         {
+            SuspendLayout();
+            // 
+            // TransactionSaleDialog
+            // 
+            ClientSize = new Size(284, 261);
+            Name = "TransactionSaleDialog";
+            Load += TransactionSaleDialog_Load_1;
+            ResumeLayout(false);
 
         }
 
         private void SaveButton_Click(object? sender, EventArgs e)
         {
-            // Forces the NumericUpDown boxes to register what you just typed before checking for zeros!
             this.ValidateChildren();
 
-            if (_pumpComboBox.SelectedItem is not PumpLookup pump)
+            if (_pumpComboBox.SelectedItem is not PumpLookup pump ||
+                _fuelTypeComboBox.SelectedItem is not FuelTypeLookup fuelType ||
+                _employeeComboBox.SelectedItem is not EmployeeLookup employee)
             {
-                MessageBox.Show("Please select a pump.", "New Sale", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (_fuelTypeComboBox.SelectedItem is not FuelTypeLookup fuelType)
-            {
-                MessageBox.Show("Please select a fuel type.", "New Sale", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (pump.FuelTypeId is null || fuelType.FuelTypeId != pump.FuelTypeId.Value)
-            {
-                MessageBox.Show("The selected pump and fuel type do not match.", "New Sale", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (_employeeComboBox.SelectedItem is not EmployeeLookup employee)
-            {
-                MessageBox.Show("Please select an employee.", "New Sale", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (fuelType.CurrentStock <= 0m)
-            {
-                MessageBox.Show("This fuel type is out of stock.", "New Sale", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (_litersNumeric.Value > fuelType.CurrentStock)
-            {
-                MessageBox.Show("Not enough stock for the requested liters.", "New Sale", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(_paymentMethodComboBox.Text))
-            {
-                MessageBox.Show("Please select a payment method.", "New Sale", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please fill in all required fields.", "New Sale", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -409,38 +382,54 @@ namespace FuelTrack
                 return;
             }
 
-            const string query = @"
-                INSERT INTO transactions
-                    (pump_id, employee_id, fuel_type_id, liters_dispensed, amount_paid, payment_method, transaction_date)
-                VALUES
-                    (@pump_id, @employee_id, @fuel_type_id, @liters_dispensed, @amount_paid, @payment_method, NOW());";
+            if (_litersNumeric.Value > fuelType.CurrentStock)
+            {
+                MessageBox.Show($"Not enough stock. Current stock: {fuelType.CurrentStock}L", "New Sale", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            using var connection = _database.GetConnection();
+            connection.Open();
+            using var transaction = connection.BeginTransaction(); // Start transaction to ensure both updates happen
 
             try
             {
-                using var connection = _database.GetConnection();
-                using var command = new MySqlCommand(query, connection);
-                command.Parameters.Add(new MySqlParameter("@pump_id", MySqlDbType.Int32) { Value = pump.PumpId });
-                command.Parameters.Add(new MySqlParameter("@employee_id", MySqlDbType.Int32) { Value = employee.EmployeeId });
-                command.Parameters.Add(new MySqlParameter("@fuel_type_id", MySqlDbType.Int32) { Value = fuelType.FuelTypeId });
-                command.Parameters.Add(new MySqlParameter("@liters_dispensed", MySqlDbType.Float) { Value = Convert.ToDouble(_litersNumeric.Value) });
-                command.Parameters.Add(new MySqlParameter("@amount_paid", MySqlDbType.Decimal) { Value = _amountNumeric.Value });
-                command.Parameters.Add(new MySqlParameter("@payment_method", MySqlDbType.VarChar) { Value = _paymentMethodComboBox.Text });
+                // 1. Insert the Transaction Record
+                const string insertQuery = @"
+            INSERT INTO transactions (pump_id, employee_id, fuel_type_id, liters_dispensed, amount_paid, payment_method, transaction_date)
+            VALUES (@pump_id, @employee_id, @fuel_type_id, @liters_dispensed, @amount_paid, @payment_method, NOW());";
 
-                connection.Open();
-                if (command.ExecuteNonQuery() == 1)
-                {
-                    MessageBox.Show("Transaction saved successfully.", "New Sale", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    DialogResult = DialogResult.OK;
-                    Close();
-                }
-                else
-                {
-                    MessageBox.Show("The transaction could not be saved.", "New Sale", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                using var cmdInsert = new MySqlCommand(insertQuery, connection, transaction);
+                cmdInsert.Parameters.AddWithValue("@pump_id", pump.PumpId);
+                cmdInsert.Parameters.AddWithValue("@employee_id", employee.EmployeeId);
+                cmdInsert.Parameters.AddWithValue("@fuel_type_id", fuelType.FuelTypeId);
+                cmdInsert.Parameters.AddWithValue("@liters_dispensed", _litersNumeric.Value);
+                cmdInsert.Parameters.AddWithValue("@amount_paid", _amountNumeric.Value);
+                cmdInsert.Parameters.AddWithValue("@payment_method", _paymentMethodComboBox.Text);
+                cmdInsert.ExecuteNonQuery();
+
+                // 2. Deduct from Inventory (Update fuel_types table)
+                const string updateStockQuery = @"
+            UPDATE Fuel_types 
+            SET current_stock_liters = current_stock_liters - @liters,
+                updated_at = NOW()
+            WHERE fuel_type_id = @id;";
+
+                using var cmdUpdate = new MySqlCommand(updateStockQuery, connection, transaction);
+                cmdUpdate.Parameters.AddWithValue("@liters", _litersNumeric.Value);
+                cmdUpdate.Parameters.AddWithValue("@id", fuelType.FuelTypeId);
+                cmdUpdate.ExecuteNonQuery();
+
+                transaction.Commit(); // Finalize both actions
+
+                MessageBox.Show("Transaction saved and stock updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DialogResult = DialogResult.OK;
+                Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Unable to save transaction: {ex.Message}", "New Sale", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                transaction.Rollback(); // If anything fails, undo the changes
+                MessageBox.Show($"Error processing sale: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -492,6 +481,11 @@ namespace FuelTrack
             public string EmployeeName { get; }
             public string DisplayText => $"{EmployeeId} - {EmployeeName}";
             public override string ToString() => DisplayText;
+        }
+
+        private void TransactionSaleDialog_Load_1(object sender, EventArgs e)
+        {
+                
         }
     }
 }

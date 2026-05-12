@@ -46,9 +46,9 @@
             dashboard_btn = new Button();
             fueltrack_icon = new Label();
             panel1 = new Panel();
+            usr_avatar = new PictureBox();
             role_label = new Label();
             date_label = new Label();
-            usr_avatar = new PictureBox();
             menubar_dashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)logout).BeginInit();
             panel1.SuspendLayout();
@@ -291,6 +291,18 @@
             panel1.Size = new Size(1271, 46);
             panel1.TabIndex = 14;
             // 
+            // usr_avatar
+            // 
+            usr_avatar.BackColor = SystemColors.ControlDark;
+            usr_avatar.BackgroundImageLayout = ImageLayout.None;
+            usr_avatar.Location = new Point(928, 9);
+            usr_avatar.Name = "usr_avatar";
+            usr_avatar.Size = new Size(33, 30);
+            usr_avatar.SizeMode = PictureBoxSizeMode.Zoom;
+            usr_avatar.TabIndex = 2;
+            usr_avatar.TabStop = false;
+            usr_avatar.Click += usr_avatar_Click;
+            // 
             // role_label
             // 
             role_label.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -309,17 +321,6 @@
             date_label.Size = new Size(98, 15);
             date_label.TabIndex = 0;
             date_label.Text = "DATE GOES HERE";
-            // 
-            // usr_avatar
-            // 
-            usr_avatar.BackColor = SystemColors.ControlDark;
-            usr_avatar.BackgroundImageLayout = ImageLayout.None;
-            usr_avatar.Location = new Point(928, 9);
-            usr_avatar.Name = "usr_avatar";
-            usr_avatar.Size = new Size(33, 30);
-            usr_avatar.SizeMode = PictureBoxSizeMode.Zoom;
-            usr_avatar.TabIndex = 2;
-            usr_avatar.TabStop = false;
             // 
             // MainForm
             // 

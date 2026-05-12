@@ -115,34 +115,18 @@ ORDER BY fuel_type_id, name;";
             fuelInventorys_dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             fuelInventorys_dataGridView.ReadOnly = true;
             fuelInventorys_dataGridView.CellFormatting += fuelInventorys_dataGridView_CellFormatting;
-
-            if (fuelInventorys_dataGridView.Columns["Edit"] == null)
-            {
-                var editColumn = new DataGridViewButtonColumn
-                {
-                    Name = "Edit",
-                    HeaderText = "Action",
-                    Text = "Edit",
-                    UseColumnTextForButtonValue = true
-                };
-
-                fuelInventorys_dataGridView.Columns.Add(editColumn);
-            }
         }
 
         private void fuelInventorys_dataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             var grid = fuelInventorys_dataGridView;
-            if (grid.Columns[e.ColumnIndex].Name != "Status")
-            {
-                return;
-            }
+            if (grid.Columns[e.ColumnIndex].Name != "Status") return;
 
             var currentStockCell = grid.Rows[e.RowIndex].Cells["Current stock (L)"];
             var minStockCell = grid.Rows[e.RowIndex].Cells["Min threshold (L)"];
 
-            if (!decimal.TryParse(currentStockCell.Value?.ToString(), out var currentStock)
-                || !decimal.TryParse(minStockCell.Value?.ToString(), out var minStock))
+            if (!decimal.TryParse(currentStockCell.Value?.ToString(), out var currentStock) ||
+                !decimal.TryParse(minStockCell.Value?.ToString(), out var minStock))
             {
                 return;
             }
@@ -150,18 +134,21 @@ ORDER BY fuel_type_id, name;";
             var cell = grid.Rows[e.RowIndex].Cells[e.ColumnIndex];
             cell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
+            // Logic for Critical Stock
             if (minStock > 0 && currentStock < minStock * 0.2m)
             {
                 cell.Value = "Critical";
                 cell.Style.BackColor = ColorTranslator.FromHtml("#FCEBEB");
                 cell.Style.ForeColor = ColorTranslator.FromHtml("#791F1F");
             }
-            else if (currentStock > minStock)
+            // Logic for Normal Stock (This fixes the RON 91 issue in image_8edb1a.png)
+            else if (currentStock >= minStock)
             {
-                cell.Value = "Normal";
+                cell.Value = "Normal"; // Ensure the text is assigned!
                 cell.Style.BackColor = ColorTranslator.FromHtml("#EAF3DE");
                 cell.Style.ForeColor = ColorTranslator.FromHtml("#27500A");
             }
+            // Logic for Low Stock (Between 20% and 100% of threshold)
             else
             {
                 cell.Value = "Low Stock";
@@ -340,6 +327,33 @@ VALUES (@name, @current_stock, @min_stock, @price_per_liter, @status, NOW());";
                     DialogResult = DialogResult.None;
                 }
             }
+        }
+
+        public static void StyleStatusCell(DataGridViewCell cell, string status)
+        {
+            cell.Value = status;
+            cell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            switch (status)
+            {
+                case "Critical":
+                    cell.Style.BackColor = Color.FromArgb(252, 235, 235);
+                    cell.Style.ForeColor = Color.FromArgb(121, 31, 31);
+                    break;
+                case "Normal":
+                    cell.Style.BackColor = Color.FromArgb(234, 243, 222);
+                    cell.Style.ForeColor = Color.FromArgb(39, 80, 10);
+                    break;
+                case "Low Stock":
+                    cell.Style.BackColor = Color.FromArgb(250, 238, 218);
+                    cell.Style.ForeColor = Color.FromArgb(99, 56, 6);
+                    break;
+            }
+        }
+
+        private void fuelInventorys_dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -66,8 +66,8 @@
             total_sales_db_label = new Label();
             trans_db_label = new Label();
             MOP_datagrid = new DataGridView();
-            label1 = new Label();
-            label2 = new Label();
+            cr_ca_lbl = new Label();
+            cr_ca_db_lbl = new Label();
             pictureBox4 = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
@@ -538,27 +538,29 @@
             MOP_datagrid.Size = new Size(229, 123);
             MOP_datagrid.TabIndex = 30;
             // 
-            // label1
+            // cr_ca_lbl
             // 
-            label1.AutoSize = true;
-            label1.BackColor = SystemColors.Info;
-            label1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
-            label1.Location = new Point(717, 159);
-            label1.Name = "label1";
-            label1.Size = new Size(95, 20);
-            label1.TabIndex = 31;
-            label1.Text = "Today's Date";
+            cr_ca_lbl.AutoSize = true;
+            cr_ca_lbl.BackColor = SystemColors.Info;
+            cr_ca_lbl.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
+            cr_ca_lbl.Location = new Point(717, 159);
+            cr_ca_lbl.Name = "cr_ca_lbl";
+            cr_ca_lbl.Size = new Size(79, 20);
+            cr_ca_lbl.TabIndex = 31;
+            cr_ca_lbl.Text = "Cash/Card";
+            cr_ca_lbl.Click += label1_Click_1;
             // 
-            // label2
+            // cr_ca_db_lbl
             // 
-            label2.AutoSize = true;
-            label2.BackColor = SystemColors.Info;
-            label2.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
-            label2.Location = new Point(782, 207);
-            label2.Name = "label2";
-            label2.Size = new Size(95, 20);
-            label2.TabIndex = 32;
-            label2.Text = "Today's Date";
+            cr_ca_db_lbl.AutoSize = true;
+            cr_ca_db_lbl.BackColor = SystemColors.Info;
+            cr_ca_db_lbl.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
+            cr_ca_db_lbl.Location = new Point(782, 207);
+            cr_ca_db_lbl.Name = "cr_ca_db_lbl";
+            cr_ca_db_lbl.Size = new Size(114, 20);
+            cr_ca_db_lbl.TabIndex = 32;
+            cr_ca_db_lbl.Text = "Card/Cash here";
+            cr_ca_db_lbl.Click += cr_ca_db_lbl_Click;
             // 
             // pictureBox4
             // 
@@ -602,8 +604,8 @@
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox4);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(cr_ca_db_lbl);
+            Controls.Add(cr_ca_lbl);
             Controls.Add(trans_db_label);
             Controls.Add(total_sales_db_label);
             Controls.Add(Transactions_label);
@@ -686,8 +688,8 @@
         private PictureBox reports;
         private PictureBox auditTrial;
         private PictureBox logout;
-        private Label label1;
-        private Label label2;
+        private Label cr_ca_lbl;
+        private Label cr_ca_db_lbl;
         private PictureBox pictureBox4;
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;

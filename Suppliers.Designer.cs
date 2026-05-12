@@ -99,19 +99,20 @@
             canceldelivery_button = new Button();
             deliverydate_dateTimePicker = new DateTimePicker();
             total_suppliers_pnl = new Panel();
+            total_sup_db_lbl = new Label();
             totalSupplier = new PictureBox();
             total_supp_label = new Label();
             active_contracts_pnl = new Panel();
+            act_cont_db_lbl = new Label();
             activeContracts = new PictureBox();
             active_label = new Label();
             pending_deliver_pnl = new Panel();
+            pend_del_db_lbl = new Label();
             pendingDeliveries = new PictureBox();
             pending_label = new Label();
             addSupplier = new PictureBox();
             recordDelivery = new PictureBox();
-            total_sup_db_lbl = new Label();
-            act_cont_db_lbl = new Label();
-            pend_del_db_lbl = new Label();
+            confirm_del_btn = new Button();
             menubar_Suppliers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)logout).BeginInit();
             ((System.ComponentModel.ISupportInitialize)auditTrial).BeginInit();
@@ -867,7 +868,7 @@
             canceldelivery_button.BackColor = Color.FromArgb(221, 152, 34);
             canceldelivery_button.FlatStyle = FlatStyle.Popup;
             canceldelivery_button.ForeColor = Color.White;
-            canceldelivery_button.Location = new Point(874, 470);
+            canceldelivery_button.Location = new Point(874, 546);
             canceldelivery_button.Name = "canceldelivery_button";
             canceldelivery_button.Size = new Size(67, 35);
             canceldelivery_button.TabIndex = 51;
@@ -892,6 +893,17 @@
             total_suppliers_pnl.Name = "total_suppliers_pnl";
             total_suppliers_pnl.Size = new Size(229, 98);
             total_suppliers_pnl.TabIndex = 54;
+            // 
+            // total_sup_db_lbl
+            // 
+            total_sup_db_lbl.AutoSize = true;
+            total_sup_db_lbl.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
+            total_sup_db_lbl.Location = new Point(75, 51);
+            total_sup_db_lbl.Name = "total_sup_db_lbl";
+            total_sup_db_lbl.Size = new Size(109, 20);
+            total_sup_db_lbl.TabIndex = 59;
+            total_sup_db_lbl.Text = "Total Suppliers";
+            total_sup_db_lbl.Click += total_sup_db_lbl_Click;
             // 
             // totalSupplier
             // 
@@ -925,6 +937,17 @@
             active_contracts_pnl.Size = new Size(229, 98);
             active_contracts_pnl.TabIndex = 55;
             // 
+            // act_cont_db_lbl
+            // 
+            act_cont_db_lbl.AutoSize = true;
+            act_cont_db_lbl.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
+            act_cont_db_lbl.Location = new Point(82, 49);
+            act_cont_db_lbl.Name = "act_cont_db_lbl";
+            act_cont_db_lbl.Size = new Size(156, 20);
+            act_cont_db_lbl.TabIndex = 60;
+            act_cont_db_lbl.Text = "Active Contracts Here";
+            act_cont_db_lbl.Click += label3_Click_1;
+            // 
             // activeContracts
             // 
             activeContracts.BackColor = SystemColors.ControlLightLight;
@@ -956,6 +979,17 @@
             pending_deliver_pnl.Name = "pending_deliver_pnl";
             pending_deliver_pnl.Size = new Size(229, 98);
             pending_deliver_pnl.TabIndex = 55;
+            // 
+            // pend_del_db_lbl
+            // 
+            pend_del_db_lbl.AutoSize = true;
+            pend_del_db_lbl.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
+            pend_del_db_lbl.Location = new Point(74, 48);
+            pend_del_db_lbl.Name = "pend_del_db_lbl";
+            pend_del_db_lbl.Size = new Size(171, 20);
+            pend_del_db_lbl.TabIndex = 61;
+            pend_del_db_lbl.Text = "Pending Deliveries here";
+            pend_del_db_lbl.Click += pend_del_db_lbl_Click;
             // 
             // pendingDeliveries
             // 
@@ -1000,38 +1034,18 @@
             recordDelivery.TabIndex = 57;
             recordDelivery.TabStop = false;
             // 
-            // total_sup_db_lbl
+            // confirm_del_btn
             // 
-            total_sup_db_lbl.AutoSize = true;
-            total_sup_db_lbl.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
-            total_sup_db_lbl.Location = new Point(75, 51);
-            total_sup_db_lbl.Name = "total_sup_db_lbl";
-            total_sup_db_lbl.Size = new Size(109, 20);
-            total_sup_db_lbl.TabIndex = 59;
-            total_sup_db_lbl.Text = "Total Suppliers";
-            total_sup_db_lbl.Click += total_sup_db_lbl_Click;
-            // 
-            // act_cont_db_lbl
-            // 
-            act_cont_db_lbl.AutoSize = true;
-            act_cont_db_lbl.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
-            act_cont_db_lbl.Location = new Point(82, 49);
-            act_cont_db_lbl.Name = "act_cont_db_lbl";
-            act_cont_db_lbl.Size = new Size(156, 20);
-            act_cont_db_lbl.TabIndex = 60;
-            act_cont_db_lbl.Text = "Active Contracts Here";
-            act_cont_db_lbl.Click += label3_Click_1;
-            // 
-            // pend_del_db_lbl
-            // 
-            pend_del_db_lbl.AutoSize = true;
-            pend_del_db_lbl.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
-            pend_del_db_lbl.Location = new Point(74, 48);
-            pend_del_db_lbl.Name = "pend_del_db_lbl";
-            pend_del_db_lbl.Size = new Size(171, 20);
-            pend_del_db_lbl.TabIndex = 61;
-            pend_del_db_lbl.Text = "Pending Deliveries here";
-            pend_del_db_lbl.Click += pend_del_db_lbl_Click;
+            confirm_del_btn.BackColor = Color.DarkKhaki;
+            confirm_del_btn.FlatStyle = FlatStyle.Popup;
+            confirm_del_btn.ForeColor = Color.White;
+            confirm_del_btn.Location = new Point(874, 469);
+            confirm_del_btn.Name = "confirm_del_btn";
+            confirm_del_btn.Size = new Size(67, 66);
+            confirm_del_btn.TabIndex = 58;
+            confirm_del_btn.Text = "Confirm Delivery Status";
+            confirm_del_btn.UseVisualStyleBackColor = false;
+            confirm_del_btn.Click += confirm_del_btn_Click;
             // 
             // Suppliers
             // 
@@ -1039,6 +1053,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(224, 224, 224);
             ClientSize = new Size(979, 768);
+            Controls.Add(confirm_del_btn);
             Controls.Add(recordDelivery);
             Controls.Add(addSupplier);
             Controls.Add(pending_deliver_pnl);
@@ -1212,5 +1227,6 @@
         private Label total_sup_db_lbl;
         private Label act_cont_db_lbl;
         private Label pend_del_db_lbl;
+        private Button confirm_del_btn;
     }
 }
