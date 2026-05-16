@@ -103,18 +103,20 @@
             menubar_inventory.Controls.Add(dashboard_btn);
             menubar_inventory.Controls.Add(fueltrack_icon);
             menubar_inventory.ForeColor = Color.White;
-            menubar_inventory.Location = new Point(0, 37);
+            menubar_inventory.Location = new Point(0, 49);
+            menubar_inventory.Margin = new Padding(3, 4, 3, 4);
             menubar_inventory.Name = "menubar_inventory";
-            menubar_inventory.Size = new Size(163, 732);
+            menubar_inventory.Size = new Size(186, 976);
             menubar_inventory.TabIndex = 2;
             // 
             // logout
             // 
             logout.BackColor = Color.Maroon;
             logout.Image = (Image)resources.GetObject("logout.Image");
-            logout.Location = new Point(11, 679);
+            logout.Location = new Point(13, 905);
+            logout.Margin = new Padding(3, 4, 3, 4);
             logout.Name = "logout";
-            logout.Size = new Size(34, 30);
+            logout.Size = new Size(39, 40);
             logout.SizeMode = PictureBoxSizeMode.StretchImage;
             logout.TabIndex = 68;
             logout.TabStop = false;
@@ -123,9 +125,10 @@
             // 
             auditTrial.BackColor = Color.Maroon;
             auditTrial.Image = (Image)resources.GetObject("auditTrial.Image");
-            auditTrial.Location = new Point(13, 557);
+            auditTrial.Location = new Point(15, 743);
+            auditTrial.Margin = new Padding(3, 4, 3, 4);
             auditTrial.Name = "auditTrial";
-            auditTrial.Size = new Size(34, 33);
+            auditTrial.Size = new Size(39, 44);
             auditTrial.SizeMode = PictureBoxSizeMode.StretchImage;
             auditTrial.TabIndex = 66;
             auditTrial.TabStop = false;
@@ -134,9 +137,10 @@
             // 
             reports.BackColor = Color.Maroon;
             reports.Image = (Image)resources.GetObject("reports.Image");
-            reports.Location = new Point(15, 511);
+            reports.Location = new Point(17, 681);
+            reports.Margin = new Padding(3, 4, 3, 4);
             reports.Name = "reports";
-            reports.Size = new Size(34, 30);
+            reports.Size = new Size(39, 40);
             reports.SizeMode = PictureBoxSizeMode.StretchImage;
             reports.TabIndex = 65;
             reports.TabStop = false;
@@ -145,9 +149,10 @@
             // 
             supplier.BackColor = Color.Maroon;
             supplier.Image = (Image)resources.GetObject("supplier.Image");
-            supplier.Location = new Point(15, 414);
+            supplier.Location = new Point(17, 552);
+            supplier.Margin = new Padding(3, 4, 3, 4);
             supplier.Name = "supplier";
-            supplier.Size = new Size(34, 30);
+            supplier.Size = new Size(39, 40);
             supplier.SizeMode = PictureBoxSizeMode.StretchImage;
             supplier.TabIndex = 64;
             supplier.TabStop = false;
@@ -156,9 +161,10 @@
             // 
             employee.BackColor = Color.Maroon;
             employee.Image = (Image)resources.GetObject("employee.Image");
-            employee.Location = new Point(15, 365);
+            employee.Location = new Point(17, 487);
+            employee.Margin = new Padding(3, 4, 3, 4);
             employee.Name = "employee";
-            employee.Size = new Size(34, 30);
+            employee.Size = new Size(39, 40);
             employee.SizeMode = PictureBoxSizeMode.StretchImage;
             employee.TabIndex = 63;
             employee.TabStop = false;
@@ -167,9 +173,10 @@
             // 
             pictureBox2.BackColor = Color.Maroon;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(15, 244);
+            pictureBox2.Location = new Point(17, 325);
+            pictureBox2.Margin = new Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(34, 30);
+            pictureBox2.Size = new Size(39, 40);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 62;
             pictureBox2.TabStop = false;
@@ -178,9 +185,10 @@
             // 
             pictureBox1.BackColor = Color.Maroon;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(15, 199);
+            pictureBox1.Location = new Point(17, 265);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(34, 30);
+            pictureBox1.Size = new Size(39, 40);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 61;
             pictureBox1.TabStop = false;
@@ -189,9 +197,10 @@
             // 
             dashboard.BackColor = Color.Maroon;
             dashboard.Image = (Image)resources.GetObject("dashboard.Image");
-            dashboard.Location = new Point(15, 150);
+            dashboard.Location = new Point(17, 200);
+            dashboard.Margin = new Padding(3, 4, 3, 4);
             dashboard.Name = "dashboard";
-            dashboard.Size = new Size(34, 30);
+            dashboard.Size = new Size(39, 40);
             dashboard.SizeMode = PictureBoxSizeMode.StretchImage;
             dashboard.TabIndex = 60;
             dashboard.TabStop = false;
@@ -203,9 +212,10 @@
             logout_btn.FlatAppearance.BorderSize = 0;
             logout_btn.FlatStyle = FlatStyle.Flat;
             logout_btn.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            logout_btn.Location = new Point(30, 679);
+            logout_btn.Location = new Point(34, 905);
+            logout_btn.Margin = new Padding(3, 4, 3, 4);
             logout_btn.Name = "logout_btn";
-            logout_btn.Size = new Size(118, 30);
+            logout_btn.Size = new Size(135, 40);
             logout_btn.TabIndex = 12;
             logout_btn.Text = "LOGOUT";
             logout_btn.UseVisualStyleBackColor = false;
@@ -216,9 +226,10 @@
             audit_btn.FlatAppearance.BorderSize = 0;
             audit_btn.FlatStyle = FlatStyle.Flat;
             audit_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            audit_btn.Location = new Point(37, 557);
+            audit_btn.Location = new Point(42, 743);
+            audit_btn.Margin = new Padding(3, 4, 3, 4);
             audit_btn.Name = "audit_btn";
-            audit_btn.Size = new Size(111, 33);
+            audit_btn.Size = new Size(127, 44);
             audit_btn.TabIndex = 11;
             audit_btn.Text = "Audit Trail";
             audit_btn.UseVisualStyleBackColor = false;
@@ -229,9 +240,10 @@
             reports_Btn.FlatAppearance.BorderSize = 0;
             reports_Btn.FlatStyle = FlatStyle.Flat;
             reports_Btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            reports_Btn.Location = new Point(46, 508);
+            reports_Btn.Location = new Point(53, 677);
+            reports_Btn.Margin = new Padding(3, 4, 3, 4);
             reports_Btn.Name = "reports_Btn";
-            reports_Btn.Size = new Size(84, 33);
+            reports_Btn.Size = new Size(96, 44);
             reports_Btn.TabIndex = 10;
             reports_Btn.Text = "Reports";
             reports_Btn.UseVisualStyleBackColor = false;
@@ -243,9 +255,9 @@
             rprt_label.FlatStyle = FlatStyle.Flat;
             rprt_label.Font = new Font("Segoe UI", 9F);
             rprt_label.ForeColor = Color.White;
-            rprt_label.Location = new Point(6, 474);
+            rprt_label.Location = new Point(7, 632);
             rprt_label.Name = "rprt_label";
-            rprt_label.Size = new Size(55, 15);
+            rprt_label.Size = new Size(69, 20);
             rprt_label.TabIndex = 9;
             rprt_label.Text = "REPORTS";
             // 
@@ -255,10 +267,11 @@
             richTextBox1.BorderStyle = BorderStyle.None;
             richTextBox1.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
             richTextBox1.ForeColor = Color.White;
-            richTextBox1.Location = new Point(37, 37);
+            richTextBox1.Location = new Point(42, 49);
+            richTextBox1.Margin = new Padding(3, 4, 3, 4);
             richTextBox1.Name = "richTextBox1";
             richTextBox1.ScrollBars = RichTextBoxScrollBars.None;
-            richTextBox1.Size = new Size(123, 32);
+            richTextBox1.Size = new Size(141, 43);
             richTextBox1.TabIndex = 8;
             richTextBox1.Text = "FuelTrack";
             richTextBox1.TextChanged += richTextBox1_TextChanged;
@@ -269,9 +282,10 @@
             employee_btn.FlatAppearance.BorderSize = 0;
             employee_btn.FlatStyle = FlatStyle.Flat;
             employee_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            employee_btn.Location = new Point(30, 362);
+            employee_btn.Location = new Point(34, 483);
+            employee_btn.Margin = new Padding(3, 4, 3, 4);
             employee_btn.Name = "employee_btn";
-            employee_btn.Size = new Size(131, 33);
+            employee_btn.Size = new Size(150, 44);
             employee_btn.TabIndex = 7;
             employee_btn.Text = "Employees";
             employee_btn.UseVisualStyleBackColor = false;
@@ -282,9 +296,10 @@
             suplier_btn.FlatAppearance.BorderSize = 0;
             suplier_btn.FlatStyle = FlatStyle.Flat;
             suplier_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            suplier_btn.Location = new Point(39, 408);
+            suplier_btn.Location = new Point(45, 544);
+            suplier_btn.Margin = new Padding(3, 4, 3, 4);
             suplier_btn.Name = "suplier_btn";
-            suplier_btn.Size = new Size(102, 33);
+            suplier_btn.Size = new Size(117, 44);
             suplier_btn.TabIndex = 6;
             suplier_btn.Text = "Suppliers";
             suplier_btn.UseVisualStyleBackColor = false;
@@ -296,9 +311,9 @@
             manage_btn.FlatStyle = FlatStyle.Flat;
             manage_btn.Font = new Font("Segoe UI", 9F);
             manage_btn.ForeColor = Color.White;
-            manage_btn.Location = new Point(6, 327);
+            manage_btn.Location = new Point(7, 436);
             manage_btn.Name = "manage_btn";
-            manage_btn.Size = new Size(57, 15);
+            manage_btn.Size = new Size(71, 20);
             manage_btn.TabIndex = 5;
             manage_btn.Text = "MANAGE";
             // 
@@ -308,9 +323,10 @@
             trans_btn.FlatAppearance.BorderSize = 0;
             trans_btn.FlatStyle = FlatStyle.Flat;
             trans_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            trans_btn.Location = new Point(46, 244);
+            trans_btn.Location = new Point(53, 325);
+            trans_btn.Margin = new Padding(3, 4, 3, 4);
             trans_btn.Name = "trans_btn";
-            trans_btn.Size = new Size(119, 33);
+            trans_btn.Size = new Size(136, 44);
             trans_btn.TabIndex = 4;
             trans_btn.Text = "Transactions";
             trans_btn.UseVisualStyleBackColor = false;
@@ -322,9 +338,9 @@
             main_label_menu.FlatStyle = FlatStyle.Flat;
             main_label_menu.Font = new Font("Segoe UI", 9F);
             main_label_menu.ForeColor = Color.White;
-            main_label_menu.Location = new Point(11, 118);
+            main_label_menu.Location = new Point(13, 157);
             main_label_menu.Name = "main_label_menu";
-            main_label_menu.Size = new Size(38, 15);
+            main_label_menu.Size = new Size(47, 20);
             main_label_menu.TabIndex = 3;
             main_label_menu.Text = "MAIN";
             // 
@@ -334,9 +350,10 @@
             inv_btn.FlatAppearance.BorderSize = 0;
             inv_btn.FlatStyle = FlatStyle.Flat;
             inv_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            inv_btn.Location = new Point(37, 196);
+            inv_btn.Location = new Point(42, 261);
+            inv_btn.Margin = new Padding(3, 4, 3, 4);
             inv_btn.Name = "inv_btn";
-            inv_btn.Size = new Size(126, 33);
+            inv_btn.Size = new Size(144, 44);
             inv_btn.TabIndex = 2;
             inv_btn.Text = "Inventory";
             inv_btn.UseVisualStyleBackColor = false;
@@ -347,27 +364,30 @@
             dashboard_btn.FlatAppearance.BorderSize = 0;
             dashboard_btn.FlatStyle = FlatStyle.Flat;
             dashboard_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dashboard_btn.Location = new Point(37, 150);
+            dashboard_btn.Location = new Point(42, 200);
+            dashboard_btn.Margin = new Padding(3, 4, 3, 4);
             dashboard_btn.Name = "dashboard_btn";
-            dashboard_btn.Size = new Size(128, 33);
+            dashboard_btn.Size = new Size(146, 44);
             dashboard_btn.TabIndex = 0;
             dashboard_btn.Text = "Dashboard";
             dashboard_btn.UseVisualStyleBackColor = false;
+            dashboard_btn.Click += dashboard_btn_Click;
             // 
             // fueltrack_icon
             // 
             fueltrack_icon.Image = Properties.Resources.fuel_station_vector_icon;
-            fueltrack_icon.Location = new Point(6, 34);
+            fueltrack_icon.Location = new Point(7, 45);
             fueltrack_icon.Name = "fueltrack_icon";
-            fueltrack_icon.Size = new Size(39, 38);
+            fueltrack_icon.Size = new Size(45, 51);
             fueltrack_icon.TabIndex = 14;
             fueltrack_icon.Text = "               ";
             // 
             // inventory_search
             // 
-            inventory_search.Location = new Point(607, 138);
+            inventory_search.Location = new Point(694, 184);
+            inventory_search.Margin = new Padding(3, 4, 3, 4);
             inventory_search.Name = "inventory_search";
-            inventory_search.Size = new Size(197, 23);
+            inventory_search.Size = new Size(225, 27);
             inventory_search.TabIndex = 3;
             inventory_search.Text = "Search...";
             inventory_search.TextChanged += inventory_search_TextChanged;
@@ -379,9 +399,10 @@
             inventorysadd_button.BackColor = Color.FromArgb(221, 152, 3);
             inventorysadd_button.FlatStyle = FlatStyle.Popup;
             inventorysadd_button.ForeColor = SystemColors.ControlLightLight;
-            inventorysadd_button.Location = new Point(822, 138);
+            inventorysadd_button.Location = new Point(939, 184);
+            inventorysadd_button.Margin = new Padding(3, 4, 3, 4);
             inventorysadd_button.Name = "inventorysadd_button";
-            inventorysadd_button.Size = new Size(118, 32);
+            inventorysadd_button.Size = new Size(135, 43);
             inventorysadd_button.TabIndex = 4;
             inventorysadd_button.Text = "+ Add";
             inventorysadd_button.UseVisualStyleBackColor = false;
@@ -391,9 +412,9 @@
             // 
             fuelInventory_label.AutoSize = true;
             fuelInventory_label.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold);
-            fuelInventory_label.Location = new Point(207, 141);
+            fuelInventory_label.Location = new Point(237, 188);
             fuelInventory_label.Name = "fuelInventory_label";
-            fuelInventory_label.Size = new Size(151, 30);
+            fuelInventory_label.Size = new Size(194, 37);
             fuelInventory_label.TabIndex = 5;
             fuelInventory_label.Text = "Fuel Inventory";
             fuelInventory_label.Click += label1_Click;
@@ -401,9 +422,9 @@
             // label25
             // 
             label25.AutoSize = true;
-            label25.Location = new Point(575, 196);
+            label25.Location = new Point(657, 261);
             label25.Name = "label25";
-            label25.Size = new Size(0, 15);
+            label25.Size = new Size(0, 20);
             label25.TabIndex = 34;
             // 
             // fuelInventorys_dataGridView
@@ -412,34 +433,36 @@
             fuelInventorys_dataGridView.BorderStyle = BorderStyle.None;
             fuelInventorys_dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.None;
             fuelInventorys_dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            fuelInventorys_dataGridView.Location = new Point(207, 187);
+            fuelInventorys_dataGridView.Location = new Point(237, 249);
+            fuelInventorys_dataGridView.Margin = new Padding(3, 4, 3, 4);
             fuelInventorys_dataGridView.Name = "fuelInventorys_dataGridView";
-            fuelInventorys_dataGridView.Size = new Size(733, 545);
+            fuelInventorys_dataGridView.RowHeadersWidth = 51;
+            fuelInventorys_dataGridView.Size = new Size(838, 727);
             fuelInventorys_dataGridView.TabIndex = 6;
             fuelInventorys_dataGridView.CellContentClick += fuelInventorys_dataGridView_CellContentClick;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(190, 346);
+            label8.Location = new Point(217, 461);
             label8.Name = "label8";
-            label8.Size = new Size(0, 15);
+            label8.Size = new Size(0, 20);
             label8.TabIndex = 35;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(422, 46);
+            label9.Location = new Point(482, 61);
             label9.Name = "label9";
-            label9.Size = new Size(0, 15);
+            label9.Size = new Size(0, 20);
             label9.TabIndex = 36;
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(464, 50);
+            label10.Location = new Point(530, 67);
             label10.Name = "label10";
-            label10.Size = new Size(0, 15);
+            label10.Size = new Size(0, 20);
             label10.TabIndex = 37;
             // 
             // inventory_panel
@@ -449,17 +472,18 @@
             inventory_panel.Controls.Add(usr_avatar);
             inventory_panel.Controls.Add(role_label);
             inventory_panel.Controls.Add(date_label);
-            inventory_panel.Location = new Point(-2, -3);
+            inventory_panel.Location = new Point(-2, -4);
+            inventory_panel.Margin = new Padding(3, 4, 3, 4);
             inventory_panel.Name = "inventory_panel";
-            inventory_panel.Size = new Size(1271, 52);
+            inventory_panel.Size = new Size(1453, 69);
             inventory_panel.TabIndex = 38;
             // 
             // alert_label
             // 
             alert_label.AutoSize = true;
-            alert_label.Location = new Point(772, 22);
+            alert_label.Location = new Point(882, 29);
             alert_label.Name = "alert_label";
-            alert_label.Size = new Size(66, 15);
+            alert_label.Size = new Size(82, 20);
             alert_label.TabIndex = 3;
             alert_label.Text = "--ALERTS--";
             // 
@@ -467,9 +491,10 @@
             // 
             usr_avatar.BackColor = SystemColors.ControlDark;
             usr_avatar.BackgroundImageLayout = ImageLayout.None;
-            usr_avatar.Location = new Point(853, 9);
+            usr_avatar.Location = new Point(975, 12);
+            usr_avatar.Margin = new Padding(3, 4, 3, 4);
             usr_avatar.Name = "usr_avatar";
-            usr_avatar.Size = new Size(38, 38);
+            usr_avatar.Size = new Size(43, 51);
             usr_avatar.SizeMode = PictureBoxSizeMode.Zoom;
             usr_avatar.TabIndex = 2;
             usr_avatar.TabStop = false;
@@ -477,26 +502,26 @@
             // role_label
             // 
             role_label.AutoSize = true;
-            role_label.Location = new Point(902, 22);
+            role_label.Location = new Point(1031, 29);
             role_label.Name = "role_label";
-            role_label.Size = new Size(55, 15);
+            role_label.Size = new Size(68, 20);
             role_label.TabIndex = 1;
             role_label.Text = "--ROLE--";
             // 
             // date_label
             // 
             date_label.AutoSize = true;
-            date_label.Location = new Point(14, 22);
+            date_label.Location = new Point(16, 29);
             date_label.Name = "date_label";
-            date_label.Size = new Size(98, 15);
+            date_label.Size = new Size(126, 20);
             date_label.TabIndex = 0;
             date_label.Text = "DATE GOES HERE";
             // 
             // Inventory
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(979, 768);
+            ClientSize = new Size(1119, 1024);
             ControlBox = false;
             Controls.Add(inventory_panel);
             Controls.Add(label10);
@@ -510,6 +535,7 @@
             Controls.Add(menubar_inventory);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Inventory";

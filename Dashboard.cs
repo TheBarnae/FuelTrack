@@ -25,9 +25,7 @@ namespace FuelTrack
         public Dashboard()
         {
             InitializeComponent();
-            _logoutOriginalColor = logout_btn.BackColor;
             UIHelper.MakeCircular(usr_avatar);
-            UIHelper.StyleFuelTrackTitle(richTextBox1);
             ConfigureOverviewGrids();
             ConfigureClockTimer();
         }
@@ -35,7 +33,6 @@ namespace FuelTrack
         {
             UIHelper.setDateLabel(date_label);
             // Set the dashboard as the active one
-            UIHelper.SetButtonActive(dashboard_btn, true);
             // Set rounded corners for panels in dashboard
             UIHelper.SetRadius(sales_panel, 12);
             UIHelper.SetRadius(liters_panel, 12);

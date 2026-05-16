@@ -14,6 +14,8 @@ namespace FuelTrack
     {
         private readonly Database.Database _database = new Database.Database();
         private DataTable? _supplierTable;
+        private int? _editingSupplierId;
+        private bool _isAddingNew = false;
 
         public Suppliers()
         {
@@ -51,6 +53,15 @@ namespace FuelTrack
             supplier_textBox.ForeColor = SystemColors.GrayText;
             LoadSupplierDropdowns();
             LoadFuelTypeDropdowns();
+        }
+
+        private void StartNewSupplierEntry()
+        {
+            _isAddingNew = true;
+            _editingSupplierId = null;
+            ClearSupplierFields();
+            supplierdata_dataGridView.ClearSelection();
+            _isAddingNew = false;
         }
 
         private void LoadSupplierStats()
@@ -101,6 +112,8 @@ ORDER BY company_name;";
                 adapter.Fill(table);
                 _supplierTable = table;
                 supplierdata_dataGridView.DataSource = _supplierTable;
+                supplierdata_dataGridView.ClearSelection();
+                _editingSupplierId = null;
             }
             catch (Exception ex)
             {
@@ -173,11 +186,12 @@ ORDER BY company_name;";
 
         private void supplierdata_dataGridView_SelectionChanged(object? sender, EventArgs e)
         {
-            if (supplierdata_dataGridView.CurrentRow?.DataBoundItem is not DataRowView rowView)
-            {
-                return;
-            }
+            if (_isAddingNew) return; // Block repopulation during new entry
 
+            if (supplierdata_dataGridView.CurrentRow?.DataBoundItem is not DataRowView rowView)
+                return;
+
+            _editingSupplierId = int.TryParse(rowView["Supplier ID"].ToString(), out var id) ? id : null;
             suppliername_textBox.Text = rowView["Supplier name"].ToString();
             contactperson_textBox.Text = rowView["Contact person"].ToString();
             phonenumber_textBox.Text = rowView["Phone"].ToString();
@@ -199,8 +213,8 @@ ORDER BY company_name;";
                 return;
             }
 
-            var selectedId = GetSelectedSupplierId();
-            var query = selectedId.HasValue
+            var isEditing = _editingSupplierId.HasValue;
+            var query = isEditing
                 ? @"UPDATE Suppliers
 SET company_name = @company_name,
     contact_person = @contact_person,
@@ -220,9 +234,9 @@ VALUES (@company_name, @contact_person, @contact_number, @email, @status);";
                 command.Parameters.AddWithValue("@contact_number", contactNumber);
                 command.Parameters.AddWithValue("@email", email);
                 command.Parameters.AddWithValue("@status", status);
-                if (selectedId.HasValue)
+                if (isEditing)
                 {
-                    command.Parameters.AddWithValue("@supplier_id", selectedId.Value);
+                    command.Parameters.AddWithValue("@supplier_id", _editingSupplierId!.Value);
                 }
 
                 connection.Open();
@@ -275,6 +289,11 @@ VALUES (@company_name, @contact_person, @contact_number, @email, @status);";
 
         private int? GetSelectedSupplierId()
         {
+            if (_editingSupplierId.HasValue)
+            {
+                return _editingSupplierId;
+            }
+
             if (supplierdata_dataGridView.CurrentRow?.DataBoundItem is not DataRowView rowView)
             {
                 return null;
@@ -472,6 +491,11 @@ VALUES (@supplier_id, @fuel_type_id, @dr_number, @volume_liters, @delivery_date,
         private void deletesupplier_button_Click(object? sender, EventArgs e)
         {
             DeleteSupplier();
+        }
+
+        private void addsupplier_button_Click(object? sender, EventArgs e)
+        {
+            StartNewSupplierEntry();
         }
 
         private void confirmdelivery_button_Click(object? sender, EventArgs e)

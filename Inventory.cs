@@ -355,5 +355,10 @@ VALUES (@name, @current_stock, @min_stock, @price_per_liter, @status, NOW());";
         {
 
         }
+
+        private void dashboard_btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

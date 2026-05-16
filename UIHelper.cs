@@ -85,7 +85,7 @@ namespace FuelTrack
         {
             rtb.Text = "FuelTrack";
             rtb.Select(0, 4);
-            rtb.SelectionColor = Color.Aqua;
+            rtb.SelectionColor = Color.FromArgb(245, 87, 51);
             rtb.Select(4, 5);
             rtb.SelectionColor = Color.White;
             rtb.Select(0, 0);

@@ -27,7 +27,6 @@ namespace FuelTrack
         private void Employees_Load(object? sender, EventArgs e)
         {
             UIHelper.setDateLabel(date_label);
-            UIHelper.SetButtonActive(employee_btn, true);
             UIHelper.DisableCloseButton(this);
             ConfigureGrid();
             LoadComboBoxes();
